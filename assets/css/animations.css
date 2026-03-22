@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS.CSS — Keyframes & Scroll Reveal
+   Somala Ajay Portfolio
+═══════════════════════════════════════════════════ */
+
+/* ── Base Keyframes ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Scroll Reveal: Initial Hidden State ── */
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-up    { transform: translateY(36px); }
+.reveal-left  { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+
+/* Stagger delay via CSS var */
+.reveal-up    { transition-delay: var(--delay, 0s); }
+
+/* ── Visible State (toggled by IntersectionObserver) ── */
+.reveal-up.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ── Custom Cursor ── */
+#cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--purple);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s, background 0.3s;
+  box-shadow: 0 0 8px var(--purple);
+}
+
+#cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(155,89,245,0.5);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.12s;
+}
+
+/* Cursor states */
+#cursor-dot.hovering {
+  background: var(--gold);
+  transform: translate(-50%, -50%) scale(1.5);
+  box-shadow: 0 0 14px var(--gold);
+}
+
+#cursor-ring.hovering {
+  width: 54px;
+  height: 54px;
+  border-color: rgba(212,168,67,0.5);
+}
+
+#cursor-dot.clicking {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+#cursor-ring.clicking {
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Section Entrance Animations (per section) ── */
+
+/* Hero — staggered by CSS animation */
+/* (handled inline via animation property in hero.css) */
+
+/* About section — slide in both sides */
+#about .reveal-left  { transition-duration: 0.8s; transition-timing-function: cubic-bezier(0.23,1,0.32,1); }
+#about .reveal-right { transition-duration: 0.8s; transition-delay: 0.15s; transition-timing-function: cubic-bezier(0.23,1,0.32,1); }
+
+/* Experience — timeline items slide up */
+#experience .reveal-up { transition-timing-function: cubic-bezier(0.16,1,0.3,1); }
+
+/* Skills — globe fades left, cards fade right */
+#skills .reveal-left  { transition-duration: 0.9s; }
+#skills .reveal-right { transition-duration: 0.9s; transition-delay: 0.2s; }
+
+/* Projects — scale pop */
+#projects .project-card {
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1), border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Certifications — slide left from edge */
+#certifications .cert-card {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s;
+}
+#certifications .cert-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Contact — opposite sides */
+#contact .reveal-left  { transition-duration: 0.8s; }
+#contact .reveal-right { transition-duration: 0.8s; transition-delay: 0.1s; }
+
+/* ── Hover Micro-animations ── */
+
+/* Skill tags bounce on hover */
+.tag:hover { transform: translateY(-2px); }
+
+/* Nav logo pulse on hover */
+.nav-logo:hover { animation: logoPulse 0.4s ease; }
+@keyframes logoPulse {
+  0%,100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+
+/* Stat counter glow */
+.stat-item:hover .stat-val {
+  animation: counterGlow 0.4s ease forwards;
+}
+@keyframes counterGlow {
+  to { text-shadow: 0 0 20px var(--purple); }
+}
+
+/* ── Page Load Animation ── */
+body {
+  animation: pageLoad 0.4s ease forwards;
+}
+@keyframes pageLoad {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
