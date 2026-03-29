@@ -235,14 +235,14 @@
 }
 
 #techGlobe {
-  border-radius: 50%;
+  border-radius: 60%;
 }
 
 .globe-label {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.80rem;
   color: var(--gold);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   margin-top: 1rem;
 }
