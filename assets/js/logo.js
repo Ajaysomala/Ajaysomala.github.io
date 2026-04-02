@@ -33,28 +33,40 @@
       return document.documentElement.getAttribute('data-theme') !== 'light';
     }
 
-    function sampleLetter(letter, targetX, targetY, letterSize) {
+    function buildParticles() {
+      // Draw "SA" as one centered text on a same-size canvas
+      // then sample pixels — guarantees perfect centering
       const off = document.createElement('canvas');
-      off.width = off.height = letterSize;
+      off.width  = SIZE;
+      off.height = SIZE;
       const offCtx = off.getContext('2d');
+
+      // Fill circle clip so we only sample inside the circle
+      offCtx.beginPath();
+      offCtx.arc(SIZE/2, SIZE/2, SIZE/2 - 6, 0, Math.PI * 2);
+      offCtx.clip();
+
+      // Draw SA perfectly centered
       offCtx.fillStyle = '#ffffff';
-      offCtx.font = `bold ${Math.floor(letterSize * 0.95)}px serif`;
-      offCtx.textAlign = 'center';
+      offCtx.font = `bold ${Math.floor(SIZE * 0.52)}px serif`;
+      offCtx.textAlign    = 'center';
       offCtx.textBaseline = 'middle';
-      offCtx.fillText(letter, letterSize / 2, letterSize / 2);
-      const data = offCtx.getImageData(0, 0, letterSize, letterSize).data;
+      offCtx.fillText('SA', SIZE / 2, SIZE / 2);
+
+      const data = offCtx.getImageData(0, 0, SIZE, SIZE).data;
       const dots = [];
       const step = 3;
-      for (let y = 0; y < letterSize; y += step) {
-        for (let x = 0; x < letterSize; x += step) {
-          if (data[(y * letterSize + x) * 4 + 3] > 80) {
+
+      for (let y = 0; y < SIZE; y += step) {
+        for (let x = 0; x < SIZE; x += step) {
+          if (data[(y * SIZE + x) * 4 + 3] > 80) {
             const angle = Math.random() * Math.PI * 2;
             const dist  = 180 + Math.random() * 150;
             dots.push({
-              tx: targetX + x, ty: targetY + y,
-              x: CX + Math.cos(angle) * dist,
-              y: CY + Math.sin(angle) * dist,
-              size: 1.5 + Math.random() * 1.3,
+              tx: x, ty: y,   // target = exact pixel position on main canvas
+              x:  CX + Math.cos(angle) * dist,
+              y:  CY + Math.sin(angle) * dist,
+              size: 1.6 + Math.random() * 1.2,
             });
           }
         }
@@ -64,18 +76,8 @@
 
     let particles = [], animId = null, t = 0;
 
-    function buildParticles() {
-      // Each letter gets half the canvas width, centered vertically
-      const letterSize = Math.floor(SIZE / 2) - 8;
-      const topPad     = Math.floor((SIZE - letterSize) / 2); // vertical center
-      const gap        = 4; // gap between S and A
-      const totalW     = letterSize * 2 + gap;
-      const leftStart  = Math.floor((SIZE - totalW) / 2);     // horizontal center
-
-      particles = [
-        ...sampleLetter('S', leftStart,                  topPad, letterSize),
-        ...sampleLetter('A', leftStart + letterSize + gap, topPad, letterSize)
-      ];
+    function initParticles() {
+      particles = buildParticles();
     }
 
     function easeOutBack(x) {
@@ -143,7 +145,7 @@
     function play() {
       if (animId) cancelAnimationFrame(animId);
       t = 0;
-      buildParticles();
+      initParticles();
       resetNameLetters();
       animate();
     }
