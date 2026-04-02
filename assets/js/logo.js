@@ -38,7 +38,7 @@
       off.width = off.height = letterSize;
       const offCtx = off.getContext('2d');
       offCtx.fillStyle = '#ffffff';
-      offCtx.font = `bold ${Math.floor(letterSize * 0.82)}px serif`;
+      offCtx.font = `bold ${Math.floor(letterSize * 0.95)}px serif`;
       offCtx.textAlign = 'center';
       offCtx.textBaseline = 'middle';
       offCtx.fillText(letter, letterSize / 2, letterSize / 2);
@@ -65,10 +65,16 @@
     let particles = [], animId = null, t = 0;
 
     function buildParticles() {
-      const half = Math.floor(SIZE / 2) - 6;
+      // Each letter gets half the canvas width, centered vertically
+      const letterSize = Math.floor(SIZE / 2) - 8;
+      const topPad     = Math.floor((SIZE - letterSize) / 2); // vertical center
+      const gap        = 4; // gap between S and A
+      const totalW     = letterSize * 2 + gap;
+      const leftStart  = Math.floor((SIZE - totalW) / 2);     // horizontal center
+
       particles = [
-        ...sampleLetter('S', 4, 4, half),
-        ...sampleLetter('A', half + 8, 4, half)
+        ...sampleLetter('S', leftStart,                  topPad, letterSize),
+        ...sampleLetter('A', leftStart + letterSize + gap, topPad, letterSize)
       ];
     }
 
