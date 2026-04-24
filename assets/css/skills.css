@@ -1,0 +1,35 @@
+/* SKILLS.CSS */
+.skills-layout { display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:center; position:relative; z-index:2; }
+
+.skills-globe-wrap { display:flex; flex-direction:column; align-items:center; gap:1.1rem; }
+#techGlobe { width:320px; height:320px; display:block; }
+.globe-caption { font-family:var(--font-mono); font-size:0.62rem; color:var(--muted2); letter-spacing:0.25em; text-transform:uppercase; }
+.globe-hint { font-family:var(--font-mono); font-size:0.6rem; color:var(--muted); letter-spacing:0.12em; }
+
+.skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.85rem; }
+
+.skill-card {
+  background:var(--card);
+  border:1px solid var(--border-md);
+  border-radius:10px;
+  padding:1.25rem 1.4rem;
+  transition:border-color var(--t-med),transform var(--t-med),box-shadow var(--t-med);
+  position:relative;
+  overflow:hidden;
+}
+.skill-card::after { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent); opacity:0; transition:opacity var(--t-med); }
+.skill-card:hover { border-color:var(--border-hi); transform:translateY(-3px); box-shadow:0 15px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05); }
+.skill-card:hover::after { opacity:1; }
+
+/* ALL text visible on hover */
+.skill-card:hover .skill-cat,
+.skill-card:hover .stag { color:var(--text-hi); }
+
+.skill-card-header { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.75rem; }
+.skill-icon { font-size:1rem; }
+.skill-cat { font-family:var(--font-mono); font-size:0.62rem; color:var(--muted2); letter-spacing:0.14em; text-transform:uppercase; transition:color var(--t-fast); }
+
+.skill-tags { display:flex; flex-wrap:wrap; gap:0.35rem; }
+.stag { display:inline-block; padding:0.24rem 0.6rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-md); border-radius:3px; font-family:var(--font-mono); font-size:0.68rem; color:var(--muted2); transition:all var(--t-fast); }
+.skill-card:hover .stag { background:rgba(255,255,255,0.07); color:var(--text); border-color:var(--border-md); }
+.skill-card:hover .stag:hover { background:rgba(255,255,255,0.12); color:var(--white); border-color:var(--border-hi); transform:scale(1.03); }
