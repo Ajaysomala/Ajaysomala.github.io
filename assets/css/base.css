@@ -1,0 +1,64 @@
+/* BASE.CSS */
+:root {
+  --bg:#000000; --bg2:#060606; --card:#0d0d0d;
+  --border:rgba(255,255,255,0.08); --border-md:rgba(255,255,255,0.15); --border-hi:rgba(255,255,255,0.38);
+  --white:#f2f2f2; --wp:#ffffff; --text:#c0c0c0; --text-hi:#e0e0e0; --muted:#808080; --muted2:#a8a8a8;
+  --fd:'Syne',sans-serif; --fb:'Plus Jakarta Sans',sans-serif; --fm:'JetBrains Mono',monospace;
+  --tf:0.18s ease; --tm:0.32s ease; --ts:0.6s cubic-bezier(0.23,1,0.32,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.75;overflow-x:hidden;cursor:none;}
+@media(hover:none){body{cursor:auto;}#cursor-dot,#cursor-ring{display:none!important;}}
+
+/* 3D canvas - fixed behind everything */
+#threeCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+
+#scroll-progress{position:fixed;top:0;left:0;width:0%;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0.3),rgba(255,255,255,0.95));z-index:9999;box-shadow:0 0 10px rgba(255,255,255,0.3);}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:#000;}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:2px;}
+::selection{background:rgba(255,255,255,0.12);color:#fff;}
+
+h1,h2,h3,h4{font-family:var(--fd);color:var(--white);line-height:1.1;font-weight:800;}
+p{color:var(--text);}a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}strong{color:var(--white);font-weight:600;}
+
+.container{max-width:1180px;margin:0 auto;padding:0 2.5rem;width:100%;}
+
+/* Sections sit above 3D canvas */
+.s3d{
+  position:relative;z-index:2;
+  padding:7rem 0;
+  overflow:hidden;
+}
+.s3d.section-alt{background:rgba(6,6,6,0.82);backdrop-filter:blur(2px);}
+.s3d:not(.section-alt){background:rgba(0,0,0,0.75);backdrop-filter:blur(1px);}
+
+/* First section (hero) fully transparent so 3D shows */
+#hero{background:transparent!important;backdrop-filter:none!important;}
+
+.sec-label{
+  position:absolute;top:3rem;right:3rem;
+  font-family:var(--fd);font-size:7rem;font-weight:800;
+  color:rgba(255,255,255,0.018);line-height:1;
+  user-select:none;pointer-events:none;z-index:0;letter-spacing:-0.04em;
+}
+
+.section-tag{font-family:var(--fm);font-size:0.63rem;color:var(--muted2);letter-spacing:0.28em;text-transform:uppercase;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;}
+.section-tag::before{content:'';display:inline-block;width:22px;height:1px;background:var(--muted2);flex-shrink:0;}
+h2.section-title{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;color:var(--white);margin-bottom:3rem;}
+
+/* Buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:var(--wp);color:#000;font-family:var(--fb);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:5px;border:none;cursor:none;transition:all var(--tm);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,255,255,0.2);}
+.btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;background:transparent;color:var(--text-hi);border:1px solid var(--border-md);font-family:var(--fb);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border-radius:5px;cursor:none;transition:all var(--tm);}
+.btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:var(--border-hi);color:var(--white);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 1.75rem;background:transparent;color:var(--muted2);border:1px solid var(--border);font-family:var(--fb);font-size:0.78rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border-radius:5px;cursor:none;transition:all var(--tm);}
+.btn-ghost:hover{border-color:var(--border-hi);color:var(--white);transform:translateY(-2px);}
+.btn-full{width:100%;justify-content:center;}
+
+footer{padding:2rem 0;border-top:1px solid var(--border);background:rgba(0,0,0,0.9);position:relative;z-index:2;}
+.footer-inner{max-width:1180px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.7rem;font-family:var(--fm);color:var(--muted);}
+.footer-name{color:var(--white);font-weight:600;}

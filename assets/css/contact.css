@@ -1,0 +1,42 @@
+/* CONTACT.CSS */
+.contact-layout { display:grid; grid-template-columns:1fr 1.3fr; gap:4rem; align-items:start; position:relative; z-index:2; }
+
+.contact-tagline { font-size:0.97rem; color:var(--muted2); line-height:1.85; margin-bottom:2rem; max-width:360px; }
+
+.contact-links { display:flex; flex-direction:column; gap:0.7rem; margin-bottom:1.75rem; }
+
+.clink {
+  display:flex; align-items:center; gap:1rem;
+  padding:1rem 1.25rem;
+  background:var(--card); border:1px solid var(--border-md);
+  border-radius:10px; color:var(--text); cursor:none;
+  transition:border-color var(--tm),transform var(--tm),box-shadow var(--tm);
+  position:relative; overflow:hidden;
+}
+.clink::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:rgba(255,255,255,0.25); opacity:0; transition:opacity var(--tm); }
+.clink:hover { border-color:var(--border-hi); transform:translateX(6px); box-shadow:0 10px 30px rgba(0,0,0,0.3); }
+.clink:hover::before { opacity:1; }
+.clink:hover .clink-label { color:var(--muted2); }
+.clink:hover .clink-value { color:var(--white); }
+
+.clink-icon { font-size:1.2rem; flex-shrink:0; }
+.clink-label { font-family:var(--fm); font-size:0.62rem; color:var(--muted2); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.1rem; transition:color var(--tf); }
+.clink-value { font-size:0.86rem; font-weight:500; color:var(--text-hi); transition:color var(--tf); }
+.contact-location { font-family:var(--fm); font-size:0.7rem; color:var(--muted); letter-spacing:0.08em; }
+
+/* Form */
+.contact-form { display:flex; flex-direction:column; gap:1.1rem; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.form-group { display:flex; flex-direction:column; gap:0.4rem; }
+.form-group label { font-family:var(--fm); font-size:0.62rem; color:var(--muted2); letter-spacing:0.12em; text-transform:uppercase; }
+.form-group input, .form-group textarea {
+  background:var(--card); border:1px solid var(--border-md); border-radius:6px;
+  padding:0.85rem 1rem; color:var(--white); font-family:var(--fb); font-size:0.88rem;
+  outline:none; cursor:none; transition:border-color var(--tf),box-shadow var(--tf),background var(--tf);
+  width:100%; resize:vertical;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color:var(--muted); font-size:0.84rem; }
+.form-group input:focus, .form-group textarea:focus { border-color:rgba(255,255,255,0.35); background:rgba(255,255,255,0.03); box-shadow:0 0 0 3px rgba(255,255,255,0.04); }
+.form-status { font-family:var(--fm); font-size:0.75rem; padding:0.5rem 0; letter-spacing:0.06em; min-height:1.2rem; transition:color var(--tf); }
+.form-status.success { color:#4ade80; }
+.form-status.error   { color:#f87171; }

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Somala Ajay — Python Developer & AI/ML Engineer</title>
+  <meta name="description" content="Somala Ajay — Python Developer & AI/ML Engineer. 31 AI/ML projects. NLP, CV, Deep Learning, GenAI & RAG."/>
+  <meta name="keywords" content="Somala Ajay, Python Developer, AI ML Engineer, Data Scientist, Hyderabad, RAG, FastAPI, TensorFlow"/>
+  <meta name="author" content="Somala Ajay"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://ajaysomala.github.io/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ajaysomala.github.io/"/>
+  <meta property="og:title" content="Somala Ajay — Python Developer & AI/ML Engineer"/>
+  <meta property="og:description" content="Python Developer & AI/ML Engineer. 31 AI/ML projects. Open to opportunities."/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Somala Ajay","url":"https://ajaysomala.github.io","email":"jaydeveloper010@gmail.com","telephone":"+917675010831","jobTitle":"Python Developer & AI/ML Engineer","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"sameAs":["https://github.com/Ajaysomala","https://www.linkedin.com/in/somala-ajay-8a806b213"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/base.css"/>
+  <link rel="stylesheet" href="assets/css/loader.css"/>
+  <link rel="stylesheet" href="assets/css/nav.css"/>
+  <link rel="stylesheet" href="assets/css/hero.css"/>
+  <link rel="stylesheet" href="assets/css/about.css"/>
+  <link rel="stylesheet" href="assets/css/experience.css"/>
+  <link rel="stylesheet" href="assets/css/skills.css"/>
+  <link rel="stylesheet" href="assets/css/projects.css"/>
+  <link rel="stylesheet" href="assets/css/certifications.css"/>
+  <link rel="stylesheet" href="assets/css/contact.css"/>
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <link rel="stylesheet" href="assets/css/responsive.css"/>
+</head>
+<body>
+
+  <!-- ═══ LOADER ═══ -->
+  <div id="loader">
+    <canvas id="loaderCanvas"></canvas>
+    <div class="loader-content">
+      <div class="loader-logo">S<span>.</span>A</div>
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+      <div class="loader-text" id="loaderText">Initializing 3D Environment...</div>
+    </div>
+  </div>
+
+  <!-- ═══ 3D CANVAS ═══ -->
+  <canvas id="threeCanvas"></canvas>
+
+  <!-- ═══ SCROLL PROGRESS ═══ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ═══ CURSOR ═══ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">S<span>.</span>Ajay</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mob-close" id="mobClose">✕</button>
+    <a href="#about"          onclick="closeMobileMenu()">About</a>
+    <a href="#experience"     onclick="closeMobileMenu()">Experience</a>
+    <a href="#skills"         onclick="closeMobileMenu()">Skills</a>
+    <a href="#projects"       onclick="closeMobileMenu()">Projects</a>
+    <a href="#certifications" onclick="closeMobileMenu()">Certifications</a>
+    <a href="#contact"        onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTIONS — HTML overlays on 3D
+  ═══════════════════════════════ -->
+
+  <!-- 01 HERO -->
+  <section id="hero" class="s3d">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="badge-pulse"></span>Available for Opportunities</div>
+          <h1 class="hero-name">
+            <span class="name-first">Somala</span>
+            <span class="name-last">Ajay</span>
+          </h1>
+          <div class="hero-role-wrap">
+            <span class="role-typed" id="roleTyped"></span><span class="role-cursor">|</span>
+          </div>
+          <div class="hero-divider"></div>
+          <p class="hero-summary">Python Developer &amp; AI/ML Engineer with <strong>2+ years</strong> of experience. Delivered <strong>31 AI/ML projects</strong> across NLP, Computer Vision, Deep Learning, GenAI &amp; RAG pipelines.</p>
+          <div class="hero-ctas">
+            <a href="mailto:jaydeveloper010@gmail.com" class="btn-primary">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Get in Touch
+            </a>
+            <a href="Somala_Ajay_Resume.pdf" download class="btn-secondary">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Resume
+            </a>
+            <a href="https://www.linkedin.com/in/somala-ajay-8a806b213" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+            <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener" class="btn-ghost">GitHub</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><span class="stat-val" data-target="98">0</span><span class="stat-unit">%</span><span class="stat-label">Data Accuracy</span></div>
+            <div class="stat-item"><span class="stat-val" data-target="31">0</span><span class="stat-unit">+</span><span class="stat-label">AI/ML Projects</span></div>
+            <div class="stat-item"><span class="stat-val" data-target="5">0</span><span class="stat-unit">+</span><span class="stat-label">Certifications</span></div>
+            <div class="stat-item"><span class="stat-val" data-target="2">0</span><span class="stat-unit">yr</span><span class="stat-label">Experience</span></div>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-ring">
+            <img src="assets/img/profile.jpg" alt="Somala Ajay" class="hero-photo"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+  </section>
+
+  <!-- 02 ABOUT -->
+  <section id="about" class="s3d section-alt">
+    <div class="sec-label">02</div>
+    <div class="container">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="bento-grid">
+        <div class="bento-card bento-intro reveal-up"><div class="bento-glow"></div><div class="bento-icon">🧠</div><div class="bento-card-title">Somala Ajay</div><div class="bento-card-sub">Python Developer · AI/ML Engineer · Data Scientist</div><p class="bento-card-body">Results-driven Python Developer and AI/ML Engineer with 2+ years of combined experience. Completed 31 hands-on AI/ML projects spanning NLP, Computer Vision, Deep Learning, and Generative AI. Passionate about solving real-world problems through intelligent software solutions.</p></div>
+        <div class="bento-card bento-status reveal-up" style="--delay:0.06s"><div class="bento-glow"></div><div class="bento-label">Current Status</div><div class="status-row"><span class="status-dot"></span><span>Open to Work</span></div><p class="bento-card-body">Actively seeking Software Developer, Data Scientist &amp; ML Engineer roles in Hyderabad or remote.</p></div>
+        <div class="bento-card bento-stat reveal-up" style="--delay:0.1s"><div class="bento-glow"></div><div class="bento-big-num">31<span class="bento-unit">+</span></div><div class="bento-stat-label">AI/ML Projects</div></div>
+        <div class="bento-card bento-stat reveal-up" style="--delay:0.14s"><div class="bento-glow"></div><div class="bento-big-num">98<span class="bento-unit">%</span></div><div class="bento-stat-label">Data Accuracy</div></div>
+        <div class="bento-card bento-stat reveal-up" style="--delay:0.18s"><div class="bento-glow"></div><div class="bento-big-num">2<span class="bento-unit">yr</span></div><div class="bento-stat-label">Experience</div></div>
+        <div class="bento-card bento-location reveal-up" style="--delay:0.2s"><div class="bento-glow"></div><div class="bento-label">📍 Location</div><div class="bento-place">Hyderabad, India</div><div class="bento-coords">17.3850° N · IST (UTC +5:30)</div></div>
+        <div class="bento-card bento-stack reveal-up" style="--delay:0.22s"><div class="bento-glow"></div><div class="bento-label">⚡ Core Stack</div><div class="bento-tags"><span class="btag">Python</span><span class="btag">TensorFlow</span><span class="btag">FastAPI</span><span class="btag">Flask</span><span class="btag">RAG</span><span class="btag">FAISS</span><span class="btag">OpenCV</span><span class="btag">Docker</span><span class="btag">MongoDB</span><span class="btag">SQL</span></div></div>
+        <div class="bento-card bento-edu reveal-up" style="--delay:0.24s"><div class="bento-glow"></div><div class="bento-label">🎓 Education</div><div class="bento-degree">B.Tech Electronics &amp; Communication Engineering</div><div class="bento-school">Aditya University, Surampalem</div><div class="bento-year">2018 – 2022</div></div>
+        <div class="bento-card bento-quote reveal-up" style="--delay:0.26s"><div class="bento-glow"></div><div class="bento-quote-text">"Building intelligent solutions that make a real difference."</div><div class="bento-quote-by">— Somala Ajay</div></div>
+        <div class="bento-card bento-currently reveal-up" style="--delay:0.28s"><div class="bento-glow"></div><div class="bento-label">🔥 Currently</div><div class="current-item">🔨 Building production RAG pipelines &amp; SaaS tools</div><div class="current-item">📚 Deep diving into LLMs &amp; vector search</div><div class="current-item">🎯 Open to exciting AI/ML opportunities</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 EXPERIENCE -->
+  <section id="experience" class="s3d">
+    <div class="sec-label">03</div>
+    <div class="container">
+      <div class="section-tag">Work History</div>
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"><div class="dot-inner"></div></div>
+          <div class="timeline-card">
+            <div class="tl-meta"><span class="tl-date">Sep 2024 — Dec 2025</span><span class="tl-badge">Full-Time</span></div>
+            <h3 class="tl-role">Associate Customer Support</h3>
+            <div class="tl-company">Tech Mahindra Ltd — Hyderabad, Telangana</div>
+            <div class="tl-focus">Enterprise Data &amp; Workflow Systems · Data Integrity · Systems Auditing</div>
+            <ul class="tl-points">
+              <li>Managed end-to-end data validation within enterprise WFMS and ERP platforms, maintaining <strong>100% accuracy</strong>.</li>
+              <li>Performed systematic technical audits on large-scale document datasets — identified and resolved data anomalies.</li>
+              <li>Utilized RSA-based secure system access protocols reflecting enterprise security awareness.</li>
+              <li>Reduced processing errors by identifying systemic data discrepancies across internal platforms.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item reveal-up" style="--delay:0.15s">
+          <div class="timeline-dot"><div class="dot-inner"></div></div>
+          <div class="timeline-card">
+            <div class="tl-meta"><span class="tl-date">Oct 2023 — Jun 2024</span><span class="tl-badge badge-outline">Internship · DDUGKY</span></div>
+            <h3 class="tl-role">AI/ML Data Scientist Intern</h3>
+            <div class="tl-company">Trylogic Soft Solutions AP Pvt. Ltd — Vijayawada, AP</div>
+            <div class="tl-focus">End-to-End AI/ML Development · Generative AI · Flask Deployments</div>
+            <ul class="tl-points">
+              <li>Designed and delivered <strong>31 real-world AI/ML projects</strong> covering NLP, Computer Vision, Deep Learning, and GenAI.</li>
+              <li>Built ML pipelines with Python, Scikit-learn, TensorFlow, Keras — classification, regression, sequence models.</li>
+              <li>Integrated third-party APIs (OpenAI, Spotify, YouTube, Google Translate) into Flask/Django applications.</li>
+              <li>OJT as Assistant Trainer at Vikas Engineering College — demonstrated 31 projects to students and faculty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SKILLS -->
+  <section id="skills" class="s3d section-alt">
+    <div class="sec-label">04</div>
+    <div class="container">
+      <div class="section-tag">Technical Stack</div>
+      <h2 class="section-title">What I Work With</h2>
+      <div class="skills-layout">
+        <div class="skills-globe-wrap reveal-left">
+          <canvas id="techGlobe" width="320" height="320"></canvas>
+          <div class="globe-caption">Tech Stack Globe</div>
+          <div class="globe-hint">Drag to rotate</div>
+        </div>
+        <div class="skills-grid reveal-right">
+          <div class="skill-card"><div class="skill-card-header"><span class="skill-icon">🐍</span><span class="skill-cat">Languages</span></div><div class="skill-tags"><span class="stag">Python</span><span class="stag">SQL</span><span class="stag">Bash</span></div></div>
+          <div class="skill-card"><div class="skill-card-header"><span class="skill-icon">🤖</span><span class="skill-cat">AI / ML</span></div><div class="skill-tags"><span class="stag">TensorFlow</span><span class="stag">Keras</span><span class="stag">PyTorch</span><span class="stag">Scikit-learn</span><span class="stag">OpenCV</span></div></div>
+          <div class="skill-card"><div class="skill-card-header"><span class="skill-icon">✨</span><span class="skill-cat">GenAI &amp; RAG</span></div><div class="skill-tags"><span class="stag">FastAPI</span><span class="stag">FAISS</span><span class="stag">RAG</span><span class="stag">LLM</span><span class="stag">sentence-transformers</span></div></div>
+          <div class="skill-card"><div class="skill-card-header"><span class="skill-icon">🔧</span><span class="skill-cat">Backend</span></div><div class="skill-tags"><span class="stag">Flask</span><span class="stag">Django</span><span class="stag">REST APIs</span><span class="stag">Streamlit</span></div></div>
+          <div class="skill-card"><div class="skill-card-header"><span class="skill-icon">📊</span><span class="skill-cat">Data Science</span></div><div class="skill-tags"><span class="stag">Pandas</span><span class="stag">NumPy</span><span class="stag">Matplotlib</span><span class="stag">ETL</span><span class="stag">NLTK</span></div></div>
+          <div class="skill-card"><div class="skill-card-header"><span class="skill-icon">🛠️</span><span class="skill-cat">Tools &amp; Cloud</span></div><div class="skill-tags"><span class="stag">Git</span><span class="stag">Docker</span><span class="stag">MongoDB</span><span class="stag">MySQL</span><span class="stag">AWS S3</span><span class="stag">Linux</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PROJECTS -->
+  <section id="projects" class="s3d">
+    <div class="sec-label">05</div>
+    <div class="container">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">Things I've Built</h2>
+      <div class="projects-grid">
+        <div class="proj-card proj-featured reveal-up"><div class="proj-glow"></div><div class="proj-num">01</div><div class="proj-emoji">📲</div><h3 class="proj-title">PinGuru — Instagram DM Automation SaaS</h3><div class="proj-stack">Python · FastAPI · MongoDB · Instagram Graph API · DigitalOcean · Stripe</div><p class="proj-desc">Full-stack Instagram automation SaaS with real-time DM triggers, multi-tier Stripe billing, FastAPI/MongoDB backend, JWT/OTP security, and automated comment-to-DM workflows.</p><div class="proj-footer"><span class="proj-domain">SaaS · Backend</span><div class="proj-links"><a href="https://github.com/Ajaysomala/pinguru-landing.git" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a></div></div></div>
+        <div class="proj-card reveal-up" style="--delay:0.08s"><div class="proj-glow"></div><div class="proj-num">02</div><div class="proj-emoji">🚀</div><h3 class="proj-title">NASA Manual QA System</h3><div class="proj-stack">Python · FastAPI · FAISS · Llama 3.3 · Groq · RAG</div><p class="proj-desc">Production RAG pipeline querying the 270-page NASA handbook. 885 semantic vectors, confidence scoring, multi-turn history, citation-backed answers. i2e Hireathon 2026.</p><div class="proj-footer"><span class="proj-domain">RAG · LLM</span><div class="proj-links"><a href="https://github.com/Ajaysomala/i2e_Hireathon-Complex_Technical_Manual_QA_System.git" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a></div></div></div>
+        <div class="proj-card reveal-up" style="--delay:0.16s"><div class="proj-glow"></div><div class="proj-num">03</div><div class="proj-emoji">🧠</div><h3 class="proj-title">Brain Tumor Detection</h3><div class="proj-stack">Python · TensorFlow · OpenCV · CNN</div><p class="proj-desc">CNN-based MRI classifier achieving 90%+ accuracy — detects and classifies brain tumors using deep learning and advanced image processing.</p><div class="proj-footer"><span class="proj-domain">Computer Vision</span></div></div>
+        <div class="proj-card reveal-up" style="--delay:0.08s"><div class="proj-glow"></div><div class="proj-num">04</div><div class="proj-emoji">🖼️</div><h3 class="proj-title">Image Caption Generator</h3><div class="proj-stack">Python · CNN · LSTM · FLIKR Dataset</div><p class="proj-desc">End-to-end AI combining CNN feature extraction with LSTM sequence generation for automatic image captioning.</p><div class="proj-footer"><span class="proj-domain">Deep Learning · NLP</span></div></div>
+        <div class="proj-card reveal-up" style="--delay:0.16s"><div class="proj-glow"></div><div class="proj-num">05</div><div class="proj-emoji">🤖</div><h3 class="proj-title">AI Chatbot for Customer Support</h3><div class="proj-stack">Python · NLP · NLTK · GPT-3 · BERT</div><p class="proj-desc">Conversational AI using GPT-3 and intent recognition for e-commerce customer support automation.</p><div class="proj-footer"><span class="proj-domain">NLP · GenAI</span></div></div>
+        <div class="proj-card proj-all reveal-up" style="--delay:0.24s"><div class="proj-glow"></div><div class="proj-num">06+</div><div class="proj-emoji">⚡</div><h3 class="proj-title">Full Portfolio — 31 Projects</h3><div class="proj-stack">Python · Flask · Docker · TensorFlow · GenAI · NLP · CV</div><p class="proj-desc">Amazon Recommender, Stock Prediction, Face Mask Detection, Sentiment Analysis &amp; more — all 31 on GitHub.</p><div class="proj-footer"><div class="proj-links"><a href="https://github.com/Ajaysomala" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View All →</a></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 CERTIFICATIONS -->
+  <section id="certifications" class="s3d section-alt">
+    <div class="sec-label">06</div>
+    <div class="container">
+      <div class="section-tag">Credentials</div>
+      <h2 class="section-title">Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card reveal-up"><div class="cert-icon-wrap">🤖</div><div class="cert-info"><div class="cert-name">AI Data Scientist</div><div class="cert-issuer">NASSCOM</div></div><div class="cert-badge">Verified</div></div>
+        <div class="cert-card reveal-up" style="--delay:0.08s"><div class="cert-icon-wrap">✨</div><div class="cert-info"><div class="cert-name">Career Essentials in Generative AI</div><div class="cert-issuer">Microsoft &amp; LinkedIn</div></div><div class="cert-badge">Verified</div></div>
+        <div class="cert-card reveal-up" style="--delay:0.16s"><div class="cert-icon-wrap">🐍</div><div class="cert-info"><div class="cert-name">Programming for Everybody (Python)</div><div class="cert-issuer">HackerRank</div></div><div class="cert-badge">Verified</div></div>
+        <div class="cert-card reveal-up" style="--delay:0.24s"><div class="cert-icon-wrap">⚡</div><div class="cert-info"><div class="cert-name">Agile Methodology Virtual Experience</div><div class="cert-issuer">Forage</div></div><div class="cert-badge">Verified</div></div>
+        <div class="cert-card reveal-up" style="--delay:0.32s"><div class="cert-icon-wrap">📘</div><div class="cert-info"><div class="cert-name">Learning Microsoft 365 Copilot</div><div class="cert-issuer">Microsoft Learning</div></div><div class="cert-badge">Verified</div></div>
+      </div>
+      <!-- Hackathon -->
+      <div class="hackathon-block reveal-up" style="--delay:0.15s;margin-top:3rem">
+        <div class="section-tag">Hackathon</div>
+        <div class="hackathon-card">
+          <div class="hack-header"><div class="hack-title">🏆 i2e Hireathon 2026 — National AI Hackathon</div><span class="hack-badge">Bangalore · Jan–Apr 2026</span></div>
+          <div class="hack-meta">i2e Consulting · Complex Technical Manual QA System</div>
+          <p class="hack-desc">Production-grade RAG pipeline for the 270-page NASA handbook — 885 semantic vectors, FAISS indexing, Llama 3.3-70b, confidence scoring (0–100%), multi-turn history, section-level citations.</p>
+          <ul class="hack-points">
+            <li>FastAPI backend (/ask, /health, /ingest, /shutdown) with Pydantic validation and CORS.</li>
+            <li>Query-time NASA acronym expansion (20+ terms: TRL, PDR, KDP, SRR) to improve retrieval precision.</li>
+          </ul>
+          <div class="hack-stack">Stack: FastAPI · FAISS · Groq API · LLAMA 3.3-70B · sentence-transformers · PyPDFLoader · Vanilla JS</div>
+          <a href="https://github.com/Ajaysomala/i2e_Hireathon-Complex_Technical_Manual_QA_System.git" target="_blank" rel="noopener" class="hack-link">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Education -->
+      <div class="edu-block reveal-up" style="--delay:0.2s;margin-top:3rem">
+        <div class="section-tag">Education</div>
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-info">
+            <h3 class="edu-degree">B.Tech — Electronics &amp; Communication Engineering</h3>
+            <div class="edu-school">Aditya University, Surampalem, Andhra Pradesh</div>
+            <div class="edu-year">August 2018 – June 2022</div>
+            <div class="edu-cap">Capstone: Quality Analysis of Rice Granules using MATLAB Image Processing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 CONTACT -->
+  <section id="contact" class="s3d">
+    <div class="sec-label">07</div>
+    <div class="container">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="contact-layout">
+        <div class="contact-info reveal-left">
+          <p class="contact-tagline">Open to new opportunities, collaborations, or just a good tech conversation. Seeking Software Developer, Data Scientist &amp; ML Engineer roles.</p>
+          <div class="contact-links">
+            <a href="mailto:jaydeveloper010@gmail.com" class="clink"><span class="clink-icon">✉️</span><div><div class="clink-label">Email</div><div class="clink-value">jaydeveloper010@gmail.com</div></div></a>
+            <a href="tel:+917675010831" class="clink"><span class="clink-icon">📞</span><div><div class="clink-label">Phone</div><div class="clink-value">+91 76750 10831</div></div></a>
+            <a href="https://www.linkedin.com/in/somala-ajay-8a806b213" target="_blank" rel="noopener" class="clink"><span class="clink-icon">💼</span><div><div class="clink-label">LinkedIn</div><div class="clink-value">somala-ajay-8a806b213</div></div></a>
+            <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener" class="clink"><span class="clink-icon">🐙</span><div><div class="clink-label">GitHub</div><div class="clink-value">Ajaysomala</div></div></a>
+          </div>
+          <p class="contact-location">📍 Hyderabad, Telangana 500081</p>
+        </div>
+        <form class="contact-form reveal-right" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label for="cf-name">Your Name</label><input type="text" id="cf-name" name="from_name" placeholder="John Doe" required autocomplete="name"/></div>
+            <div class="form-group"><label for="cf-email">Your Email</label><input type="email" id="cf-email" name="reply_to" placeholder="john@example.com" required autocomplete="email"/></div>
+          </div>
+          <div class="form-group"><label for="cf-subject">Subject</label><input type="text" id="cf-subject" name="subject" placeholder="Job Opportunity / Collaboration..."/></div>
+          <div class="form-group"><label for="cf-message">Message</label><textarea id="cf-message" name="message" rows="5" placeholder="Hi Ajay, I came across your portfolio..." required></textarea></div>
+          <button type="submit" class="btn-primary btn-full" id="submitBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+            Send Message
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Somala Ajay</span>
+      <span>Built with Three.js · GSAP · HTML · CSS · Hosted on GitHub Pages</span>
+      <span>© <span id="footerYear"></span></span>
+    </div>
+  </footer>
+
+  <!-- Three.js r128 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Portfolio JS -->
+  <script src="assets/js/security.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/scene.js"></script>
+  <script src="assets/js/world.js"></script>
+  <script src="assets/js/scroll3d.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/hero.js"></script>
+  <script src="assets/js/globe.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
