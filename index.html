@@ -9,10 +9,18 @@
   <meta name="author" content="Somala Ajay"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://ajaysomala.github.io/"/>
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23000'/><text x='50' y='68' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'>SA</text></svg>"/>
+  <link rel="apple-touch-icon" href="assets/img/profile.jpg"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://ajaysomala.github.io/"/>
   <meta property="og:title" content="Somala Ajay — Python Developer & AI/ML Engineer"/>
   <meta property="og:description" content="Python Developer & AI/ML Engineer. 20+ AI/ML projects. Open to opportunities."/>
+  <meta property="og:image" content="https://ajaysomala.github.io/assets/img/profile.jpg"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Somala Ajay — Python Developer & AI/ML Engineer"/>
+  <meta name="twitter:description" content="Python Developer & AI/ML Engineer. 20+ AI/ML projects. Open to opportunities."/>
+  <meta name="twitter:image" content="https://ajaysomala.github.io/assets/img/profile.jpg"/>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Somala Ajay","url":"https://ajaysomala.github.io","email":"jaydeveloper010@gmail.com","telephone":"+917675010831","jobTitle":"Python Developer & AI/ML Engineer","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"sameAs":["https://github.com/Ajaysomala","https://www.linkedin.com/in/somala-ajay-8a806b213"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -88,7 +96,7 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-badge"><span class="badge-pulse"></span>Available for Opportunities</div>
+          <div class="hero-badge"><span class="badge-pulse"></span><span id="availBadge">Available for Opportunities</span></div>
           <h1 class="hero-name">
             <span class="name-first">Somala</span>
             <span class="name-last">Ajay</span>
@@ -345,6 +353,11 @@
     </div>
   </footer>
 
+  <!-- Scroll to Top -->
+  <button id="scrollTop" aria-label="Scroll to top" title="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
   <!-- Three.js r128 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- GSAP + ScrollTrigger -->
@@ -365,5 +378,41 @@
   <script src="assets/js/animations.js"></script>
   <script src="assets/js/contact.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+  /* ── Availability Countdown ── */
+  (function () {
+    // Set your expected join date here (YYYY, MM-1, DD) — update when notice ends
+    const JOIN_DATE = new Date(2026, 5, 15); // June 15, 2026
+    const badge = document.getElementById('availBadge');
+    if (!badge) return;
+    function update() {
+      const now = new Date();
+      const diff = JOIN_DATE - now;
+      if (diff <= 0) {
+        badge.textContent = 'Available to Join Immediately';
+        return;
+      }
+      const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      badge.textContent = days === 1
+        ? 'Available to Join in 1 Day'
+        : `Serving Notice · Available in ${days} days`;
+    }
+    update();
+    setInterval(update, 60000);
+  })();
+
+  /* ── Scroll to Top ── */
+  (function () {
+    const btn = document.getElementById('scrollTop');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+  </script>
 </body>
 </html>
