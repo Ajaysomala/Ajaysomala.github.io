@@ -8,9 +8,9 @@
   const cx = SIZE / 2, cy = SIZE / 2;
 
   const techs = [
-    'Python','TensorFlow','Flask','OpenCV','Pandas','NumPy',
+    'Python','TensorFlow','FastAPI','OpenCV','Pandas','NumPy',
     'Keras','Scikit-learn','Docker','MySQL','NLP','GenAI',
-    'FastAPI','FAISS','RAG','PyTorch','MongoDB','AWS',
+    'Flask','FAISS','RAG','LangChain','MongoDB','SQL',
     'Git','Streamlit','LSTM','CNN','ETL','Bash',
   ];
 
