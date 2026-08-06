@@ -1,194 +1,344 @@
-/* WORLD.JS — 3D Scene Objects */
+/* WORLD.JS — Bruno-Simon-style drive world (mouse steer, no map, no sound) */
 (function () {
   const P3D = window.Portfolio3D;
   if (!P3D || !P3D.scene) return;
-  const { scene, THREE } = P3D;
+  const { scene, THREE, accent } = P3D;
 
-  /* ── 1. 3D Neuron Particle Field ── */
-  const NODE_COUNT = window.innerWidth < 768 ? 120 : 280;
-  const positions  = new Float32Array(NODE_COUNT * 3);
-  const nodeData   = [];
+  const WORLD_LEN = 140;
+  const ROAD_HALF = 5.5;
+  const ZONE_ZS = [0, -20, -40, -60, -80, -100, -120];
 
-  for (let i = 0; i < NODE_COUNT; i++) {
-    const spread = 28;
-    const x = (Math.random() - 0.5) * spread;
-    const y = (Math.random() - 0.5) * spread * 0.6;
-    const z = (Math.random() - 0.5) * spread * 0.5 - 5;
-    positions[i * 3]     = x;
-    positions[i * 3 + 1] = y;
-    positions[i * 3 + 2] = z;
-    nodeData.push({
-      x, y, z,
-      ox: x, oy: y, oz: z,
-      vx: (Math.random() - 0.5) * 0.008,
-      vy: (Math.random() - 0.5) * 0.008,
-      vz: (Math.random() - 0.5) * 0.004,
-    });
+  /* ── Ground ── */
+  const ground = new THREE.Mesh(
+    new THREE.PlaneGeometry(80, WORLD_LEN + 40),
+    new THREE.MeshStandardMaterial({
+      color: 0x0a0a0c,
+      roughness: 0.95,
+      metalness: 0.05,
+    })
+  );
+  ground.rotation.x = -Math.PI / 2;
+  ground.position.set(0, 0, -WORLD_LEN / 2 + 10);
+  scene.add(ground);
+
+  /* ── Road ── */
+  const road = new THREE.Mesh(
+    new THREE.PlaneGeometry(ROAD_HALF * 2, WORLD_LEN + 20),
+    new THREE.MeshStandardMaterial({
+      color: 0x141418,
+      roughness: 0.85,
+      metalness: 0.1,
+    })
+  );
+  road.rotation.x = -Math.PI / 2;
+  road.position.set(0, 0.02, -WORLD_LEN / 2 + 10);
+  scene.add(road);
+
+  /* Center dashed line */
+  const dashMat = new THREE.MeshBasicMaterial({ color: 0x00d4aa });
+  for (let z = 12; z > -WORLD_LEN; z -= 3.2) {
+    const dash = new THREE.Mesh(new THREE.PlaneGeometry(0.18, 1.4), dashMat);
+    dash.rotation.x = -Math.PI / 2;
+    dash.position.set(0, 0.04, z);
+    scene.add(dash);
   }
 
-  const nodeGeo = new THREE.BufferGeometry();
-  nodeGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-  const nodeMat = new THREE.PointsMaterial({
-    color: 0xffffff,
-    size: 0.06,
-    transparent: true,
-    opacity: 0.7,
-    sizeAttenuation: true,
-  });
-
-  const nodesMesh = new THREE.Points(nodeGeo, nodeMat);
-  scene.add(nodesMesh);
-
-  /* ── 2. Connection lines between nearby nodes ── */
-  const MAX_CONNECTIONS = window.innerWidth < 768 ? 200 : 500;
-  const linePositions   = new Float32Array(MAX_CONNECTIONS * 6);
-  const lineGeo   = new THREE.BufferGeometry();
-  lineGeo.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-  lineGeo.setDrawRange(0, 0);
-
-  const lineMat = new THREE.LineSegments(lineGeo, new THREE.LineBasicMaterial({
-    color: 0xffffff,
-    transparent: true,
-    opacity: 0.08,
-  }));
-  scene.add(lineMat);
-
-  /* ── 3. Floating Geometric Shapes ── */
-  const shapes = [];
-  const geoTypes = [
-    () => new THREE.IcosahedronGeometry(0.55, 0),
-    () => new THREE.OctahedronGeometry(0.6, 0),
-    () => new THREE.TetrahedronGeometry(0.6, 0),
-    () => new THREE.IcosahedronGeometry(0.4, 1),
-  ];
-
-  const wireMat = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.12,
-  });
-
-  const solidMat = new THREE.MeshStandardMaterial({
-    color: 0x111111,
-    transparent: true,
-    opacity: 0.6,
-    roughness: 0.8,
-    metalness: 0.2,
-  });
-
-  const shapePositions = [
-    [-7,  2, -4], [ 7,  3, -6], [ 0, -4, -3],
-    [-5, -2, -8], [ 6, -3, -5], [-3,  4, -7],
-    [ 4,  1, -9], [-8,  0, -6],
-  ];
-
-  shapePositions.forEach(([x, y, z], i) => {
-    const geoFn  = geoTypes[i % geoTypes.length];
-    const geo    = geoFn();
-    const solid  = new THREE.Mesh(geo, solidMat.clone());
-    const wire   = new THREE.Mesh(geo, wireMat.clone());
-    const group  = new THREE.Group();
-    group.add(solid);
-    group.add(wire);
-    group.position.set(x, y, z);
-    group.rotation.set(
-      Math.random() * Math.PI,
-      Math.random() * Math.PI,
-      Math.random() * Math.PI
+  /* Road edge lines */
+  const edgeMat = new THREE.MeshBasicMaterial({ color: 0x2a2a30 });
+  [-ROAD_HALF, ROAD_HALF].forEach((x) => {
+    const edge = new THREE.Mesh(
+      new THREE.PlaneGeometry(0.12, WORLD_LEN + 20),
+      edgeMat
     );
-    const s = 0.7 + Math.random() * 0.6;
-    group.scale.set(s, s, s);
-    scene.add(group);
-    shapes.push({
-      group,
-      rx: (Math.random() - 0.5) * 0.004,
-      ry: (Math.random() - 0.5) * 0.005,
-      rz: (Math.random() - 0.5) * 0.003,
-      floatSpeed: 0.0008 + Math.random() * 0.0012,
-      floatAmp: 0.3 + Math.random() * 0.4,
-      floatOffset: Math.random() * Math.PI * 2,
-      baseY: y,
-    });
+    edge.rotation.x = -Math.PI / 2;
+    edge.position.set(x, 0.035, -WORLD_LEN / 2 + 10);
+    scene.add(edge);
   });
 
-  /* ── 4. Distant star field ── */
-  const starCount = window.innerWidth < 768 ? 400 : 800;
-  const starPos   = new Float32Array(starCount * 3);
-  for (let i = 0; i < starCount; i++) {
-    starPos[i * 3]     = (Math.random() - 0.5) * 80;
-    starPos[i * 3 + 1] = (Math.random() - 0.5) * 60;
-    starPos[i * 3 + 2] = (Math.random() - 0.5) * 60 - 20;
+  /* ── Grid helpers (subtle) ── */
+  const grid = new THREE.GridHelper(100, 50, 0x1a1a20, 0x121216);
+  grid.position.y = 0.01;
+  grid.material.transparent = true;
+  grid.material.opacity = 0.35;
+  scene.add(grid);
+
+  /* ── Landmark blocks along the path (section markers) ── */
+  const landmarks = [];
+  const labels = ["START", "ABOUT", "WORK", "STACK", "BUILD", "PROOF", "HELLO"];
+  ZONE_ZS.forEach((z, i) => {
+    const side = i % 2 === 0 ? -1 : 1;
+    const group = new THREE.Group();
+
+    const building = new THREE.Mesh(
+      new THREE.BoxGeometry(2.2 + (i % 3) * 0.4, 1.5 + (i % 4) * 0.55, 2.2),
+      new THREE.MeshStandardMaterial({
+        color: 0x101014,
+        roughness: 0.7,
+        metalness: 0.25,
+      })
+    );
+    building.position.y = building.geometry.parameters.height / 2;
+    group.add(building);
+
+    const wire = new THREE.LineSegments(
+      new THREE.EdgesGeometry(building.geometry),
+      new THREE.LineBasicMaterial({ color: 0x00d4aa, transparent: true, opacity: 0.35 })
+    );
+    wire.position.copy(building.position);
+    group.add(wire);
+
+    const pillar = new THREE.Mesh(
+      new THREE.BoxGeometry(0.35, 0.08, 0.35),
+      new THREE.MeshBasicMaterial({ color: 0x00d4aa })
+    );
+    pillar.position.set(0, building.geometry.parameters.height + 0.2, 0);
+    group.add(pillar);
+
+    group.position.set(side * (ROAD_HALF + 3.5 + (i % 2)), 0, z);
+    scene.add(group);
+    landmarks.push({ group, z, label: labels[i] });
+
+    /* Floating ring markers on road */
+    const ring = new THREE.Mesh(
+      new THREE.RingGeometry(1.6, 1.75, 48),
+      new THREE.MeshBasicMaterial({
+        color: 0x00d4aa,
+        transparent: true,
+        opacity: 0.22,
+        side: THREE.DoubleSide,
+      })
+    );
+    ring.rotation.x = -Math.PI / 2;
+    ring.position.set(0, 0.05, z);
+    scene.add(ring);
+  });
+
+  /* ── Decorative floating nodes ── */
+  const floaters = [];
+  for (let i = 0; i < 28; i++) {
+    const mesh = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(0.25 + Math.random() * 0.35, 0),
+      new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12,
+      })
+    );
+    const x = (Math.random() > 0.5 ? 1 : -1) * (7 + Math.random() * 10);
+    const y = 1.2 + Math.random() * 4;
+    const z = 10 - Math.random() * WORLD_LEN;
+    mesh.position.set(x, y, z);
+    scene.add(mesh);
+    floaters.push({
+      mesh,
+      baseY: y,
+      speed: 0.4 + Math.random() * 0.8,
+      phase: Math.random() * Math.PI * 2,
+      spin: (Math.random() - 0.5) * 0.01,
+    });
   }
-  const starGeo = new THREE.BufferGeometry();
-  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
-  const starMesh = new THREE.Points(starGeo, new THREE.PointsMaterial({
-    color: 0xffffff, size: 0.04, transparent: true, opacity: 0.35,
-  }));
-  scene.add(starMesh);
 
-  /* ── Animate ── */
-  let mouse3D = { x: 0, y: 0 };
-  window.addEventListener('mousemove', e => {
-    mouse3D.x = (e.clientX / window.innerWidth  - 0.5) * 2;
-    mouse3D.y = (e.clientY / window.innerHeight - 0.5) * 2;
-  }, { passive: true });
+  /* ── Particle dust ── */
+  const DUST = window.innerWidth < 768 ? 180 : 420;
+  const dustPos = new Float32Array(DUST * 3);
+  for (let i = 0; i < DUST; i++) {
+    dustPos[i * 3] = (Math.random() - 0.5) * 40;
+    dustPos[i * 3 + 1] = Math.random() * 8;
+    dustPos[i * 3 + 2] = 15 - Math.random() * (WORLD_LEN + 20);
+  }
+  const dust = new THREE.Points(
+    new THREE.BufferGeometry().setAttribute(
+      "position",
+      new THREE.BufferAttribute(dustPos, 3)
+    ),
+    new THREE.PointsMaterial({
+      color: 0x00d4aa,
+      size: 0.06,
+      transparent: true,
+      opacity: 0.45,
+      depthWrite: false,
+    })
+  );
+  scene.add(dust);
 
-  let t = 0;
-  const CONNECT_DIST = 5.5;
+  /* ── Vehicle (mouse-driven) ── */
+  function makeCar() {
+    const car = new THREE.Group();
 
-  function updateWorld(scrollProgress) {
-    t += 0.01;
+    const body = new THREE.Mesh(
+      new THREE.BoxGeometry(1.1, 0.35, 2.1),
+      new THREE.MeshStandardMaterial({
+        color: 0xf2f2f2,
+        roughness: 0.35,
+        metalness: 0.4,
+      })
+    );
+    body.position.y = 0.35;
+    car.add(body);
 
-    /* Animate nodes */
-    let connCount = 0;
-    for (let i = 0; i < NODE_COUNT; i++) {
-      const n = nodeData[i];
-      n.x += n.vx; n.y += n.vy; n.z += n.vz;
-      if (Math.abs(n.x - n.ox) > 3) n.vx *= -1;
-      if (Math.abs(n.y - n.oy) > 2) n.vy *= -1;
-      if (Math.abs(n.z - n.oz) > 1.5) n.vz *= -1;
-      positions[i * 3]     = n.x;
-      positions[i * 3 + 1] = n.y;
-      positions[i * 3 + 2] = n.z;
-    }
-    nodeGeo.attributes.position.needsUpdate = true;
+    const cabin = new THREE.Mesh(
+      new THREE.BoxGeometry(0.85, 0.32, 1.0),
+      new THREE.MeshStandardMaterial({
+        color: 0x1a1a1e,
+        roughness: 0.3,
+        metalness: 0.5,
+      })
+    );
+    cabin.position.set(0, 0.62, -0.1);
+    car.add(cabin);
 
-    /* Connection lines */
-    for (let i = 0; i < NODE_COUNT && connCount < MAX_CONNECTIONS; i++) {
-      for (let j = i + 1; j < NODE_COUNT && connCount < MAX_CONNECTIONS; j++) {
-        const a = nodeData[i], b = nodeData[j];
-        const d = Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z);
-        if (d < CONNECT_DIST) {
-          const base = connCount * 6;
-          linePositions[base]     = a.x; linePositions[base + 1] = a.y; linePositions[base + 2] = a.z;
-          linePositions[base + 3] = b.x; linePositions[base + 4] = b.y; linePositions[base + 5] = b.z;
-          connCount++;
-        }
-      }
-    }
-    lineGeo.attributes.position.needsUpdate = true;
-    lineGeo.setDrawRange(0, connCount * 2);
+    const accentStripe = new THREE.Mesh(
+      new THREE.BoxGeometry(1.12, 0.06, 0.2),
+      new THREE.MeshBasicMaterial({ color: 0x00d4aa })
+    );
+    accentStripe.position.set(0, 0.42, 0.85);
+    car.add(accentStripe);
 
-    /* Animate shapes */
-    shapes.forEach(s => {
-      s.group.rotation.x += s.rx;
-      s.group.rotation.y += s.ry;
-      s.group.rotation.z += s.rz;
-      s.group.position.y = s.baseY + Math.sin(t * s.floatSpeed * 100 + s.floatOffset) * s.floatAmp;
+    const wheelGeo = new THREE.CylinderGeometry(0.22, 0.22, 0.18, 12);
+    const wheelMat = new THREE.MeshStandardMaterial({ color: 0x111113, roughness: 0.9 });
+    const wheelPositions = [
+      [-0.55, 0.22, 0.7],
+      [0.55, 0.22, 0.7],
+      [-0.55, 0.22, -0.7],
+      [0.55, 0.22, -0.7],
+    ];
+    wheelPositions.forEach(([x, y, z]) => {
+      const w = new THREE.Mesh(wheelGeo, wheelMat);
+      w.rotation.z = Math.PI / 2;
+      w.position.set(x, y, z);
+      car.add(w);
     });
 
-    /* Slow star rotation */
-    starMesh.rotation.y = t * 0.0015;
-    starMesh.rotation.x = t * 0.0008;
+    /* Headlights */
+    [[-0.35, 0.35, 1.05], [0.35, 0.35, 1.05]].forEach(([x, y, z]) => {
+      const light = new THREE.Mesh(
+        new THREE.BoxGeometry(0.15, 0.08, 0.05),
+        new THREE.MeshBasicMaterial({ color: 0x00d4aa })
+      );
+      light.position.set(x, y, z);
+      car.add(light);
+    });
 
-    /* Mouse parallax on the whole scene */
-    scene.rotation.y += (mouse3D.x * 0.025 - scene.rotation.y) * 0.04;
-    scene.rotation.x += (-mouse3D.y * 0.015 - scene.rotation.x) * 0.04;
+    car.position.set(0, 0, 8);
+    scene.add(car);
+    return car;
   }
 
-  // Expose for scroll3d
+  const car = makeCar();
+
+  /* ── Mouse / touch steering ── */
+  const mouse = { x: 0, y: 0, nx: 0, ny: 0 };
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  const groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+  const hit = new THREE.Vector3();
+  let targetX = 0;
+  let driving = true;
+
+  function updatePointer(clientX, clientY) {
+    mouse.x = clientX;
+    mouse.y = clientY;
+    mouse.nx = (clientX / window.innerWidth) * 2 - 1;
+    mouse.ny = -(clientY / window.innerHeight) * 2 + 1;
+    pointer.set(mouse.nx, mouse.ny);
+    raycaster.setFromCamera(pointer, P3D.camera);
+    if (raycaster.ray.intersectPlane(groundPlane, hit)) {
+      targetX = THREE.MathUtils.clamp(hit.x, -ROAD_HALF + 0.8, ROAD_HALF - 0.8);
+    } else {
+      targetX = THREE.MathUtils.clamp(mouse.nx * ROAD_HALF, -ROAD_HALF + 0.8, ROAD_HALF - 0.8);
+    }
+  }
+
+  window.addEventListener(
+    "pointermove",
+    (e) => {
+      if (!driving) return;
+      updatePointer(e.clientX, e.clientY);
+    },
+    { passive: true }
+  );
+
+  /* Hide drive hint after first interaction */
+  let hinted = false;
+  function dismissHint() {
+    if (hinted) return;
+    hinted = true;
+    const el = document.getElementById("driveHint");
+    if (el) el.classList.add("is-gone");
+  }
+  window.addEventListener("pointerdown", dismissHint, { passive: true });
+  window.addEventListener("wheel", dismissHint, { passive: true });
+
+  /* ── State exposed to scroll driver ── */
+  const state = {
+    car,
+    targetX: 0,
+    posZ: 8,
+    velZ: 0,
+    steer: 0,
+    progress: 0,
+  };
+
+  function updateWorld(progress, dt) {
+    state.progress = progress;
+    const t = performance.now() * 0.001;
+
+    /* Scroll drives forward along -Z */
+    const destZ = 8 - progress * (WORLD_LEN - 16);
+    state.posZ += (destZ - state.posZ) * Math.min(1, 0.08 * (dt || 1));
+
+    /* Mouse steers X */
+    state.targetX += (targetX - state.targetX) * 0.08;
+    const prevX = car.position.x;
+    car.position.x += (state.targetX - car.position.x) * 0.12;
+    car.position.z = state.posZ;
+    car.position.y = 0;
+
+    const dx = car.position.x - prevX;
+    state.steer += (dx * 2.8 - state.steer) * 0.15;
+    car.rotation.y = -state.steer * 0.9;
+    car.rotation.z = -state.steer * 0.35;
+
+    /* Wheel spin based on forward motion */
+    const spin = (destZ - state.posZ) * 0.4;
+    car.children.forEach((ch) => {
+      if (ch.geometry && ch.geometry.type === "CylinderGeometry") {
+        ch.rotation.x += 0.2 + Math.abs(spin);
+      }
+    });
+
+    /* Accent light follows car */
+    if (accent) {
+      accent.position.x = car.position.x;
+      accent.position.z = car.position.z;
+      accent.position.y = 5;
+    }
+
+    /* Floaters */
+    floaters.forEach((f) => {
+      f.mesh.position.y = f.baseY + Math.sin(t * f.speed + f.phase) * 0.35;
+      f.mesh.rotation.y += f.spin;
+      f.mesh.rotation.x += f.spin * 0.6;
+    });
+
+    /* Landmark pulse when near */
+    landmarks.forEach((lm) => {
+      const d = Math.abs(car.position.z - lm.z);
+      const near = Math.max(0, 1 - d / 10);
+      lm.group.children.forEach((ch) => {
+        if (ch.material && ch.material.opacity !== undefined && ch.type === "LineSegments") {
+          ch.material.opacity = 0.2 + near * 0.55;
+        }
+      });
+      lm.group.scale.setScalar(1 + near * 0.08);
+    });
+
+    dust.rotation.y = t * 0.02;
+  }
+
   window.Portfolio3D.updateWorld = updateWorld;
-  window.Portfolio3D.shapes = shapes;
+  window.Portfolio3D.car = car;
+  window.Portfolio3D.driveState = state;
+  window.Portfolio3D.ZONE_ZS = ZONE_ZS;
 })();

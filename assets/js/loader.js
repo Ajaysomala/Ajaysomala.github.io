@@ -11,10 +11,10 @@
 
   const messages = [
     'Initializing 3D Environment...',
-    'Loading Neural Universe...',
-    'Placing Geometric Objects...',
-    'Calibrating Camera...',
-    'Ready.'
+    'Building drive world...',
+    'Spawning vehicle...',
+    'Calibrating chase camera...',
+    'Ready. Move mouse to steer.'
   ];
 
   function resize() {

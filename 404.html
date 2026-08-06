@@ -3,116 +3,28 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404 — Page Not Found | Somala Ajay</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23000'/><text x='50' y='68' font-family='Arial Black,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'>SA</text></svg>"/>
+  <title>Page not found — Somala Ajay</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{
-      --bg:#000;--white:#f2f2f2;--muted:#808080;--muted2:#a8a8a8;
-      --border:rgba(255,255,255,0.08);--border-md:rgba(255,255,255,0.15);
-      --fd:'Syne',sans-serif;--fb:'Plus Jakarta Sans',sans-serif;--fm:'JetBrains Mono',monospace;
-    }
-    body{
-      background:var(--bg);color:var(--muted2);font-family:var(--fb);
-      min-height:100vh;display:flex;align-items:center;justify-content:center;
-      flex-direction:column;text-align:center;padding:2rem;overflow:hidden;
-    }
-
-    /* Particle canvas */
-    #bg{position:fixed;inset:0;z-index:0;pointer-events:none;}
-
-    .content{position:relative;z-index:2;}
-
-    .err-code{
-      font-family:var(--fd);
-      font-size:clamp(6rem,20vw,12rem);
-      font-weight:800;
-      color:rgba(255,255,255,0.04);
-      line-height:1;
-      letter-spacing:-0.04em;
-      margin-bottom:-1rem;
-      user-select:none;
-    }
-
-    .err-icon{font-size:3rem;margin-bottom:1rem;}
-
-    .err-title{
-      font-family:var(--fd);
-      font-size:clamp(1.4rem,4vw,2rem);
-      font-weight:800;
-      color:var(--white);
-      margin-bottom:0.75rem;
-    }
-
-    .err-sub{
-      font-family:var(--fm);
-      font-size:0.8rem;
-      color:var(--muted);
-      letter-spacing:0.12em;
-      margin-bottom:2.5rem;
-      max-width:380px;
-    }
-
-    .err-btns{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;}
-
-    .btn{
-      display:inline-flex;align-items:center;gap:0.5rem;
-      padding:0.85rem 1.75rem;
-      font-family:var(--fb);font-size:0.78rem;font-weight:600;
-      letter-spacing:0.08em;text-transform:uppercase;
-      border-radius:5px;text-decoration:none;
-      transition:all 0.25s ease;
-    }
-    .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,255,255,0.15);}
-    .btn-ghost{background:transparent;color:var(--muted2);border:1px solid var(--border-md);}
-    .btn-ghost:hover{border-color:rgba(255,255,255,0.38);color:var(--white);transform:translateY(-2px);}
-
-    .err-footer{
-      position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-      font-family:var(--fm);font-size:0.62rem;color:var(--muted);
-      letter-spacing:0.15em;white-space:nowrap;
-    }
-
-    /* Grid lines background */
-    .grid-bg{
-      position:fixed;inset:0;z-index:0;pointer-events:none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
-      background-size:60px 60px;
-    }
-
-    /* Center glow */
-    .center-glow{
-      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
-      width:600px;height:600px;border-radius:50%;
-      background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);
-      pointer-events:none;z-index:0;
-    }
+    :root { --bg:#070708; --text:#e8e6e3; --muted:#8f8b84; --accent:#00d4aa; --fd:"Bricolage Grotesque",sans-serif; --fb:Figtree,sans-serif; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100svh;display:grid;place-items:center;background:var(--bg);color:var(--text);font-family:var(--fb);padding:2rem;text-align:center;
+      background-image:radial-gradient(ellipse 50% 40% at 50% 30%,rgba(0,212,170,.08),transparent 60%)}
+    .code{font-family:var(--fd);font-size:clamp(4rem,18vw,9rem);font-weight:800;letter-spacing:-.06em;line-height:1;color:rgba(232,230,227,.08)}
+    h1{font-family:var(--fd);font-size:clamp(1.5rem,4vw,2.2rem);margin:.5rem 0 1rem;letter-spacing:-.03em}
+    p{color:var(--muted);max-width:32ch;margin:0 auto 2rem}
+    a{display:inline-flex;padding:.9rem 1.5rem;background:#f7f5f2;color:#070708;font-weight:600;font-size:.8rem;letter-spacing:.04em;border-radius:4px;text-decoration:none}
+    a:hover{background:#fff}
   </style>
 </head>
 <body>
-  <div class="grid-bg"></div>
-  <div class="center-glow"></div>
-
-  <div class="content">
-    <div class="err-code">404</div>
-    <div class="err-icon">🤖</div>
-    <h1 class="err-title">Page Not Found</h1>
-    <p class="err-sub">Looks like this page got lost in the neural network. Let's get you back on track.</p>
-    <div class="err-btns">
-      <a href="/" class="btn btn-primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Go Home
-      </a>
-      <a href="/#projects" class="btn btn-ghost">View Projects</a>
-      <a href="/#contact" class="btn btn-ghost">Contact Me</a>
-    </div>
+  <div>
+    <div class="code">404</div>
+    <h1>This route isn’t in the model.</h1>
+    <p>The page you’re looking for doesn’t exist — head back to the portfolio.</p>
+    <a href="/">Return home</a>
   </div>
-
-  <div class="err-footer">ajaysomala.github.io</div>
 </body>
 </html>
