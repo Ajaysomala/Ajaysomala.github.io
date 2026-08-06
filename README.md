@@ -34,7 +34,7 @@ class SomalaAjay:
         self.role        = "Python Developer & AI/ML Engineer"
         self.location    = "Hyderabad, Telangana, India"
         self.education   = "B.Tech ECE — Aditya University (2018–2022)"
-        self.experience  = "2+ years"
+        self.experience  = "3+ years"
         self.projects    = 31  # real-world AI/ML projects
         self.open_to     = ["AI/ML Engineer", "Python Developer"]
 
