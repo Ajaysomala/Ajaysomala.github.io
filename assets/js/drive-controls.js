@@ -24,6 +24,16 @@
   const FRICTION = 0.92;
   const TURN = 0.12;
 
+  function isUiTarget(el) {
+    return !!(el && el.closest && el.closest(".hud-nav, .panel.is-active, a, button, input, textarea, label, form"));
+  }
+  function dismissHint() {
+    if (state.hinted) return;
+    state.hinted = true;
+    const el = document.getElementById("driveHint");
+    if (el) el.classList.add("is-gone");
+  }
+
   function onDown(e) {
     if (isUiTarget(e.target)) return;
     state.driving = true;
