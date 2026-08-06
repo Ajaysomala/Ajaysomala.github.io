@@ -5,7 +5,9 @@
   --fd:'Syne',sans-serif; --fb:'Plus Jakarta Sans',sans-serif; --fm:'JetBrains Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden}
+html{scroll-behavior:smooth}
+html,body{min-height:100%; background:var(--bg); color:var(--text); font-family:var(--fb); overflow-x:hidden}
+body{overflow-y:auto}
 a{color:inherit;text-decoration:none}
 button,input,textarea{font:inherit;color:inherit}
 strong{color:var(--white)}

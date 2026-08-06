@@ -105,8 +105,26 @@
       state.scrollZone = idx;
       const z = ZONES[idx];
       state.target.set(z.x, 0, z.z);
+      state.driving = true;
+      setTimeout(() => { state.driving = false; }, 1100);
       setActivePanel(idx);
+      dismissHint();
     }
+  }, { passive: true });
+
+  /* Wheel over world also pages chapters if document scroll is awkward */
+  let wheelAcc = 0;
+  let wheelLock = false;
+  window.addEventListener("wheel", (e) => {
+    if (isUiTarget(e.target)) return;
+    wheelAcc += e.deltaY;
+    if (wheelLock) return;
+    if (Math.abs(wheelAcc) < 80) return;
+    const dir = wheelAcc > 0 ? 1 : -1;
+    wheelAcc = 0;
+    wheelLock = true;
+    goToZone(state.scrollZone + dir, true);
+    setTimeout(() => { wheelLock = false; }, 500);
   }, { passive: true });
 
   /* Nav buttons */
