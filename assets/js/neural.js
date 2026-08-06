@@ -32,9 +32,9 @@
 
   const material = new THREE.PointsMaterial({
     color: 0x00d4aa,
-    size: 0.08,
+    size: 0.11,
     transparent: true,
-    opacity: 0.75,
+    opacity: 0.9,
     depthWrite: false,
     sizeAttenuation: true,
   });
