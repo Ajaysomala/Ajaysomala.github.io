@@ -36,7 +36,7 @@ class SomalaAjay:
         self.education   = "B.Tech ECE — Aditya University (2018–2022)"
         self.experience  = "2+ years"
         self.projects    = 31  # real-world AI/ML projects
-        self.open_to     = ["Data Science", "AI/ML Engineer", "Python Developer"]
+        self.open_to     = ["AI/ML Engineer", "Python Developer"]
 
     def skills(self):
         return {
