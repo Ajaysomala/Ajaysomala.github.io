@@ -1,0 +1,98 @@
+/* ABOUT.CSS */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.bento-card {
+  background: var(--card);
+  border: 1px solid var(--border-md);
+  border-radius: 12px;
+  padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--tm), transform var(--tm), box-shadow var(--tm);
+  cursor: default;
+}
+.bento-card:hover {
+  border-color: var(--border-hi);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+}
+/* ALL text inside card fully visible on hover */
+.bento-card:hover p,
+.bento-card:hover .bento-card-body,
+.bento-card:hover .bento-card-sub,
+.bento-card:hover .bento-coords,
+.bento-card:hover .bento-year,
+.bento-card:hover .current-item { color: var(--text-hi); }
+
+.bento-glow {
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--tm);
+}
+.bento-card:hover .bento-glow { opacity: 1; }
+
+.bento-label {
+  font-family: var(--fm);
+  font-size: 0.62rem;
+  color: var(--muted2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* Intro — 3 cols */
+.bento-intro { grid-column: span 3; }
+.bento-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.bento-card-title { font-family: var(--fd); font-size: 1.35rem; font-weight: 800; color: var(--white); margin-bottom: 0.2rem; }
+.bento-card-sub { font-size: 0.75rem; color: var(--muted2); font-family: var(--fm); letter-spacing: 0.05em; margin-bottom: 0.85rem; }
+.bento-card-body { font-size: 0.88rem; color: var(--text); line-height: 1.8; }
+
+/* Status — 3 cols */
+.bento-status { grid-column: span 3; }
+.status-row { display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem; font-family:var(--fd); font-size:1.1rem; font-weight:800; color:var(--white); }
+.status-dot { width:9px; height:9px; border-radius:50%; background:#4ade80; box-shadow:0 0 10px #4ade80; flex-shrink:0; animation:pulseDot 2.5s ease-in-out infinite; }
+
+/* Stat — 2 cols each */
+.bento-stat { grid-column:span 2; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.bento-big-num { font-family:var(--fd); font-size:3rem; font-weight:800; color:var(--wp); line-height:1; margin-bottom:0.35rem; }
+.bento-unit { font-size:1.3rem; color:var(--muted2); }
+.bento-stat-label { font-family:var(--fm); font-size:0.62rem; color:var(--muted2); letter-spacing:0.15em; text-transform:uppercase; }
+
+/* Location — 3 cols */
+.bento-location { grid-column:span 3; }
+.bento-place { font-family:var(--fd); font-size:1.3rem; font-weight:800; color:var(--white); margin-bottom:0.3rem; }
+.bento-coords { font-family:var(--fm); font-size:0.7rem; color:var(--muted); }
+
+/* Stack — 3 cols */
+.bento-stack { grid-column:span 3; }
+.bento-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.2rem; }
+.btag { display:inline-block; padding:0.22rem 0.6rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-md); border-radius:3px; font-family:var(--fm); font-size:0.7rem; color:var(--muted2); transition:all var(--tf); }
+.bento-card:hover .btag { color:var(--text-hi); border-color:var(--border-md); }
+.bento-card:hover .btag:hover { background:rgba(255,255,255,0.1); color:var(--white); border-color:var(--border-hi); }
+
+/* Education — 3 cols */
+.bento-edu { grid-column:span 3; }
+.bento-degree { font-family:var(--fd); font-size:0.95rem; font-weight:800; color:var(--white); margin-bottom:0.3rem; line-height:1.3; }
+.bento-school { font-size:0.82rem; color:var(--muted2); margin-bottom:0.15rem; }
+.bento-year { font-family:var(--fm); font-size:0.68rem; color:var(--muted); }
+
+/* Quote — 3 cols */
+.bento-quote { grid-column:span 3; display:flex; flex-direction:column; justify-content:center; }
+.bento-quote-text { font-family:var(--fd); font-size:1rem; font-weight:700; color:var(--white); line-height:1.5; margin-bottom:0.6rem; font-style:italic; }
+.bento-quote-by { font-family:var(--fm); font-size:0.68rem; color:var(--muted2); letter-spacing:0.1em; }
+
+/* Currently — 3 cols */
+.bento-currently { grid-column:span 3; }
+.current-item { font-size:0.85rem; color:var(--text); padding:0.35rem 0; border-bottom:1px solid var(--border); transition:color var(--tf); }
+.current-item:last-child { border-bottom:none; }

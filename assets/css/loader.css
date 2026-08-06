@@ -1,0 +1,52 @@
+/* LOADER.CSS */
+#loader{
+  position:fixed;inset:0;z-index:10000;
+  background:#000;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;
+  transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+
+#loaderCanvas{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+}
+
+.loader-content{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;
+  gap:1.5rem;
+}
+
+.loader-logo{
+  font-family:'Syne',sans-serif;
+  font-size:3.5rem;font-weight:800;
+  color:#fff;letter-spacing:-0.02em;
+  animation:logoPulse 2s ease-in-out infinite;
+}
+.loader-logo span{color:rgba(255,255,255,0.5);}
+
+@keyframes logoPulse{
+  0%,100%{opacity:0.7;transform:scale(1);}
+  50%{opacity:1;transform:scale(1.04);}
+}
+
+.loader-bar-wrap{
+  width:220px;height:1px;
+  background:rgba(255,255,255,0.08);
+  border-radius:2px;overflow:hidden;
+}
+.loader-bar{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,rgba(255,255,255,0.3),rgba(255,255,255,0.95));
+  border-radius:2px;
+  box-shadow:0 0 10px rgba(255,255,255,0.4);
+  transition:width 0.1s linear;
+}
+
+.loader-text{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.62rem;color:rgba(255,255,255,0.35);
+  letter-spacing:0.2em;text-transform:uppercase;
+}

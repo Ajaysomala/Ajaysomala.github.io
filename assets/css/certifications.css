@@ -1,0 +1,57 @@
+/* CERTIFICATIONS.CSS */
+.cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:0.9rem; position:relative; z-index:2; }
+
+.cert-card {
+  display:flex; align-items:center; gap:1rem;
+  padding:1.2rem 1.4rem;
+  background:var(--card);
+  border:1px solid var(--border-md);
+  border-radius:10px;
+  transition:border-color var(--tm),transform var(--tm),box-shadow var(--tm);
+  position:relative; overflow:hidden;
+}
+.cert-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.25),transparent); opacity:0; transition:opacity var(--tm); }
+.cert-card:hover { border-color:var(--border-hi); transform:translateX(5px); box-shadow:0 10px 35px rgba(0,0,0,0.35); }
+.cert-card:hover::before { opacity:1; }
+
+/* All text visible on hover */
+.cert-card:hover .cert-name { color:var(--white); }
+.cert-card:hover .cert-issuer { color:var(--muted2); }
+.cert-card:hover .cert-badge { color:var(--muted2); border-color:rgba(255,255,255,0.22); }
+
+.cert-icon-wrap { width:38px; height:38px; min-width:38px; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid var(--border-md); display:flex; align-items:center; justify-content:center; font-size:1rem; transition:background var(--tf); }
+.cert-card:hover .cert-icon-wrap { background:rgba(255,255,255,0.09); }
+.cert-info { flex:1; min-width:0; }
+.cert-name { font-family:var(--fb); font-size:0.86rem; font-weight:600; color:var(--text-hi); transition:color var(--tf); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cert-issuer { font-family:var(--fm); font-size:0.68rem; color:var(--muted2); margin-top:0.1rem; letter-spacing:0.06em; transition:color var(--tf); }
+.cert-badge { font-family:var(--fm); font-size:0.58rem; color:var(--muted); letter-spacing:0.12em; text-transform:uppercase; padding:0.2rem 0.55rem; border:1px solid var(--border-md); border-radius:100px; flex-shrink:0; transition:all var(--tf); }
+
+/* Education */
+.edu-block { position:relative; z-index:2; }
+.edu-card { display:flex; align-items:flex-start; gap:1.5rem; padding:2rem 2.25rem; background:var(--card); border:1px solid var(--border-md); border-radius:12px; transition:border-color var(--tm),transform var(--tm); position:relative; overflow:hidden; }
+.edu-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent); }
+.edu-card:hover { border-color:var(--border-hi); transform:translateY(-3px); }
+.edu-card:hover .edu-school, .edu-card:hover .edu-year, .edu-card:hover .edu-cap { color:var(--muted2); }
+.edu-icon { font-size:2rem; flex-shrink:0; margin-top:0.25rem; }
+.edu-degree { font-family:var(--fd); font-size:1.2rem; font-weight:800; color:var(--white); margin-bottom:0.3rem; }
+.edu-school { font-size:0.9rem; color:var(--muted2); margin-bottom:0.2rem; transition:color var(--tf); }
+.edu-year { font-family:var(--fm); font-size:0.7rem; color:var(--muted); margin-bottom:0.6rem; letter-spacing:0.08em; transition:color var(--tf); }
+.edu-cap { font-size:0.82rem; color:var(--muted); padding-top:0.6rem; border-top:1px solid var(--border); font-style:italic; transition:color var(--tf); }
+
+/* Hackathon */
+.hackathon-block { position:relative; z-index:2; }
+.hackathon-card { background:var(--card); border:1px solid var(--border-md); border-radius:12px; padding:1.75rem 2rem; position:relative; overflow:hidden; transition:border-color var(--tm),transform var(--tm); }
+.hackathon-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent); }
+.hackathon-card:hover { border-color:var(--border-hi); transform:translateY(-3px); }
+.hackathon-card:hover .hack-desc, .hackathon-card:hover .hack-points li, .hackathon-card:hover .hack-stack { color:var(--text-hi); }
+.hack-header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:0.8rem; flex-wrap:wrap; }
+.hack-title { font-family:var(--fd); font-size:1.15rem; font-weight:800; color:var(--white); }
+.hack-badge { font-family:var(--fm); font-size:0.6rem; color:var(--muted2); background:rgba(255,255,255,0.05); border:1px solid var(--border-md); border-radius:100px; padding:0.22rem 0.7rem; letter-spacing:0.1em; white-space:nowrap; }
+.hack-meta { font-family:var(--fm); font-size:0.68rem; color:var(--muted2); margin-bottom:0.7rem; }
+.hack-desc { font-size:0.87rem; color:var(--muted2); line-height:1.75; margin-bottom:0.9rem; transition:color var(--tf); }
+.hack-points { list-style:none; display:flex; flex-direction:column; gap:0.45rem; margin-bottom:0.9rem; }
+.hack-points li { font-size:0.85rem; color:var(--muted2); padding-left:1.2rem; position:relative; line-height:1.7; transition:color var(--tf); }
+.hack-points li::before { content:'▸'; position:absolute; left:0; color:rgba(255,255,255,0.3); font-size:0.6rem; top:0.3rem; }
+.hack-stack { font-family:var(--fm); font-size:0.66rem; color:var(--muted); letter-spacing:0.05em; transition:color var(--tf); }
+.hack-link { display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--fm); font-size:0.68rem; color:var(--muted2); border:1px solid var(--border-md); border-radius:3px; padding:0.22rem 0.65rem; transition:all var(--tf); cursor:none; margin-top:0.5rem; }
+.hack-link:hover { color:var(--white); border-color:var(--border-hi); background:rgba(255,255,255,0.06); }
