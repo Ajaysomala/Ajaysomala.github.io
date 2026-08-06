@@ -1,43 +1,53 @@
-/* SCENE.JS — Three.js Core Setup */
+/* SCENE.JS — Three.js core */
 window.Portfolio3D = (function () {
-  if (typeof THREE === 'undefined') return {};
+  if (typeof THREE === "undefined") return {};
 
-  const canvas   = document.getElementById('threeCanvas');
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const canvas = document.getElementById("neuralCanvas");
+  if (!canvas) return {};
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: true,
+    powerPreference: "high-performance",
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x000000, 0);
 
-  const scene  = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(0, 0, 18);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    55,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    200
+  );
+  camera.position.set(0, 0, 28);
 
-  // Fog for depth
-  scene.fog = new THREE.FogExp2(0x000000, 0.022);
+  scene.fog = new THREE.FogExp2(0x070708, 0.028);
 
-  // Ambient light
-  const ambient = new THREE.AmbientLight(0xffffff, 0.4);
+  const ambient = new THREE.AmbientLight(0xffffff, 0.35);
   scene.add(ambient);
 
-  // Point lights for depth
-  const lights = [
-    { pos: [10, 10, 10], intensity: 0.6 },
-    { pos: [-10, -5, 5], intensity: 0.3 },
-    { pos: [0, -10, -10], intensity: 0.2 },
-  ];
-  lights.forEach(({ pos, intensity }) => {
-    const l = new THREE.PointLight(0xffffff, intensity, 60);
-    l.position.set(...pos);
-    scene.add(l);
+  [
+    { pos: [12, 8, 10], i: 0.45 },
+    { pos: [-10, -4, 6], i: 0.25 },
+  ].forEach(({ pos, i }) => {
+    const light = new THREE.PointLight(0x00d4aa, i, 80);
+    light.position.set(...pos);
+    scene.add(light);
   });
 
-  // Resize handler
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  }, { passive: true });
+  window.addEventListener(
+    "resize",
+    () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+    },
+    { passive: true }
+  );
 
   return { scene, camera, renderer, THREE };
 })();
