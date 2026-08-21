@@ -51,6 +51,7 @@
 
       <ul class="nav-menu">
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#demos" class="nav-link">Live Demos</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -60,7 +61,14 @@
       </ul>
 
       <div class="nav-actions">
+        <button id="cmdkTriggerBtn" class="cmdk-trigger-btn" title="Open Command Palette (Cmd+K)" aria-label="Open Command Palette">
+          <span class="cmdk-key-icon">⌘</span>
+          <span class="cmdk-key-label">K</span>
+        </button>
         <button id="audioToggleBtn" class="audio-toggle-btn" title="Toggle Sound FX" aria-label="Toggle Sound FX">🔇</button>
+        <button class="btn-cyber btn-emerald open-recruiter-modal-btn" title="Recruiter 1-Page Summary">
+          <span>⚡ Fast View</span>
+        </button>
         <button class="btn-cyber btn-primary open-resume-modal-btn">
           <span>Resume</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
@@ -102,13 +110,13 @@
                 <span>Explore Projects</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
+              <button class="btn-cyber btn-emerald open-recruiter-modal-btn">
+                <span>⚡ Recruiter Fast View</span>
+              </button>
               <button class="btn-cyber btn-secondary open-resume-modal-btn">
-                <span>View Full Resume</span>
+                <span>View Resume</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               </button>
-              <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-secondary">
-                <span>GitHub</span>
-              </a>
             </div>
 
             <div class="hero-quick-stats">
@@ -217,6 +225,103 @@
             <span class="tech-tag">RAG &amp; Vector Databases</span>
             <span class="tech-tag">FastAPI &amp; Flask APIs</span>
             <span class="tech-tag">Docker &amp; Cloud Deployment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM ARCHITECTURE TOPOLOGY & TELEMETRY MATRIX -->
+    <section id="architecture" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span>02 // SYSTEM ARCHITECTURE</span>
+          </div>
+          <h2 class="section-title">Production Topologies &amp; Telemetry</h2>
+          <p class="section-desc">
+            Explore interactive system workflows designed for high throughput, sub-50ms latency, and enterprise reliability.
+          </p>
+        </div>
+
+        <!-- Architecture Switcher Controls -->
+        <div class="arch-switcher-nav">
+          <button class="arch-tab-btn active" data-arch="nasa">
+            <span>🚀 NASA RAG Pipeline</span>
+          </button>
+          <button class="arch-tab-btn" data-arch="pinguru">
+            <span>📱 PinGuru SaaS Workflow</span>
+          </button>
+          <button class="arch-tab-btn" data-arch="enterprise">
+            <span>⚙️ Enterprise ML Pipeline</span>
+          </button>
+        </div>
+
+        <!-- Interactive Architecture Topology Display -->
+        <div class="glass-card arch-display-card">
+          <div class="arch-card-header">
+            <div>
+              <h3 id="archTitle" class="arch-title">🚀 NASA RAG Systems Engineering Pipeline</h3>
+              <p id="archSubtitle" class="arch-subtitle">270-Page NASA SE Handbook · 885 FAISS Vectors · LLaMA-3.3-70B via Groq</p>
+            </div>
+            <span class="status-pill status-healthy">LIVE INFERENCE</span>
+          </div>
+
+          <div id="archFlowCanvas" class="arch-flow-canvas">
+            <div class="arch-step-node">
+              <div class="arch-node-badge">01</div>
+              <div class="arch-node-body">
+                <h5>Document Ingestion</h5>
+                <p>PyPDF &amp; PdfPlumber chunking 270 pages into 500-token semantic chunks</p>
+              </div>
+            </div>
+            <div class="arch-connector">➔</div>
+            <div class="arch-step-node">
+              <div class="arch-node-badge">02</div>
+              <div class="arch-node-body">
+                <h5>Embedding Generation</h5>
+                <p>sentence-transformers (all-MiniLM-L6-v2) generates 768-dim dense vectors</p>
+              </div>
+            </div>
+            <div class="arch-connector">➔</div>
+            <div class="arch-step-node">
+              <div class="arch-node-badge">03</div>
+              <div class="arch-node-body">
+                <h5>Vector Index &amp; Search</h5>
+                <p>FAISS IndexFlatIP cosine similarity retrieval with sub-40ms p95 lookup</p>
+              </div>
+            </div>
+            <div class="arch-connector">➔</div>
+            <div class="arch-step-node">
+              <div class="arch-node-badge">04</div>
+              <div class="arch-node-body">
+                <h5>LLM Synthesizer &amp; Citations</h5>
+                <p>Groq LPU LLaMA-3.3-70B synthesizes answer with exact section/page citations</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Telemetry Matrix Grid -->
+          <div class="telemetry-matrix">
+            <div class="telemetry-card">
+              <div class="telemetry-label">p95 Retrieval Latency</div>
+              <div class="telemetry-value" id="telemetryP95">38 <span>ms</span></div>
+              <div class="telemetry-sub">FAISS dense vector lookup</div>
+            </div>
+            <div class="telemetry-card">
+              <div class="telemetry-label">Token Generation Throughput</div>
+              <div class="telemetry-value" id="telemetryTps">285 <span>tok/s</span></div>
+              <div class="telemetry-sub">Groq LPU LLaMA-3.3-70B</div>
+            </div>
+            <div class="telemetry-card">
+              <div class="telemetry-label">Vector Index Density</div>
+              <div class="telemetry-value" id="telemetryVectors">885 <span>vectors</span></div>
+              <div class="telemetry-sub">NASA Handbook Semantic Segments</div>
+            </div>
+            <div class="telemetry-card">
+              <div class="telemetry-label">Cosine Similarity Threshold</div>
+              <div class="telemetry-value" id="telemetryCos">0.94<span>+</span></div>
+              <div class="telemetry-sub">High precision citation gating</div>
+            </div>
           </div>
         </div>
       </div>
@@ -962,6 +1067,195 @@
       </div>
     </div>
   </footer>
+
+  <!-- RECRUITER FAST-VIEW MODAL -->
+  <div id="recruiterModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog recruiter-dialog">
+      <div class="modal-header">
+        <div class="recruiter-header-title">
+          <div class="recruiter-badge">⚡ 60-SECOND EXECUTIVE BRIEF</div>
+          <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: var(--text-primary);">
+            Somala Ajay — Executive Summary
+          </h3>
+        </div>
+        <button id="closeRecruiterModalBtn" class="btn-cyber btn-secondary" style="padding: 0.4rem 0.75rem; font-size: 0.85rem;" aria-label="Close Recruiter Modal">
+          ✕
+        </button>
+      </div>
+      <div class="modal-body recruiter-modal-body">
+        
+        <!-- Key Metrics Strip -->
+        <div class="recruiter-stats-strip">
+          <div class="recruiter-stat-box">
+            <div class="recruiter-stat-val">3+ <span>Yrs</span></div>
+            <div class="recruiter-stat-lbl">AI/ML Production Exp</div>
+          </div>
+          <div class="recruiter-stat-box">
+            <div class="recruiter-stat-val">20+</div>
+            <div class="recruiter-stat-lbl">Production Models</div>
+          </div>
+          <div class="recruiter-stat-box">
+            <div class="recruiter-stat-val">&lt;45 <span>ms</span></div>
+            <div class="recruiter-stat-lbl">Flask/FastAPI Latency</div>
+          </div>
+          <div class="recruiter-stat-box">
+            <div class="recruiter-stat-val">885</div>
+            <div class="recruiter-stat-lbl">NASA FAISS Vectors</div>
+          </div>
+        </div>
+
+        <!-- Quick Summary Box -->
+        <div class="recruiter-info-block">
+          <h5 class="recruiter-section-heading">🎯 Target Roles &amp; Availability</h5>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            <strong>Target Roles:</strong> AI/ML Engineer · Generative AI Engineer · Python Backend Engineer<br />
+            <strong>Location:</strong> Hyderabad, Telangana, India · <span style="color: var(--emerald);">Open to Remote &amp; Relocation</span><br />
+            <strong>Availability:</strong> <span style="color: var(--emerald); font-weight: 600;">Immediate / 15-Day Notice</span>
+          </p>
+        </div>
+
+        <!-- Core Stack Breakdown -->
+        <div class="recruiter-info-block">
+          <h5 class="recruiter-section-heading">🛠️ Core Technology Matrix</h5>
+          <div class="recruiter-stack-grid">
+            <div class="stack-row">
+              <span class="stack-category">GenAI &amp; RAG:</span>
+              <span class="stack-items">RAG, LangChain, FAISS, LLaMA 3.3, Groq API, sentence-transformers</span>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">Backend &amp; DB:</span>
+              <span class="stack-items">Python, FastAPI, Flask, SQL, MongoDB, Stripe, REST APIs</span>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">ML &amp; Data:</span>
+              <span class="stack-items">Scikit-learn, TensorFlow, Keras, Pandas, NumPy, OpenCV, CNN, LSTM</span>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">Deployment:</span>
+              <span class="stack-items">Docker, DigitalOcean, AWS, GCP, Git, Linux, Webhooks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recruiter Action CTAs -->
+        <div class="recruiter-action-row">
+          <a href="./Somala_Ajay_Resume.pdf" download="Somala_Ajay_Resume.pdf" class="btn-cyber btn-primary" style="flex: 1; text-align: center;">
+            <span>Download Official PDF Resume</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+          <a href="mailto:jaydeveloper010@gmail.com?subject=Interview%20Invitation%20for%20Somala%20Ajay%20(AI%2FML%20Role)&body=Hi%20Ajay%2C%0A%0AWe%20came%20across%20your%20portfolio%20and%20would%20love%20to%20schedule%20an%20interview." class="btn-cyber btn-emerald" style="flex: 1; text-align: center;">
+            <span>Schedule Interview (1-Click Email)</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMAND PALETTE (CMD+K) MODAL -->
+  <div id="cmdkModal" class="modal-backdrop cmdk-backdrop" aria-hidden="true">
+    <div class="modal-dialog cmdk-dialog">
+      <div class="cmdk-search-wrap">
+        <span class="cmdk-search-icon">🔍</span>
+        <input type="text" id="cmdkInput" class="cmdk-input" placeholder="Type a command or search sections (e.g., 'resume', 'projects', 'rag')..." autocomplete="off" />
+        <span class="cmdk-esc-hint">ESC</span>
+      </div>
+      <div id="cmdkResults" class="cmdk-results-list">
+        <div class="cmdk-group-title">Navigation</div>
+        <button class="cmdk-item" data-action="goto" data-target="#hero">
+          <span class="cmdk-item-icon">⚡</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Overview &amp; Hero</div>
+            <div class="cmdk-item-desc">Jump to portfolio introduction</div>
+          </div>
+          <span class="cmdk-badge">Section</span>
+        </button>
+        <button class="cmdk-item" data-action="goto" data-target="#architecture">
+          <span class="cmdk-item-icon">🏗️</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">System Architecture &amp; Telemetry</div>
+            <div class="cmdk-item-desc">Inspect NASA RAG, PinGuru &amp; Enterprise topologies</div>
+          </div>
+          <span class="cmdk-badge">Topology</span>
+        </button>
+        <button class="cmdk-item" data-action="goto" data-target="#experience">
+          <span class="cmdk-item-icon">💼</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Career Experience</div>
+            <div class="cmdk-item-desc">TCS, Tech Mahindra &amp; BO IT Solutions timeline</div>
+          </div>
+          <span class="cmdk-badge">Section</span>
+        </button>
+        <button class="cmdk-item" data-action="goto" data-target="#demos">
+          <span class="cmdk-item-icon">🚀</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Interactive AI Demonstrations</div>
+            <div class="cmdk-item-desc">Test NASA RAG query &amp; Multi-Agent visualizer</div>
+          </div>
+          <span class="cmdk-badge">Interactive</span>
+        </button>
+        <button class="cmdk-item" data-action="goto" data-target="#projects">
+          <span class="cmdk-item-icon">📂</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Featured Projects</div>
+            <div class="cmdk-item-desc">PinGuru SaaS, NASA RAG, Multi-Agent &amp; CV</div>
+          </div>
+          <span class="cmdk-badge">Section</span>
+        </button>
+        <button class="cmdk-item" data-action="goto" data-target="#skills">
+          <span class="cmdk-item-icon">🧠</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Technical Skills Matrix</div>
+            <div class="cmdk-item-desc">GenAI, ML, Backend &amp; Cloud stack</div>
+          </div>
+          <span class="cmdk-badge">Section</span>
+        </button>
+        
+        <div class="cmdk-group-title">Quick Actions</div>
+        <button class="cmdk-item" data-action="open-recruiter">
+          <span class="cmdk-item-icon">⚡</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Open Recruiter Fast-View</div>
+            <div class="cmdk-item-desc">60-second executive summary for hiring managers</div>
+          </div>
+          <span class="cmdk-badge">Action</span>
+        </button>
+        <button class="cmdk-item" data-action="open-resume">
+          <span class="cmdk-item-icon">📄</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">View / Download PDF Resume</div>
+            <div class="cmdk-item-desc">Full verified curriculum vitae</div>
+          </div>
+          <span class="cmdk-badge">Resume</span>
+        </button>
+        <button class="cmdk-item" data-action="copy-email">
+          <span class="cmdk-item-icon">✉️</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Copy Email to Clipboard</div>
+            <div class="cmdk-item-desc">jaydeveloper010@gmail.com</div>
+          </div>
+          <span class="cmdk-badge">Copy</span>
+        </button>
+        <button class="cmdk-item" data-action="toggle-sound">
+          <span class="cmdk-item-icon">🔊</span>
+          <div class="cmdk-item-content">
+            <div class="cmdk-item-title">Toggle Web Audio Tactile SFX</div>
+            <div class="cmdk-item-desc">Turn interface sound effects on / off</div>
+          </div>
+          <span class="cmdk-badge">Audio</span>
+        </button>
+      </div>
+      <div class="cmdk-footer">
+        <div class="cmdk-footer-hints">
+          <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+          <span><kbd>↵</kbd> Select</span>
+          <span><kbd>ESC</kbd> Close</span>
+        </div>
+        <div class="cmdk-status">Ready</div>
+      </div>
+    </div>
+  </div>
 
   <!-- RESUME MODAL & PDF VIEWER -->
   <div id="resumeModal" class="modal-backdrop" aria-hidden="true">

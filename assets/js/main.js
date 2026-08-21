@@ -537,7 +537,7 @@ function initContactSecurity() {
 }
 
 // ==========================================
-// 10. PDF Resume Modal Controller
+// 10. PDF Resume & Recruiter Modals Controller
 // ==========================================
 function initResumeModal() {
   const modal = document.getElementById('resumeModal');
@@ -571,8 +571,243 @@ function initResumeModal() {
   });
 }
 
+function initRecruiterModal() {
+  const modal = document.getElementById('recruiterModal');
+  const openBtns = document.querySelectorAll('.open-recruiter-modal-btn');
+  const closeBtn = document.getElementById('closeRecruiterModalBtn');
+
+  if (!modal) return;
+
+  openBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      sfx.click();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      sfx.click();
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // ==========================================
-// 11. Navbar Scroll Effect & Audio Toggle
+// 11. Command Palette (Cmd+K) Controller
+// ==========================================
+function initCommandPalette() {
+  const modal = document.getElementById('cmdkModal');
+  const triggerBtn = document.getElementById('cmdkTriggerBtn');
+  const input = document.getElementById('cmdkInput');
+  const resultsContainer = document.getElementById('cmdkResults');
+  const items = document.querySelectorAll('.cmdk-item');
+
+  if (!modal || !input) return;
+
+  function openCmdk() {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    input.value = '';
+    filterItems('');
+    setTimeout(() => input.focus(), 50);
+    sfx.click();
+  }
+
+  function closeCmdk() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    sfx.hover();
+  }
+
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCmdk();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (modal.classList.contains('open')) {
+        closeCmdk();
+      } else {
+        openCmdk();
+      }
+    } else if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeCmdk();
+    }
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeCmdk();
+    }
+  });
+
+  function filterItems(query) {
+    const q = query.toLowerCase().trim();
+    items.forEach((item) => {
+      const title = item.querySelector('.cmdk-item-title')?.textContent.toLowerCase() || '';
+      const desc = item.querySelector('.cmdk-item-desc')?.textContent.toLowerCase() || '';
+      if (!q || title.includes(q) || desc.includes(q)) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  input.addEventListener('input', (e) => {
+    filterItems(e.target.value);
+  });
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      const action = item.getAttribute('data-action');
+      const target = item.getAttribute('data-target');
+      closeCmdk();
+
+      if (action === 'goto' && target) {
+        const section = document.querySelector(target);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (action === 'open-recruiter') {
+        const recruiterModal = document.getElementById('recruiterModal');
+        recruiterModal?.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      } else if (action === 'open-resume') {
+        const resumeModal = document.getElementById('resumeModal');
+        resumeModal?.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      } else if (action === 'copy-email') {
+        navigator.clipboard.writeText('jaydeveloper010@gmail.com').then(() => {
+          showToast('Email copied to clipboard: jaydeveloper010@gmail.com');
+        });
+      } else if (action === 'toggle-sound') {
+        const audioBtn = document.getElementById('audioToggleBtn');
+        audioBtn?.click();
+      }
+    });
+  });
+}
+
+// ==========================================
+// 12. Architecture Switcher & Topology Matrix
+// ==========================================
+function initArchitectureSwitcher() {
+  const tabBtns = document.querySelectorAll('.arch-tab-btn');
+  const titleEl = document.getElementById('archTitle');
+  const subtitleEl = document.getElementById('archSubtitle');
+  const canvasEl = document.getElementById('archFlowCanvas');
+  const p95El = document.getElementById('telemetryP95');
+  const tpsEl = document.getElementById('telemetryTps');
+  const vectorsEl = document.getElementById('telemetryVectors');
+  const cosEl = document.getElementById('telemetryCos');
+
+  if (!tabBtns.length || !canvasEl) return;
+
+  const archData = {
+    nasa: {
+      title: "🚀 NASA RAG Systems Engineering Pipeline",
+      subtitle: "270-Page NASA SE Handbook · 885 FAISS Vectors · LLaMA-3.3-70B via Groq",
+      nodes: [
+        { num: "01", title: "Document Ingestion", desc: "PyPDF & PdfPlumber chunking 270 pages into 500-token semantic chunks" },
+        { num: "02", title: "Embedding Generation", desc: "sentence-transformers (all-MiniLM-L6-v2) generates 768-dim dense vectors" },
+        { num: "03", title: "Vector Index & Search", desc: "FAISS IndexFlatIP cosine similarity retrieval with sub-40ms p95 lookup" },
+        { num: "04", title: "LLM Synthesizer & Citations", desc: "Groq LPU LLaMA-3.3-70B synthesizes answer with exact section/page citations" }
+      ],
+      p95: "38",
+      p95Unit: "ms",
+      tps: "285",
+      tpsUnit: "tok/s",
+      vectors: "885",
+      vectorsUnit: "vectors",
+      cos: "0.94+"
+    },
+    pinguru: {
+      title: "📱 PinGuru Instagram Automation SaaS Architecture",
+      subtitle: "FastAPI Backend · MongoDB Async · Instagram Graph API Webhooks · Stripe Multi-Tier",
+      nodes: [
+        { num: "01", title: "Webhook Ingestion", desc: "Instagram Graph API triggers real-time comment & message event payload" },
+        { num: "02", title: "Auth & Security", desc: "JWT verification, OTP validation & rate-limiting middleware on FastAPI" },
+        { num: "03", title: "Workflow Automation", desc: "Deterministic DM trigger engine matches keywords and schedules DM dispatches" },
+        { num: "04", title: "Async DB & Payments", desc: "MongoDB Motor async persistence with Stripe webhooks for multi-tier billing" }
+      ],
+      p95: "42",
+      p95Unit: "ms",
+      tps: "1,200",
+      tpsUnit: "req/min",
+      vectors: "10K+",
+      vectorsUnit: "events/day",
+      cos: "99.9%"
+    },
+    enterprise: {
+      title: "⚙️ Enterprise ML Classification & Inference Pipeline",
+      subtitle: "Scikit-learn · SQL Optimization · Sub-45ms Flask REST API · 10K–100K Datasets",
+      nodes: [
+        { num: "01", title: "SQL Data Extraction", desc: "High-throughput SQL queries with indexing, speeding preprocessing by 20%" },
+        { num: "02", title: "Automated Feature Eng", desc: "Pandas & NumPy automated transformation & outlier imputation on 50K records" },
+        { num: "03", title: "Scikit-Learn Classifier", desc: "Ensemble & Random Forest architectures achieving 82–87% cross-validated accuracy" },
+        { num: "04", title: "Flask Microservice", desc: "Sub-45ms REST prediction endpoints packaged in Docker containers" }
+      ],
+      p95: "44",
+      p95Unit: "ms",
+      tps: "870",
+      tpsUnit: "evals/sec",
+      vectors: "50K",
+      vectorsUnit: "records",
+      cos: "87.4%"
+    }
+  };
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      sfx.click();
+
+      const archKey = btn.getAttribute('data-arch') || 'nasa';
+      const data = archData[archKey];
+      if (!data) return;
+
+      if (titleEl) titleEl.textContent = data.title;
+      if (subtitleEl) subtitleEl.textContent = data.subtitle;
+
+      // Render nodes
+      canvasEl.innerHTML = data.nodes.map((node, i) => `
+        <div class="arch-step-node">
+          <div class="arch-node-badge">${node.num}</div>
+          <div class="arch-node-body">
+            <h5>${node.title}</h5>
+            <p>${node.desc}</p>
+          </div>
+        </div>
+        ${i < data.nodes.length - 1 ? '<div class="arch-connector">➔</div>' : ''}
+      `).join('');
+
+      if (p95El) p95El.innerHTML = `${data.p95} <span>${data.p95Unit}</span>`;
+      if (tpsEl) tpsEl.innerHTML = `${data.tps} <span>${data.tpsUnit}</span>`;
+      if (vectorsEl) vectorsEl.innerHTML = `${data.vectors} <span>${data.vectorsUnit}</span>`;
+      if (cosEl) cosEl.textContent = data.cos;
+    });
+  });
+}
+
+// ==========================================
+// 13. Navbar Scroll Effect & Audio Toggle
 // ==========================================
 function initNavbarAndAudio() {
   const navbar = document.querySelector('.navbar');
@@ -613,7 +848,7 @@ function initNavbarAndAudio() {
 }
 
 // ==========================================
-// 12. DOM Ready Initialization
+// 14. DOM Ready Initialization
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
   initCustomCursor();
@@ -625,6 +860,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFilters();
   initContactSecurity();
   initResumeModal();
+  initRecruiterModal();
+  initCommandPalette();
+  initArchitectureSwitcher();
   initNavbarAndAudio();
 
   // Contact form submission
