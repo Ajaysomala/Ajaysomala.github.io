@@ -46,34 +46,44 @@
     <nav class="navbar" aria-label="Main Navigation">
       <a href="#hero" class="brand-logo">
         <span class="brand-badge">SA</span>
-        <span>Somala Ajay</span>
+        <span class="brand-name">Somala Ajay</span>
       </a>
 
-      <ul class="nav-menu">
+      <!-- Clean Minimalist Desktop Menu -->
+      <ul class="nav-menu" id="primaryNav">
         <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#architecture" class="nav-link">Architecture</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#demos" class="nav-link">Live Demos</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#hackathon" class="nav-link">Hackathon</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
+      <!-- Action Group -->
       <div class="nav-actions">
-        <button id="cmdkTriggerBtn" class="cmdk-trigger-btn" title="Open Command Palette (Cmd+K)" aria-label="Open Command Palette">
-          <span class="cmdk-key-icon">⌘</span>
-          <span class="cmdk-key-label">K</span>
+        <button id="cmdkTriggerBtn" class="cmdk-trigger-btn" title="Search commands (Cmd+K)" aria-label="Open Command Palette">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span class="cmdk-key-label">⌘K</span>
         </button>
-        <button id="audioToggleBtn" class="audio-toggle-btn" title="Toggle Sound FX" aria-label="Toggle Sound FX">🔇</button>
-        <button class="btn-cyber btn-emerald open-recruiter-modal-btn" title="Recruiter 1-Page Summary">
-          <span>⚡ Fast View</span>
+
+        <button id="audioToggleBtn" class="audio-toggle-btn" title="Toggle Sound FX" aria-label="Toggle Sound FX">
+          <svg class="audio-icon-muted" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+          <svg class="audio-icon-on" style="display:none;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
         </button>
-        <button class="btn-cyber btn-primary open-resume-modal-btn">
-          <span>Resume</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+
+        <div class="nav-btn-group">
+          <button class="btn-cyber btn-nav-fast open-recruiter-modal-btn" title="Recruiter 1-Page Summary">
+            <span>Fast View</span>
+          </button>
+          <button class="btn-cyber btn-primary btn-nav-resume open-resume-modal-btn">
+            <span>Resume</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </button>
+        </div>
+
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="close-icon" style="display:none;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
-        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Menu">☰</button>
       </div>
     </nav>
   </header>
@@ -111,7 +121,7 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
               <button class="btn-cyber btn-emerald open-recruiter-modal-btn">
-                <span>⚡ Recruiter Fast View</span>
+                <span>Recruiter Fast View</span>
               </button>
               <button class="btn-cyber btn-secondary open-resume-modal-btn">
                 <span>View Resume</span>

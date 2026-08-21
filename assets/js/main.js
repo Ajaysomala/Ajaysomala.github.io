@@ -814,6 +814,8 @@ function initNavbarAndAudio() {
   const audioBtn = document.getElementById('audioToggleBtn');
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const navMenu = document.querySelector('.nav-menu');
+  const hamburgerIcon = mobileBtn?.querySelector('.hamburger-icon');
+  const closeIcon = mobileBtn?.querySelector('.close-icon');
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -825,21 +827,43 @@ function initNavbarAndAudio() {
 
   if (mobileBtn && navMenu) {
     mobileBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
+      const isOpen = navMenu.classList.toggle('open');
+      if (hamburgerIcon && closeIcon) {
+        hamburgerIcon.style.display = isOpen ? 'none' : 'block';
+        closeIcon.style.display = isOpen ? 'block' : 'none';
+      }
       sfx.click();
+    });
+
+    // Close menu when clicking on any nav-link
+    navMenu.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('open')) {
+          navMenu.classList.remove('open');
+          if (hamburgerIcon && closeIcon) {
+            hamburgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+          }
+        }
+      });
     });
   }
 
   if (audioBtn) {
+    const audioMuted = audioBtn.querySelector('.audio-icon-muted');
+    const audioOn = audioBtn.querySelector('.audio-icon-on');
+
     audioBtn.addEventListener('click', () => {
       sfx.enabled = !sfx.enabled;
       if (sfx.enabled) {
-        audioBtn.innerHTML = '🔊';
+        if (audioMuted) audioMuted.style.display = 'none';
+        if (audioOn) audioOn.style.display = 'block';
         audioBtn.title = 'Sound FX: Enabled';
         showToast('Tactile Sound FX Enabled');
         sfx.click();
       } else {
-        audioBtn.innerHTML = '🔇';
+        if (audioMuted) audioMuted.style.display = 'block';
+        if (audioOn) audioOn.style.display = 'none';
         audioBtn.title = 'Sound FX: Muted';
         showToast('Sound FX Muted');
       }
