@@ -1,56 +1,51 @@
 <div align="center">
 
 <!-- Dynamic header banner -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=00d4aa&height=200&section=header&text=Somala%20Ajay&fontSize=60&fontColor=ffffff&fontAlignY=35&desc=Python%20Developer%20%7C%20AI%2FML%20Engineer%20%7C%20Data%20Scientist&descAlignY=58&descSize=18&animation=fadeIn" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=00f2fe&height=220&section=header&text=Somala%20Ajay&fontSize=58&fontColor=ffffff&fontAlignY=35&desc=AI%2FML%20Engineer%20%7C%20Gen%20AI%20Engineer%20%7C%20Python%20Developer&descAlignY=58&descSize=18&animation=fadeIn" />
 
 <!-- Typing animation -->
 <a href="https://ajaysomala.github.io">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00D4AA&center=true&vCenter=true&width=600&lines=Python+Developer+%F0%9F%90%8D;AI+%2F+ML+Engineer+%F0%9F%A4%96;Deep+Learning+%7C+NLP+%7C+Computer+Vision;31+Real-World+AI%2FML+Projects+Built+%F0%9F%9A%80;Open+to+Opportunities+%F0%9F%8C%9F" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=22&pause=1000&color=00F2FE&center=true&vCenter=true&width=650&lines=AI+%2F+ML+Engineer+%F0%9F%A4%96;Generative+AI+%26+RAG+Specialist+%E2%9A%A1;LLM+%26+Multi-Agent+Architect+%F0%9F%A7%A0;FastAPI+%C2%B7+FAISS+%C2%B7+LangChain+%C2%B7+Python+%F0%9F%90%8D;Open+to+Opportunities+%F0%9F%8C%9F" alt="Typing SVG" />
 </a>
 
 <br/>
 
 <!-- Profile badges -->
-[![Portfolio](https://img.shields.io/badge/Portfolio-ajaysomala.github.io-00d4aa?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ajaysomala.github.io)
+[![Portfolio](https://img.shields.io/badge/Portfolio-ajaysomala.github.io-00f2fe?style=for-the-badge&logo=google-chrome&logoColor=black)](https://ajaysomala.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Somala_Ajay-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ajaysomala-8a806b213)
-[![Gmail](https://img.shields.io/badge/Gmail-ajaysomala@gmail.com-d14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ajaysomala@gmail.com)
-[![Location](https://img.shields.io/badge/📍_Hyderabad-Telangana,_India-00d4aa?style=for-the-badge)](https://ajaysomala.github.io)
+[![GitHub](https://img.shields.io/badge/GitHub-Ajay--010-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ajay-010)
+[![Live SaaS](https://img.shields.io/badge/PinGuru-pinguru.me-10b981?style=for-the-badge&logo=instagram&logoColor=white)](https://pinguru.me)
+[![Location](https://img.shields.io/badge/📍_Hyderabad-Telangana,_India-8b5cf6?style=for-the-badge)](https://ajaysomala.github.io)
 
 <br/>
-
-![Profile Views](https://komarev.com/ghpvc/?username=Ajaysomala&color=00d4aa&style=for-the-badge&label=PROFILE+VIEWS)
-[![GitHub followers](https://img.shields.io/github/followers/Ajaysomala?style=for-the-badge&color=00d4aa&logo=github)](https://github.com/Ajaysomala)
 
 </div>
 
 ---
 
-## 🧠 About Me
+## 🧠 Executive Summary
 
 ```python
 class SomalaAjay:
     def __init__(self):
         self.name        = "Somala Ajay"
-        self.role        = "Python Developer & AI/ML Engineer"
-        self.location    = "Hyderabad, Telangana, India"
+        self.role        = "AI/ML Engineer & Gen AI Engineer"
+        self.location    = "Hyderabad, Telangana, India (Open to Remote)"
         self.education   = "B.Tech ECE — Aditya University (2018–2022)"
-        self.experience  = "3+ years"
-        self.projects    = 31  # real-world AI/ML projects
-        self.open_to     = ["AI/ML Engineer", "Python Developer"]
+        self.experience  = "3+ years production AI/ML & LLM engineering"
+        self.specialties = ["RAG Pipelines", "Multi-Agent Systems", "FastAPI SaaS", "MLOps & Docker"]
+        self.open_to     = ["AI/ML Engineer", "Generative AI Engineer", "Python Backend Developer"]
 
-    def skills(self):
+    def flagship_projects(self):
         return {
-            "languages"  : ["Python", "SQL", "Bash"],
-            "ml_ai"      : ["TensorFlow", "Keras", "Scikit-learn", "CNN", "LSTM"],
-            "cv_nlp"     : ["OpenCV", "MediaPipe", "NLTK", "NLP"],
-            "backend"    : ["Flask", "Django", "REST APIs"],
-            "data"       : ["Pandas", "NumPy", "ETL", "Data Cleaning"],
-            "tools"      : ["Git", "Docker", "GitHub", "Cursor AI"],
-            "genai"      : ["Generative AI", "Prompting", "LLMs"],
+            "PinGuru"       : "Instagram DM Automation SaaS (FastAPI, MongoDB, Stripe, IG Graph API)",
+            "NASA_RAG_QA"   : "Complex Technical Manual QA System (885 FAISS vectors, LLaMA-3.3-70B, Groq API)",
+            "Multi_Agent"   : "Autonomous Multi-Agent Operations System (Planner + Tool Dispatch + Audit)",
+            "Enterprise_ML" : "20+ Production ML/DL Models & Sub-45ms REST Inference Endpoints"
         }
 
     def current_status(self):
-        return "🟢 Open to opportunities — Let's build something intelligent!"
+        return "🟢 Actively interviewing for AI/ML & GenAI roles!"
 
 me = SomalaAjay()
 print(me.current_status())
@@ -58,86 +53,55 @@ print(me.current_status())
 
 ---
 
-## 🚀 What I've Built — 31 AI/ML Projects
+## 🚀 Flagship Projects & Architectures
 
 <div align="center">
 
-| # | Project | Tech Stack | Domain |
-|---|---------|-----------|--------|
-| 🧠 | **Brain Tumor Detection** | TensorFlow · OpenCV · CNN | Computer Vision |
-| 📸 | **Image Caption Generator** | CNN · LSTM · COCO Dataset | Deep Learning + NLP |
-| 🛒 | **Amazon Recommendation System** | Pandas · Scikit-learn | ML |
-| 📈 | **Stock Price Prediction** | TensorFlow · LSTM | Time Series |
-| 🖱️ | **Virtual Mouse** | MediaPipe · OpenCV | Computer Vision |
-| 📄 | **ATS Resume Screener** | NLP · Flask | NLP |
-| 🤖 | **AI Chatbot** | NLTK · Flask | NLP |
-| 😷 | **Face Mask Detection** | Keras · OpenCV | Computer Vision |
-| 🥗 | **Food Nutrition Adviser** | GenAI · Flask | Generative AI |
-| 📊 | **Consumer Sentiment Analysis** | NLTK · Scikit-learn | NLP |
-| 🌾 | **Rice Granule Quality Analysis** | MATLAB · Image Processing | Academic Capstone |
-| ⚡ | **+20 More Projects** | Python · Flask · Docker · GenAI | Multiple Domains |
+| Project | Key Architecture & Tech | Production Highlights | Link |
+|---|---|---|:---:|
+| 📱 **PinGuru SaaS** | FastAPI · MongoDB · Stripe · Instagram Graph API · JWT | Live production SaaS automating Instagram DM workflows via comments and webhooks with multi-tier Stripe subscriptions | [**pinguru.me**](https://pinguru.me) |
+| 🚀 **NASA RAG QA System** | RAG · FAISS · LLaMA 3.3-70B · sentence-transformers · Groq API | 270-Page *NASA Systems Engineering Handbook* indexed into 885 FAISS vectors with sub-100ms generation and exact citations | [**GitHub**](https://github.com/Ajay-010/i2e_Hireathon-Complex_Technical_Manual_QA_System) |
+| 🤖 **Multi-Agent Operations** | LangChain · FastAPI · LLaMA 3.3 · Self-Correction Loop | Autonomous multi-agent pipeline: Reflex Ingestion ➔ LLM Planner ➔ Containerized Executors ➔ Quality Reviewer | [**Demo**](https://ajaysomala.github.io#demos) |
+| 📸 **Image Caption Generator** | CNN (VGG16) · LSTM · Attention · TensorFlow · Keras | Hybrid deep learning vision-language model trained on Flickr8k for automated image context captioning | [**Code**](https://github.com/Ajay-010) |
+| ⚙️ **20+ Production AI/ML Suite** | Scikit-learn · TensorFlow · Docker · Flask REST APIs | End-to-end classification, regression, and computer vision pipelines delivering 82–87% validation accuracy with sub-45ms latency | [**Portfolio**](https://ajaysomala.github.io) |
 
 </div>
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technical Stack & Frameworks
 
 <div align="center">
 
-### Languages & Core
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+### 🧠 Generative AI & LLMs
+![RAG](https://img.shields.io/badge/RAG_Pipelines-00f2fe?style=for-the-badge&logoColor=black)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS_Vector_Search-0468FF?style=for-the-badge&logo=meta&logoColor=white)
+![LLaMA 3.3](https://img.shields.io/badge/LLaMA_3.3_70B-0468FF?style=for-the-badge&logo=meta&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq_LPU_API-F55036?style=for-the-badge&logoColor=white)
+![Embeddings](https://img.shields.io/badge/sentence--transformers-FF6F00?style=for-the-badge&logoColor=white)
 
-### AI / ML / Deep Learning
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+### 🐍 Backend & Programming
+![Python](https://img.shields.io/badge/Python_3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL_Advanced-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Stripe](https://img.shields.io/badge/Stripe_API-635BFF?style=for-the-badge&logo=stripe&logoColor=white)
+
+### ⚙️ Machine Learning & Deep Learning
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow_2.x-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
-
-### Data & Analysis
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
 
-### Backend & Tools
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+### ☁️ Cloud, MLOps & Deployment
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-
-</div>
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Ajaysomala&show_icons=true&theme=react&bg_color=0d1117&title_color=00d4aa&icon_color=00d4aa&text_color=eef1f8&border_color=00d4aa&border_radius=10&include_all_commits=true&count_private=true" />
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Ajaysomala&theme=react&background=0d1117&ring=00d4aa&fire=c9a84c&currStreakLabel=00d4aa&border=00d4aa&border_radius=10" />
-
-<br/>
-
-<img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ajaysomala&layout=compact&theme=react&bg_color=0d1117&title_color=00d4aa&text_color=eef1f8&border_color=00d4aa&border_radius=10&langs_count=8" />
-
-</div>
-
----
-
-## 🏆 Certifications
-
-<div align="center">
-
-| Badge | Certification | Issuer |
-|-------|--------------|--------|
-| 🤖 | **AI Data Scientist** | NASSCOM |
-| ✨ | **Generative AI Introduction** | Microsoft Learning |
-| 🐍 | **Programming for Everybody (Python)** | HackerRank |
-| ⚡ | **Agile Methodology Virtual Experience** | Forage |
-| 📘 | **Python (Basic)** | Udemy |
 
 </div>
 
@@ -146,45 +110,44 @@ print(me.current_status())
 ## 💼 Work Experience
 
 ```
-🏢 Tech Mahindra Ltd — Data Operations Analyst
-   📅 Sep 2024 – Dec 2025 | 📍 Hyderabad, Telangana
-   ✅ 98%+ data accuracy across high-volume operations
-   ✅ Zero critical errors in sensitive shipment & customs data
-   ✅ SLA-driven data pipeline management
+🏢 Tata Consultancy Services (TCS) — Associate Software Engineer
+   📅 Dec 2025 – May 2026 | 📍 Hyderabad, Telangana
+   ✅ Engineered classification pipelines via Scikit-learn achieving 82–87% validation accuracy with sub-45ms Flask inference.
+   ✅ Optimized SQL queries and database schemas, improving preprocessing ingestion speeds by 20%.
+   ✅ Automated feature engineering pipelines on 10K–50K records, reducing engineering cycle time by ~25–30%.
 
-🏢 Trylogic Soft Solutions — Python AI/ML & Data Science Intern  
-   📅 Oct 2023 – Jun 2024 | 📍 Vijayawada, Andhra Pradesh
-   ✅ Designed & delivered 31 end-to-end AI/ML projects
-   ✅ Built web scraping tools, REST APIs, Flask deployments
-   ✅ Worked across NLP, CV, Deep Learning & GenAI domains
+🏢 Tech Mahindra — Associate
+   📅 Sep 2024 – Nov 2025 | 📍 Hyderabad, Telangana
+   ✅ Engineered high-volume text pipelines in WFMS to prepare high-fidelity inputs for training downstream NLP and LLMs.
+   ✅ Designed data validation algorithms and quality checks, eliminating label noise and reducing discrepancies by 20%.
+   ✅ Maintained data integrity and document auditing across enterprise critical datasets.
+
+🏢 BO IT Solutions Pvt Ltd — AI/ML Data Scientist
+   📅 Aug 2022 – Jun 2024 | 📍 Hyderabad, Telangana
+   ✅ Delivered 20+ end-to-end AI/ML client implementations across NLP, Computer Vision, and Deep Learning.
+   ✅ Built CNN and LSTM deep learning architectures, improving baseline accuracy by ~15% over traditional ML models.
+   ✅ Performed automated feature extraction and EDA on 10K–100K+ records, reducing preprocessing time by ~30%.
 ```
 
 ---
 
-## 📈 Contribution Activity
+## 🏆 Verified Certifications
 
-<div align="center">
-
-[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Ajaysomala&bg_color=0d1117&color=00d4aa&line=00d4aa&point=c9a84c&area=true&hide_border=true)](https://github.com/Ajaysomala)
-
-</div>
+- 🤖 **Career Essentials in Generative AI** — Microsoft & LinkedIn
+- ☁️ **Develop AI Apps with Azure AI Foundry SDK** — Microsoft Learn
+- 🐍 **Introduction to Python Programming** — Microsoft Learning
+- 💼 **Transform Your Business with Microsoft 365 Copilot** — Microsoft Learn
+- 📊 **Artificial Intelligence Foundation Certification** — NASSCOM
+- 📜 **Python & SQL Skills Certifications** — HackerRank
 
 ---
 
-## 🤝 Let's Connect
+## 🤝 Connect With Me
 
 <div align="center">
 
-> *"Building intelligent solutions that make a real difference."* 🚀
-
-<br/>
-
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-00d4aa?style=for-the-badge)](https://ajaysomala.github.io)
+[![Portfolio](https://img.shields.io/badge/🌐_Interactive_Portfolio-ajaysomala.github.io-00f2fe?style=for-the-badge)](https://ajaysomala.github.io)
 [![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Connect-0077b5?style=for-the-badge)](https://linkedin.com/in/ajaysomala-8a806b213)
-[![Email](https://img.shields.io/badge/📬_Email-Reach_Out-d14836?style=for-the-badge)](mailto:ajaysomala@gmail.com)
-
-<br/>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=00d4aa&height=120&section=footer&animation=fadeIn" />
+[![GitHub](https://img.shields.io/badge/🐙_GitHub-Follow-181717?style=for-the-badge)](https://github.com/Ajay-010)
 
 </div>
