@@ -22,6 +22,20 @@
 body{background:var(--bg);color:var(--ink);font:400 1.02rem/1.7 var(--fb);overflow-x:hidden;transition:background .3s,color .3s}
 a{color:inherit}:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.4;-webkit-mask:radial-gradient(ellipse at 50% 25%,#000 15%,transparent 75%);mask:radial-gradient(ellipse at 50% 25%,#000 15%,transparent 75%)}
+.bg i{position:absolute;border-radius:50%;filter:blur(110px);opacity:.2;animation:drift 22s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:55vw;height:55vw;left:-15%;top:-20%;background:#2563eb}
+.bg i:nth-child(2){width:45vw;height:45vw;right:-12%;top:18%;background:#7c3aed;animation-delay:-8s}
+.bg i:nth-child(3){width:42vw;height:42vw;left:22%;bottom:-28%;background:#0891b2;animation-delay:-14s}
+[data-theme=light] .bg i{opacity:.1}[data-theme=light] .bg::before{opacity:.6}
+@keyframes drift{to{transform:translate(6vw,4vh) scale(1.15)}}
+#spot{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(circle,rgba(110,168,254,.15),transparent 65%);pointer-events:none;z-index:0;opacity:0;transition:opacity .3s}[data-theme=light] #spot{background:radial-gradient(circle,rgba(29,78,216,.09),transparent 65%)}
+#dot,#ring{position:fixed;left:0;top:0;pointer-events:none;z-index:999;border-radius:50%;opacity:0}
+#dot{width:7px;height:7px;margin:-3.5px;background:var(--acc)}#ring{width:34px;height:34px;margin:-17px;border:1px solid var(--acc);transition:width .2s,height .2s,margin .2s,background .2s}#ring.big{width:54px;height:54px;margin:-27px;background:var(--tag)}
+@media(hover:none){#spot,#dot,#ring{display:none}}
+.card,.hack,.certs li{background-image:radial-gradient(240px circle at var(--mx,-999px) var(--my,-999px),var(--tag),transparent 70%)}
+.ph{transition:transform .2s ease-out}.btn,.theme,#fab{transition:transform .2s ease-out,background .25s,color .25s,border-color .2s,filter .2s}
 #net{position:fixed;inset:0;z-index:0;pointer-events:none}
 header{position:sticky;top:0;z-index:50;background:var(--glass);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;gap:1rem;height:64px}
@@ -31,7 +45,7 @@ nav{margin-left:auto}nav ul{display:flex;gap:1.8rem;list-style:none}nav a{font-s
 .acts{display:flex;align-items:center;gap:.6rem}
 .theme,.menu{height:36px;border-radius:4px;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;font:500 .75rem var(--fb);text-transform:uppercase;letter-spacing:.1em;padding:0 .9rem;transition:.2s}.theme:hover,.menu:hover{border-color:var(--acc);color:var(--acc)}.menu{display:none}
 .hero{padding:4.5rem 0 4rem}
-.hero .wrap{display:grid;grid-template-columns:1fr 240px;grid-template-areas:"hn ph" "hr ph";column-gap:4rem;align-items:start}
+.hero .wrap{display:grid;grid-template-columns:1fr 330px;grid-template-areas:"hn ph" "hr ph";column-gap:4rem;align-items:start}
 .hn{grid-area:hn;align-self:end}.hr{grid-area:hr}
 .tag{display:inline-block;font-size:.74rem;font-weight:600;color:var(--acc);letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--acc);padding:.3rem .8rem;margin-bottom:1.4rem}
 h1{font:700 clamp(3rem,7vw,5.4rem)/1 var(--fd);letter-spacing:-.02em}h1 em{font-style:italic;font-weight:500;color:var(--acc)}
@@ -41,12 +55,14 @@ h1{font:700 clamp(3rem,7vw,5.4rem)/1 var(--fd);letter-spacing:-.02em}h1 em{font-
 .btn{display:inline-block;padding:.8rem 1.5rem;border-radius:2px;font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:var(--fb);transition:.25s}
 .btn.main{background:var(--acc);border-color:var(--acc);color:var(--on)}.btn.main:hover{filter:brightness(1.1)}.btn:not(.main):hover{background:var(--ink);color:var(--bg)}
 .stats{display:flex;gap:2.2rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line);flex-wrap:wrap}.stats div{font:700 2.1rem var(--fd);line-height:1}.stats small{display:block;font:500 .68rem var(--fb);color:var(--mute);margin-top:.5rem;letter-spacing:.14em}
-.ph{grid-area:ph;position:relative;align-self:center;justify-self:end;width:220px}.ph img{display:block;width:220px;height:220px;aspect-ratio:1/1;object-fit:cover;object-position:center 22%;border-radius:6px}@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+.ph{grid-area:ph;position:relative;align-self:center;justify-self:center;width:290px}.ph img{display:block;width:290px;height:290px;aspect-ratio:1/1;object-fit:cover;object-position:center 22%;border-radius:6px}@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
 .ph{isolation:isolate}
 .ph::before,.ph::after{content:"";position:absolute;z-index:-1;background:conic-gradient(from var(--a),var(--acc),transparent 28%,#38bdf8 52%,transparent 76%,var(--acc));animation:spin 5s linear infinite}
 .ph::before{inset:-16px;border-radius:22px;filter:blur(22px);opacity:.65;animation:spin 5s linear infinite,pulse 3s ease-in-out infinite}
 .ph::after{inset:-3px;border-radius:9px}
 @keyframes spin{to{--a:360deg}}@keyframes pulse{50%{opacity:.35}}
+.st{position:absolute;left:-18px;bottom:22px;z-index:3;display:flex;align-items:center;gap:.5rem;background:var(--panel);border:1px solid var(--line);padding:.4rem .8rem;border-radius:4px;font:600 .68rem var(--fb);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.st s{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 1.6s ease-in-out infinite}
 .tick{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0;position:relative;z-index:1;background:var(--glass)}.tick div{display:flex;gap:3rem;width:max-content;animation:mq 40s linear infinite;font:500 .78rem var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}@keyframes mq{to{transform:translateX(-50%)}}
 section{padding:5rem 0;border-top:1px solid var(--line)}
 h2{font:700 clamp(2rem,4vw,2.8rem)/1.1 var(--fd);letter-spacing:-.01em;margin-bottom:2.2rem}h2 em{font-style:italic;font-weight:500;color:var(--acc)}
@@ -82,12 +98,14 @@ h2{font:700 clamp(2rem,4vw,2.8rem)/1.1 var(--fd);letter-spacing:-.01em;margin-bo
 footer{padding:1.8rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 #fab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:60;display:none;padding:.8rem 1.3rem;border:0;border-radius:2px;font:600 .78rem var(--fb);text-transform:uppercase;letter-spacing:.12em;cursor:pointer;background:var(--acc);color:var(--on);box-shadow:0 10px 30px rgba(0,0,0,.35)}#fab.show{display:block}
 @media(max-width:900px){.menu{display:block}nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}nav.open{display:block}nav ul{flex-direction:column;gap:.2rem}nav a{display:block;padding:.6rem 0}
-.hero .wrap{grid-template-columns:1fr;grid-template-areas:"hn" "ph" "hr"}.ph{width:160px;margin:1.6rem 0 2rem 0;justify-self:start}.ph img{width:160px;height:160px}.hn{align-self:start}
+.hero .wrap{grid-template-columns:1fr;grid-template-areas:"hn" "ph" "hr"}.ph{width:210px;margin:1.6rem 0 2rem 0;justify-self:start}.ph img{width:210px;height:210px}.hn{align-self:start}
 .about,.grid,.sk,.certs{grid-template-columns:1fr}.about{gap:2.5rem}.sk{gap:.3rem}.chat{height:520px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<div id="spot"></div><div id="dot"></div><div id="ring"></div>
 <canvas id="net" aria-hidden="true"></canvas>
 <header><div class="wrap">
 <a class="logo" href="#top"><img src="assets/img/ajay.jpeg" alt="">Somala Ajay</a>
@@ -98,7 +116,7 @@ footer{padding:1.8rem 0;border-top:1px solid var(--line);font-size:.85rem;color:
 <main id="top">
 <div class="hero"><div class="wrap">
 <div class="hn"><span class="tag">Open to AI/ML and Gen AI roles</span><h1>Somala <em>Ajay</em></h1></div>
-<div class="ph"><img src="assets/img/ajay.jpeg" alt="Portrait of Somala Ajay" width="220" height="220"></div>
+<div class="ph"><img src="assets/img/ajay.jpeg" alt="Portrait of Somala Ajay" width="290" height="290"><span class="st"><s></s>Open to work</span></div>
 <div class="hr">
 <p class="role">AI/ML Engineer &nbsp;·&nbsp; Generative AI Engineer &nbsp;·&nbsp; Python Developer</p>
 <p class="lead">I build LLM applications, RAG pipelines and full-stack AI products, and I run PinGuru, a live Instagram DM automation SaaS. Based in Hyderabad.</p>
@@ -222,6 +240,17 @@ $('#chips').onclick=e=>{const b=e.target.closest('[data-ask]');if(b)ask(b.datase
 (async()=>{busy=true;await stream(bot(),R_.hi.t);busy=false})();
 const fab=$('#fab');new IntersectionObserver(([e])=>fab.classList.toggle('show',!e.isIntersecting)).observe($('#chatbox'));
 fab.onclick=()=>{$('#about').scrollIntoView();setTimeout(()=>inp.focus(),500)};
+if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+const sp=$('#spot'),dot=$('#dot'),ring=$('#ring'),ph=$('.ph'),bl=[...document.querySelectorAll('.bg i')];let rx=0,ry=0,mx=0,my=0,mag=null;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;sp.style.opacity=dot.style.opacity=ring.style.opacity=1;
+sp.style.transform=dot.style.transform=`translate(${mx}px,${my}px)`;
+const nx=mx/innerWidth-.5,ny=my/innerHeight-.5;bl.forEach((b,i)=>b.style.translate=`${nx*(i+1)*-30}px ${ny*(i+1)*-30}px`);
+ph.style.transform=`perspective(800px) rotateY(${nx*10}deg) rotateX(${-ny*10}deg)`;
+const c=e.target.closest('.card,.hack,.certs li');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}
+const m=e.target.closest('.btn,.theme,#fab');if(mag&&mag!==m)mag.style.transform='';mag=m;
+if(m){const r=m.getBoundingClientRect();m.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`}});
+document.addEventListener('mouseover',e=>ring.classList.toggle('big',!!e.target.closest('a,button,input,.card')));
+(function f(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(f)})()}
 </script>
 </body>
 </html>
