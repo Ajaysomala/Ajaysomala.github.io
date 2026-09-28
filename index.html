@@ -1,1307 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Somala Ajay — AI/ML Engineer | Gen AI Engineer | Python Developer</title>
-  
-  <!-- SEO & Anti-Scraping Meta Tags -->
-  <meta name="description" content="Somala Ajay — AI/ML & Generative AI Engineer with 3+ years experience building production-grade LLM applications, RAG pipelines, and full-stack AI products." />
-  <meta name="keywords" content="Somala Ajay, AI ML Engineer, Gen AI Engineer, Python Developer, RAG, FastAPI, FAISS, LangChain, TCS, Hyderabad, Multi-Agent" />
-  <meta name="author" content="Somala Ajay" />
-  <meta name="robots" content="index, follow, noai, noimageai" />
-  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Somala Ajay — AI/ML Engineer | Gen AI Engineer" />
-  <meta property="og:description" content="AI/ML & Gen AI Engineer with 3+ years of experience designing scalable RAG pipelines, LLM systems, and production ML pipelines." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ajaysomala.github.io/" />
-  
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23030712'/><text x='50' y='66' font-family='sans-serif' font-size='48' font-weight='900' text-anchor='middle' fill='%2300f2fe'>SA</text></svg>" />
-  
-  <!-- Google Fonts & Stylesheet -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="./assets/css/portfolio.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Somala Ajay — AI/ML & Gen AI Engineer, Hyderabad</title>
+<meta name="description" content="Somala Ajay, AI/ML and Generative AI engineer in Hyderabad. RAG pipelines, multi-agent systems, and the PinGuru SaaS.">
+<link rel="canonical" href="https://ajaysomala.github.io/">
+<meta property="og:title" content="Somala Ajay — AI/ML & Gen AI Engineer">
+<meta property="og:description" content="RAG pipelines, multi-agent systems and production ML. Based in Hyderabad.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ajaysomala.github.io/">
+<meta property="og:image" content="https://ajaysomala.github.io/assets/img/ajay.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<style>
+:root{--bg:#0b1120;--ink:#eaeef7;--mute:#93a0ba;--line:#222d47;--acc:#7b93ff;--panel:#131c33;--body:#b7c2d9;--hdr:rgba(11,17,32,.88);--tag:#182449;--hack:#16223d;--fd:'Bricolage Grotesque',system-ui,sans-serif;--fb:'IBM Plex Sans',system-ui,sans-serif;color-scheme:dark}
+[data-theme=light]{--bg:#f2f4f7;--ink:#0f1a2b;--mute:#55627a;--line:#d5dbe6;--acc:#2340d8;--panel:#e7ebf3;--body:#33415a;--hdr:rgba(242,244,247,.92);--tag:#e3e8fb;--hack:#0f1a2b;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.7 var(--fb)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+header{position:sticky;top:0;z-index:10;background:var(--hdr);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 1.1rem var(--fd);text-decoration:none}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav a{font-size:.9rem;font-weight:500;color:var(--mute);text-decoration:none}
+nav a:hover{color:var(--acc)}
+.acts{display:flex;align-items:center;gap:.6rem}
+.theme{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;font-size:1.05rem;line-height:1;transition:transform .25s,border-color .2s}
+.theme:hover{border-color:var(--acc);transform:rotate(20deg)}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:.35rem .8rem;font:500 .9rem var(--fb);color:var(--ink);cursor:pointer}
+/* hero */
+.hero{padding:4.5rem 0 4rem}
+.hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:3.5rem;align-items:center}
+.status{display:inline-block;font-size:.85rem;font-weight:500;color:var(--acc);background:var(--tag);padding:.3rem .8rem;border-radius:99px;margin-bottom:1.3rem}
+h1{font:800 clamp(2.8rem,7vw,5.2rem)/.98 var(--fd);letter-spacing:-.03em}
+.role{font:500 1.25rem/1.4 var(--fd);color:var(--mute);margin:1.2rem 0}
+.lead{max-width:34rem;color:var(--body)}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+.btn{display:inline-block;padding:.7rem 1.4rem;border-radius:6px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--ink);transition:background .2s,color .2s}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn.main:hover{background:var(--acc);border-color:var(--acc)}
+.btn:not(.main):hover{background:var(--ink);color:var(--bg)}
+.photo{position:relative;width:300px;justify-self:end;transition:transform .15s ease-out;will-change:transform}
+.photo img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 25%;border-radius:4px 60px 4px 4px;background:var(--panel)}
+.photo::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--acc);border-radius:4px 60px 4px 4px;z-index:-1}
+.hero .wrap>*{animation:in .8s ease both}
+.hero .photo{animation-delay:.15s}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+#glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,rgba(123,147,255,.16),transparent 65%);pointer-events:none;z-index:0;opacity:0;transition:opacity .3s}
+[data-theme=light] #glow{background:radial-gradient(circle,rgba(35,64,216,.10),transparent 65%)}
+header,main,footer{position:relative;z-index:1}
+.row{transition:padding-left .25s,background .25s}
+.row:hover{padding-left:1rem;background:linear-gradient(90deg,var(--tag),transparent 70%)}
+.job,.certs li,.sk{transition:transform .2s}
+.certs li:hover{transform:translateY(-4px)}
+/* sections */
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.5rem)/1.1 var(--fd);letter-spacing:-.02em;margin-bottom:2.2rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.facts{list-style:none;border-top:1px solid var(--line)}
+.facts li{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts span{color:var(--mute)}
+.facts b{font-weight:600;text-align:right}
+/* timeline */
+.tl{border-left:2px solid var(--ink);margin-left:.4rem}
+.job{position:relative;padding:0 0 2.6rem 2rem}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-8px;top:.55rem;width:14px;height:14px;background:var(--bg);border:3px solid var(--acc);border-radius:50%}
+.when{font-size:.85rem;color:var(--acc);font-weight:600}
+.job h3{font:700 1.3rem/1.3 var(--fd);margin:.2rem 0}
+.job h3 span{color:var(--mute);font-weight:500}
+.job ul{margin:.8rem 0 0 1.1rem;color:var(--body)}
+.job li{margin-bottom:.4rem;max-width:46rem}
+/* projects */
+.proj{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:1fr 1.5fr;gap:2rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+.row h3{font:700 1.2rem/1.3 var(--fd)}
+.row h3 a{text-decoration:none;border-bottom:2px solid var(--acc)}
+.row h3 a:hover{color:var(--acc)}
+.stack{font-size:.85rem;color:var(--acc);margin-top:.4rem;font-weight:500}
+.row p{color:var(--body)}
+.hack{background:var(--hack);color:#fff;border:1px solid var(--line);border-radius:6px;padding:2rem;margin-top:2.5rem}
+.hack h3{font:700 1.3rem var(--fd);margin-bottom:.3rem}
+.hack .stack{color:#9db0ff;margin:.8rem 0 0}
+.hack p{color:#c6cfe2;margin-top:.6rem}
+/* skills */
+dl{border-top:1px solid var(--ink)}
+.sk{display:grid;grid-template-columns:14rem 1fr;gap:1.5rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+dt{font:700 1rem var(--fd)}
+dd{color:var(--body)}
+.certs{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.certs li{background:var(--panel);padding:1.1rem 1.3rem;border-radius:4px;font-weight:600}
+.certs small{display:block;font-weight:400;color:var(--mute)}
+/* contact */
+.contact p{max-width:34rem;color:var(--body);margin-bottom:1.5rem}
+.links{display:flex;flex-wrap:wrap;gap:.7rem}
+footer{padding:1.8rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}
+@media(max-width:800px){
+.menu{display:block}
+nav{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}
+nav.open{display:block}
+nav ul{flex-direction:column;gap:.2rem}
+nav a{display:block;padding:.6rem 0}
+.hero{padding-top:2.5rem}
+.hero .wrap,.about,.row,.sk,.certs{grid-template-columns:1fr}
+.photo{width:210px;justify-self:start;order:-1}
+.sk{gap:.3rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}#glow{display:none}}
+@media(hover:none){#glow{display:none}}
+</style>
 </head>
 <body>
-
-  <!-- Custom Glowing Cursor -->
-  <div class="custom-cursor-dot"></div>
-  <div class="custom-cursor-aura"></div>
-
-  <!-- Background Dynamic Mesh & Neural Canvas -->
-  <div id="bg-canvas-container">
-    <canvas id="neuralCanvas" class="neural-canvas"></canvas>
-    <div class="ambient-orb orb-1"></div>
-    <div class="ambient-orb orb-2"></div>
-    <div class="ambient-orb orb-3"></div>
-    <div class="grid-overlay"></div>
-  </div>
-
-  <!-- Floating Navigation Bar -->
-  <header>
-    <nav class="navbar" aria-label="Main Navigation">
-      <a href="#hero" class="brand-logo">
-        <span class="brand-badge">SA</span>
-        <span class="brand-name">Somala Ajay</span>
-      </a>
-
-      <!-- Clean Minimalist Desktop Menu -->
-      <ul class="nav-menu" id="primaryNav">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <!-- Action Group -->
-      <div class="nav-actions">
-        <button id="cmdkTriggerBtn" class="cmdk-trigger-btn" title="Search commands (Cmd+K)" aria-label="Open Command Palette">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span class="cmdk-key-label">⌘K</span>
-        </button>
-
-        <button id="audioToggleBtn" class="audio-toggle-btn" title="Toggle Sound FX" aria-label="Toggle Sound FX">
-          <svg class="audio-icon-muted" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-          <svg class="audio-icon-on" style="display:none;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-        </button>
-
-        <div class="nav-btn-group">
-          <button class="btn-cyber btn-nav-fast open-recruiter-modal-btn" title="Recruiter 1-Page Summary">
-            <span>Fast View</span>
-          </button>
-          <button class="btn-cyber btn-primary btn-nav-resume open-resume-modal-btn">
-            <span>Resume</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-          </button>
-        </div>
-
-        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
-          <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-          <svg class="close-icon" style="display:none;" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero-section">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Left Column -->
-          <div class="hero-content">
-            <div class="status-badge">
-              <span class="status-dot"></span>
-              <span>Available for AI/ML & GenAI Roles</span>
-            </div>
-
-            <h1 class="hero-title">
-              Engineering <br />
-              <span class="text-gradient">Intelligent Systems</span>
-            </h1>
-
-            <div class="hero-typewriter">
-              <span id="heroTypewriter">AI/ML Engineer</span>
-              <span class="typing-cursor"></span>
-            </div>
-
-            <p class="hero-desc">
-              AI/ML & Generative AI Engineer with <strong>3+ years of experience</strong> developing production-grade LLM applications, RAG pipelines, and full-stack AI products. Proven track record of architecting scalable SaaS platforms and deploying 20+ ML/DL models.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projects" class="btn-cyber btn-primary">
-                <span>Explore Projects</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <button class="btn-cyber btn-emerald open-recruiter-modal-btn">
-                <span>Recruiter Fast View</span>
-              </button>
-              <button class="btn-cyber btn-secondary open-resume-modal-btn">
-                <span>View Resume</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              </button>
-            </div>
-
-            <div class="hero-quick-stats">
-              <div class="stat-item">
-                <div class="stat-number">3<span>+ yrs</span></div>
-                <div class="stat-label">Production Exp</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">20<span>+</span></div>
-                <div class="stat-label">AI/ML Deliveries</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">885</div>
-                <div class="stat-label">NASA Vectors</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">87<span>%</span></div>
-                <div class="stat-label">Model Accuracy</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: 3D Autonomous AI Architecture Card -->
-          <div class="hero-visual-wrap">
-            <div class="hero-visual-card tilt-card">
-              <div class="hero-visual-header">
-                <div class="terminal-dots">
-                  <span class="dot-red"></span>
-                  <span class="dot-yellow"></span>
-                  <span class="dot-green"></span>
-                </div>
-                <div class="terminal-title">runtime // multi_agent_orchestrator.py</div>
-                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald);">HEALTHY 🟢</span>
-              </div>
-
-              <div class="visual-node-flow">
-                <div class="agent-node active-flow">
-                  <div class="node-icon-box">⚡</div>
-                  <div class="node-meta">
-                    <h5>Reflex Trigger Layer</h5>
-                    <p>FastAPI Endpoint · Zero-Shot Webhooks</p>
-                  </div>
-                </div>
-
-                <div class="flow-arrow-down">↓</div>
-
-                <div class="agent-node">
-                  <div class="node-icon-box">🧠</div>
-                  <div class="node-meta">
-                    <h5>Planner Agent (LLaMA 3.3-70B)</h5>
-                    <p>Decomposes complex goals · FAISS Context</p>
-                  </div>
-                </div>
-
-                <div class="flow-arrow-down">↓</div>
-
-                <div class="agent-node">
-                  <div class="node-icon-box">⚙️</div>
-                  <div class="node-meta">
-                    <h5>Executor & ML Pipeline</h5>
-                    <p>Scikit-learn · Vector Search · Docker Tasks</p>
-                  </div>
-                </div>
-
-                <div class="flow-arrow-down">↓</div>
-
-                <div class="agent-node">
-                  <div class="node-icon-box">🛡️</div>
-                  <div class="node-meta">
-                    <h5>Reviewer & Self-Correction</h5>
-                    <p>Quality Verification · Zero Hallucination Audit</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT & SUMMARY -->
-    <section id="about" class="section-wrapper">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">
-            <span>01 // PROFILE OVERVIEW</span>
-          </div>
-          <h2 class="section-title">Architecting Production-Ready AI</h2>
-          <p class="section-desc">
-            Bridging foundational machine learning theory with robust, scalable software engineering.
-          </p>
-        </div>
-
-        <div class="glass-card" style="padding: 2.5rem; margin-bottom: 2rem;">
-          <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary);">
-            Professional Summary
-          </h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
-            AI/ML & Generative AI Engineer with <strong>3+ years of experience</strong> developing production-grade LLM applications, RAG pipelines, and full-stack AI products. Strong foundation in data engineering, data validation workflows, and backend API integration. Proven track record of architecting scalable SaaS platforms, deploying vector search architectures, and delivering <strong>20+ ML/DL models</strong> across NLP and Computer Vision. Proficient in Python, SQL, FastAPI, LangChain, FAISS, Docker, and Cloud (AWS/GCP/DigitalOcean).
-          </p>
-          <div class="tech-tag-row">
-            <span class="tech-tag">Hyderabad, Telangana</span>
-            <span class="tech-tag">B.Tech ECE · Aditya University (2018–2022)</span>
-            <span class="tech-tag">Python &amp; SQL Expert</span>
-            <span class="tech-tag">RAG &amp; Vector Databases</span>
-            <span class="tech-tag">FastAPI &amp; Flask APIs</span>
-            <span class="tech-tag">Docker &amp; Cloud Deployment</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SYSTEM ARCHITECTURE TOPOLOGY & TELEMETRY MATRIX -->
-    <section id="architecture" class="section-wrapper">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">
-            <span>02 // SYSTEM ARCHITECTURE</span>
-          </div>
-          <h2 class="section-title">Production Topologies &amp; Telemetry</h2>
-          <p class="section-desc">
-            Explore interactive system workflows designed for high throughput, sub-50ms latency, and enterprise reliability.
-          </p>
-        </div>
-
-        <!-- Architecture Switcher Controls -->
-        <div class="arch-switcher-nav">
-          <button class="arch-tab-btn active" data-arch="nasa">
-            <span>🚀 NASA RAG Pipeline</span>
-          </button>
-          <button class="arch-tab-btn" data-arch="pinguru">
-            <span>📱 PinGuru SaaS Workflow</span>
-          </button>
-          <button class="arch-tab-btn" data-arch="enterprise">
-            <span>⚙️ Enterprise ML Pipeline</span>
-          </button>
-        </div>
-
-        <!-- Interactive Architecture Topology Display -->
-        <div class="glass-card arch-display-card">
-          <div class="arch-card-header">
-            <div>
-              <h3 id="archTitle" class="arch-title">🚀 NASA RAG Systems Engineering Pipeline</h3>
-              <p id="archSubtitle" class="arch-subtitle">270-Page NASA SE Handbook · 885 FAISS Vectors · LLaMA-3.3-70B via Groq</p>
-            </div>
-            <span class="status-pill status-healthy">LIVE INFERENCE</span>
-          </div>
-
-          <div id="archFlowCanvas" class="arch-flow-canvas">
-            <div class="arch-step-node">
-              <div class="arch-node-badge">01</div>
-              <div class="arch-node-body">
-                <h5>Document Ingestion</h5>
-                <p>PyPDF &amp; PdfPlumber chunking 270 pages into 500-token semantic chunks</p>
-              </div>
-            </div>
-            <div class="arch-connector">➔</div>
-            <div class="arch-step-node">
-              <div class="arch-node-badge">02</div>
-              <div class="arch-node-body">
-                <h5>Embedding Generation</h5>
-                <p>sentence-transformers (all-MiniLM-L6-v2) generates 768-dim dense vectors</p>
-              </div>
-            </div>
-            <div class="arch-connector">➔</div>
-            <div class="arch-step-node">
-              <div class="arch-node-badge">03</div>
-              <div class="arch-node-body">
-                <h5>Vector Index &amp; Search</h5>
-                <p>FAISS IndexFlatIP cosine similarity retrieval with sub-40ms p95 lookup</p>
-              </div>
-            </div>
-            <div class="arch-connector">➔</div>
-            <div class="arch-step-node">
-              <div class="arch-node-badge">04</div>
-              <div class="arch-node-body">
-                <h5>LLM Synthesizer &amp; Citations</h5>
-                <p>Groq LPU LLaMA-3.3-70B synthesizes answer with exact section/page citations</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Telemetry Matrix Grid -->
-          <div class="telemetry-matrix">
-            <div class="telemetry-card">
-              <div class="telemetry-label">p95 Retrieval Latency</div>
-              <div class="telemetry-value" id="telemetryP95">38 <span>ms</span></div>
-              <div class="telemetry-sub">FAISS dense vector lookup</div>
-            </div>
-            <div class="telemetry-card">
-              <div class="telemetry-label">Token Generation Throughput</div>
-              <div class="telemetry-value" id="telemetryTps">285 <span>tok/s</span></div>
-              <div class="telemetry-sub">Groq LPU LLaMA-3.3-70B</div>
-            </div>
-            <div class="telemetry-card">
-              <div class="telemetry-label">Vector Index Density</div>
-              <div class="telemetry-value" id="telemetryVectors">885 <span>vectors</span></div>
-              <div class="telemetry-sub">NASA Handbook Semantic Segments</div>
-            </div>
-            <div class="telemetry-card">
-              <div class="telemetry-label">Cosine Similarity Threshold</div>
-              <div class="telemetry-value" id="telemetryCos">0.94<span>+</span></div>
-              <div class="telemetry-sub">High precision citation gating</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK EXPERIENCE TIMELINE -->
-    <section id="experience" class="section-wrapper">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">
-            <span>02 // CAREER TIMELINE</span>
-          </div>
-          <h2 class="section-title">Work Experience</h2>
-          <p class="section-desc">
-            Proven track record across enterprise consulting, workflow automation, and high-impact AI/ML engineering.
-          </p>
-        </div>
-
-        <div class="timeline-container">
-          <div class="timeline-line"></div>
-
-          <!-- Role 1: TCS -->
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="experience-header">
-                <div class="company-title">
-                  <h4>Tata Consultancy Services (TCS)</h4>
-                  <h5>Associate Software Engineer</h5>
-                </div>
-                <div class="experience-meta">
-                  <span class="experience-date">12/2025 – 05/2026</span>
-                  <span class="experience-location">Hyderabad, India</span>
-                </div>
-              </div>
-              <ul class="experience-bullets">
-                <li>Designed and implemented <strong>end-to-end ML pipelines</strong> for structured client datasets covering data ingestion, preprocessing, and model training.</li>
-                <li><strong>Optimized SQL queries</strong> and database schemas to handle large-scale data extraction, improving preprocessing data ingestion speeds by <strong>20%</strong>.</li>
-                <li>Performed EDA, data preprocessing, and feature engineering using <strong>Pandas and NumPy</strong> on datasets ranging from 10K to 50K records.</li>
-                <li>Built classification models using <strong>Scikit-learn</strong>, achieving <strong>~82–87% accuracy</strong> on validation datasets. Deployed ML models via <strong>Flask REST API</strong> for internal inference workflows.</li>
-                <li>Automated data preprocessing pipelines, reducing manual engineering effort by <strong>~25–30%</strong>. Used SQL for data extraction and transformation to prepare model-ready datasets.</li>
-                <li>Tracked and versioned ML experiments using Git, ensuring strict reproducibility across development iterations.</li>
-              </ul>
-              <div class="tech-tag-row">
-                <span class="tech-tag">ML Pipelines</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">Flask REST API</span>
-                <span class="tech-tag">SQL Optimization</span>
-                <span class="tech-tag">Pandas &amp; NumPy</span>
-                <span class="tech-tag">Feature Engineering</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Role 2: Tech Mahindra -->
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="experience-header">
-                <div class="company-title">
-                  <h4>Tech Mahindra</h4>
-                  <h5>Associate</h5>
-                </div>
-                <div class="experience-meta">
-                  <span class="experience-date">09/2024 – 11/2025</span>
-                  <span class="experience-location">Hyderabad, India</span>
-                </div>
-              </div>
-              <ul class="experience-bullets">
-                <li>Worked on client projects utilizing the <strong>Workflow Management System (WFMS)</strong> to handle and process complex structured data.</li>
-                <li>Engineered high-volume unstructured and semi-structured text data pipelines within WFMS to prepare <strong>high-fidelity inputs for training downstream NLP and LLM architectures</strong>.</li>
-                <li>Performed document auditing and data correction to maintain high accuracy and data integrity across critical datasets.</li>
-                <li>Supported continuous data validation and quality checks, reducing discrepancies and improving overall workflow reliability.</li>
-                <li>Designed and implemented robust data validation algorithms and quality verification workflows, <strong>eliminating label noise and reducing feature discrepancies by 20%</strong>.</li>
-              </ul>
-              <div class="tech-tag-row">
-                <span class="tech-tag">Workflow Management System (WFMS)</span>
-                <span class="tech-tag">NLP Pipelines</span>
-                <span class="tech-tag">Data Validation</span>
-                <span class="tech-tag">Data Integrity</span>
-                <span class="tech-tag">Doc Auditing</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Role 3: BO IT Solutions -->
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="experience-header">
-                <div class="company-title">
-                  <h4>BO IT Solutions Pvt Ltd</h4>
-                  <h5>AI/ML Data Scientist</h5>
-                </div>
-                <div class="experience-meta">
-                  <span class="experience-date">08/2022 – 06/2024</span>
-                  <span class="experience-location">Hyderabad, India</span>
-                </div>
-              </div>
-              <ul class="experience-bullets">
-                <li>Delivered <strong>20+ end-to-end AI/ML projects</strong> across NLP, Computer Vision, and Deep Learning, covering the full pipeline from raw data collection to model deployment.</li>
-                <li>Performed EDA and feature engineering on datasets of <strong>10K–100K+ records</strong> using Pandas, NumPy, and Matplotlib, reducing data preprocessing time by <strong>~30%</strong>.</li>
-                <li>Built and evaluated classification and regression models using <strong>Scikit-learn and TensorFlow</strong>, consistently achieving <strong>80–90% accuracy</strong> across multiple project deliveries.</li>
-                <li>Implemented <strong>CNN and LSTM-based deep learning models</strong> for image classification and sequence prediction tasks, improving baseline accuracy by <strong>~15%</strong> over traditional ML approaches.</li>
-              </ul>
-              <div class="tech-tag-row">
-                <span class="tech-tag">TensorFlow &amp; Keras</span>
-                <span class="tech-tag">CNNs &amp; LSTMs</span>
-                <span class="tech-tag">Computer Vision</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">20+ Production Deliveries</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- INTERACTIVE LIVE DEMOS -->
-    <section id="demos" class="section-wrapper">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">
-            <span>03 // LIVE ARCHITECTURE SANDBOX</span>
-          </div>
-          <h2 class="section-title">Interactive AI Demonstrations</h2>
-          <p class="section-desc">
-            Test the live RAG vector search logic & multi-agent orchestration runtime directly in your browser.
-          </p>
-        </div>
-
-        <div class="demo-grid">
-          
-          <!-- Demo 1: NASA RAG Pipeline Simulator -->
-          <div class="interactive-box tilt-card">
-            <div class="interactive-header">
-              <div>
-                <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary);">
-                  🚀 NASA RAG Pipeline Simulator
-                </h4>
-                <p style="font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">
-                  270-Page NASA SE Handbook · 885 Vectors · FAISS Search
-                </p>
-              </div>
-              <span style="font-size: 0.72rem; color: var(--primary); font-family: var(--font-mono); background: rgba(0,242,254,0.1); padding: 0.2rem 0.5rem; border-radius: 4px;">
-                LLaMA-3.3-70B
-              </span>
-            </div>
-
-            <div class="rag-query-input-wrap">
-              <input type="text" id="ragQueryInput" class="rag-query-input" value="What is the Key Decision Point (KDP) process in NASA projects?" placeholder="Enter NASA Systems Engineering query..." />
-            </div>
-
-            <div class="preset-queries-row">
-              <button class="preset-btn" data-query-key="kdp">⚡ KDP Gates</button>
-              <button class="preset-btn" data-query-key="trl">🔬 TRL Readiness</button>
-              <button class="preset-btn" data-query-key="pdr">📐 PDR Review</button>
-              <button class="preset-btn" data-query-key="risk">🛡️ Risk Mgmt</button>
-            </div>
-
-            <button id="runRagBtn" class="btn-cyber btn-primary" style="width: 100%; margin-bottom: 1rem;">
-              <span>Execute RAG Query &amp; Vector Lookup</span>
-            </button>
-
-            <div class="rag-live-output">
-              <div class="output-status-bar">
-                <span id="ragVectorMeta">885 indexed / 4 matched (Cosine Sim: 0.942)</span>
-                <span id="ragConfidence" class="confidence-pill">Confidence: 98.4%</span>
-              </div>
-              <div id="ragTextStream" class="rag-text-stream">
-                A Key Decision Point (KDP) is an event in the NASA project life cycle where the Decision Authority assesses the project readiness, maturity, and compliance to progress into the next project phase. KDP gates evaluate programmatic viability alongside technical milestones.
-              </div>
-              <div id="ragCitationBox" class="rag-citation-box">
-                <span>📖 Citation:</span>
-                <span id="ragCitationText">NASA Systems Engineering Handbook (NASA/SP-2016-6105 Rev 2), Section 3.0, Page 42</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Demo 2: Autonomous Multi-Agent Runtime -->
-          <div class="interactive-box tilt-card">
-            <div class="interactive-header">
-              <div>
-                <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary);">
-                  🤖 Multi-Agent Autonomous Operations
-                </h4>
-                <p style="font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">
-                  Reflex Layer · Planner · Parallel Executors · Reviewer
-                </p>
-              </div>
-              <span style="font-size: 0.72rem; color: var(--emerald); font-family: var(--font-mono); background: rgba(16,185,129,0.1); padding: 0.2rem 0.5rem; border-radius: 4px;">
-                Task Memory Active
-              </span>
-            </div>
-
-            <div class="agent-step-flow" style="margin-bottom: 1.25rem;">
-              <div class="step-card active-step">
-                <div class="step-info">
-                  <div class="step-number">1</div>
-                  <div>
-                    <h6 style="font-size: 0.85rem; color: var(--text-primary);">Webhook Ingestion &amp; Reflex Layer</h6>
-                    <p style="font-size: 0.74rem; color: var(--text-muted);">Fixed rules evaluate known triggers instantly</p>
-                  </div>
-                </div>
-                <span style="font-size: 0.72rem; color: var(--emerald); font-family: var(--font-mono);">PASSED</span>
-              </div>
-
-              <div class="step-card">
-                <div class="step-info">
-                  <div class="step-number">2</div>
-                  <div>
-                    <h6 style="font-size: 0.85rem; color: var(--text-primary);">LLM Planner (LLaMA 3.3)</h6>
-                    <p style="font-size: 0.74rem; color: var(--text-muted);">Deconstructs plain-language goals into sub-tasks</p>
-                  </div>
-                </div>
-                <span style="font-size: 0.72rem; color: var(--primary); font-family: var(--font-mono);">PLANNED</span>
-              </div>
-
-              <div class="step-card">
-                <div class="step-info">
-                  <div class="step-number">3</div>
-                  <div>
-                    <h6 style="font-size: 0.85rem; color: var(--text-primary);">Executor &amp; ML Tool Dispatcher</h6>
-                    <p style="font-size: 0.74rem; color: var(--text-muted);">Executes parallel inference &amp; data transformations</p>
-                  </div>
-                </div>
-                <span style="font-size: 0.72rem; color: var(--amber); font-family: var(--font-mono);">RUNNING</span>
-              </div>
-
-              <div class="step-card">
-                <div class="step-info">
-                  <div class="step-number">4</div>
-                  <div>
-                    <h6 style="font-size: 0.85rem; color: var(--text-primary);">Reviewer Quality Audit &amp; Self-Correction</h6>
-                    <p style="font-size: 0.74rem; color: var(--text-muted);">Validates output schema and self-corrects errors</p>
-                  </div>
-                </div>
-                <span style="font-size: 0.72rem; color: var(--violet); font-family: var(--font-mono);">AUDITED</span>
-              </div>
-            </div>
-
-            <button id="runAgentSimulationBtn" class="btn-cyber btn-emerald" style="width: 100%; margin-bottom: 1rem;">
-              <span>Dispatch Autonomous Task Workflow</span>
-            </button>
-
-            <div style="background: #020617; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-secondary); min-height: 50px;" id="agentExecutionLog">
-              [SYSTEM IDLE]: Click above to trigger the autonomous multi-agent task execution sequence.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- KEY PROJECTS -->
-    <section id="projects" class="section-wrapper">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">
-            <span>04 // FEATURED WORK</span>
-          </div>
-          <h2 class="section-title">Key Projects</h2>
-          <p class="section-desc">
-            Production-grade systems, RAG retrieval architectures, SaaS automation, and deep learning engines.
-          </p>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="projects-filter-nav">
-          <button class="filter-btn active" data-filter="all">All Projects (5)</button>
-          <button class="filter-btn" data-filter="rag">GenAI &amp; RAG</button>
-          <button class="filter-btn" data-filter="agents">Autonomous Agents</button>
-          <button class="filter-btn" data-filter="saas">Full-Stack SaaS</button>
-          <button class="filter-btn" data-filter="cv">Deep Learning &amp; CV</button>
-        </div>
-
-        <div class="projects-grid">
-          
-          <!-- Project 1: PinGuru SaaS -->
-          <div class="project-card-wrap" data-category="saas rag">
-            <div class="glass-card project-card tilt-card">
-              <div>
-                <div class="project-top-bar">
-                  <span class="project-category-badge">Full-Stack SaaS</span>
-                  <div class="project-links">
-                    <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 class="project-title">PinGuru — Instagram DM Automation SaaS</h3>
-                <p class="project-desc">
-                  Architected and deployed <strong>Pinguru (pinguru.me)</strong>, a full-stack Instagram automation SaaS featuring real-time DM triggers and multi-tier Stripe billing. Built with a <strong>FastAPI &amp; MongoDB</strong> backend and Instagram Graph API, integrating robust security (JWT, OTP) and automated comment-to-DM workflows on DigitalOcean.
-                </p>
-              </div>
-              <div class="tech-tag-row">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">FastAPI</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">Instagram Graph API</span>
-                <span class="tech-tag">Stripe Billing</span>
-                <span class="tech-tag">DigitalOcean</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: NASA RAG QA System -->
-          <div class="project-card-wrap" data-category="rag">
-            <div class="glass-card project-card tilt-card">
-              <div>
-                <div class="project-top-bar">
-                  <span class="project-category-badge">RAG Architecture</span>
-                  <div class="project-links">
-                    <a href="https://github.com/Ajaysomala/i2e_Hireathon-Complex_Technical_Manual_QA_System" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 class="project-title">Complex Technical Manual QA System (NASA RAG)</h3>
-                <p class="project-desc">
-                  Designed a production-grade RAG pipeline ingesting the <strong>270-page NASA Systems Engineering Handbook</strong>. Indexed <strong>885 semantic vectors</strong> in FAISS using sentence-transformers (all-MiniLM-L6-v2), integrated <strong>LLaMA-3.3-70B via Groq</strong>, confidence scoring (0–100%), multi-turn conversation memory, section-level citations, and 20+ NASA acronym expansions.
-                </p>
-              </div>
-              <div class="tech-tag-row">
-                <span class="tech-tag">FastAPI</span>
-                <span class="tech-tag">FAISS</span>
-                <span class="tech-tag">Groq LLaMA 3.3</span>
-                <span class="tech-tag">sentence-transformers</span>
-                <span class="tech-tag">PyPDF / PdfPlumber</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Autonomous Multi-Agent System -->
-          <div class="project-card-wrap" data-category="agents rag">
-            <div class="glass-card project-card tilt-card">
-              <div>
-                <div class="project-top-bar">
-                  <span class="project-category-badge">Agentic Systems</span>
-                  <div class="project-links">
-                    <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 class="project-title">Autonomous Multi-Agent Operations System</h3>
-                <p class="project-desc">
-                  Built a multi-layered AI agent system with hierarchical autonomy. A reflex layer handles deterministic triggers. A specialized agent (Llama 3.3) plans steps from natural language. For complex goals, a tri-agent cluster — <strong>Planner, Executor, and Reviewer</strong> — splits tasks, executes operations, and self-corrects through review as a containerized FastAPI service with task memory.
-                </p>
-              </div>
-              <div class="tech-tag-row">
-                <span class="tech-tag">Multi-Agent Orchestration</span>
-                <span class="tech-tag">FastAPI</span>
-                <span class="tech-tag">Groq API</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">SQLite</span>
-                <span class="tech-tag">Pydantic</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4: Image Caption Generator -->
-          <div class="project-card-wrap" data-category="cv">
-            <div class="glass-card project-card tilt-card">
-              <div>
-                <div class="project-top-bar">
-                  <span class="project-category-badge">Deep Learning &amp; NLP</span>
-                  <div class="project-links">
-                    <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 class="project-title">Image Caption Generator (CNN + LSTM)</h3>
-                <p class="project-desc">
-                  Built an end-to-end multimodal image captioning architecture using a <strong>CNN encoder</strong> for visual feature extraction and an <strong>LSTM decoder</strong> for sequential natural language caption generation, trained and validated on the Flickr8k dataset.
-                </p>
-              </div>
-              <div class="tech-tag-row">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">CNN</span>
-                <span class="tech-tag">LSTM</span>
-                <span class="tech-tag">Flickr8k</span>
-                <span class="tech-tag">TensorFlow</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5: 20+ Production AI/ML Suite -->
-          <div class="project-card-wrap" data-category="cv rag saas">
-            <div class="glass-card project-card tilt-card">
-              <div>
-                <div class="project-top-bar">
-                  <span class="project-category-badge">Comprehensive Suite</span>
-                  <div class="project-links">
-                    <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 class="project-title">Brain Tumor Classifier &amp; 20+ ML Suite</h3>
-                <p class="project-desc">
-                  Suite of 20+ delivered models including MRI Brain Tumor Classification (90%+ accuracy), Stock Market Predictors, Face Mask Detectors, Amazon Recommendation Engine (collaborative filtering), and Food Nutrition AI.
-                </p>
-              </div>
-              <div class="tech-tag-row">
-                <span class="tech-tag">OpenCV</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">Collaborative Filtering</span>
-                <span class="tech-tag">Flask</span>
-                <span class="tech-tag">Docker</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- TECHNICAL SKILLS MATRIX -->
-    <section id="skills" class="section-wrapper">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">
-            <span>05 // CORE COMPETENCIES</span>
-          </div>
-          <h2 class="section-title">Technical Skills Matrix</h2>
-          <p class="section-desc">
-            Organized across Generative AI, machine learning pipelines, backend systems, and cloud infrastructure.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          
-          <!-- Category 1: Generative AI & Agents -->
-          <div class="glass-card skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">⚡</div>
-              <h4 class="skill-cat-title">Generative AI &amp; Agents</h4>
-            </div>
-            <div class="skill-chips-wrap">
-              <span class="skill-chip">LLMs &amp; Fine-tuning</span>
-              <span class="skill-chip">RAG Pipelines</span>
-              <span class="skill-chip">Semantic Search</span>
-              <span class="skill-chip">Vector Databases (FAISS)</span>
-              <span class="skill-chip">LangChain</span>
-              <span class="skill-chip">LlamaIndex</span>
-              <span class="skill-chip">Prompt Engineering</span>
-              <span class="skill-chip">Agentic Workflows</span>
-              <span class="skill-chip">ADK &amp; MCP</span>
-            </div>
-          </div>
-
-          <!-- Category 2: Programming & Backend -->
-          <div class="glass-card skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">💻</div>
-              <h4 class="skill-cat-title">Programming &amp; Backend</h4>
-            </div>
-            <div class="skill-chips-wrap">
-              <span class="skill-chip">Python</span>
-              <span class="skill-chip">SQL</span>
-              <span class="skill-chip">FastAPI</span>
-              <span class="skill-chip">Flask</span>
-              <span class="skill-chip">RESTful APIs</span>
-              <span class="skill-chip">Pydantic</span>
-              <span class="skill-chip">AsyncIO</span>
-            </div>
-          </div>
-
-          <!-- Category 3: Machine Learning & Deep Learning -->
-          <div class="glass-card skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">🧠</div>
-              <h4 class="skill-cat-title">Machine Learning &amp; DL</h4>
-            </div>
-            <div class="skill-chips-wrap">
-              <span class="skill-chip">Scikit-learn</span>
-              <span class="skill-chip">TensorFlow</span>
-              <span class="skill-chip">Keras</span>
-              <span class="skill-chip">CNN (Computer Vision)</span>
-              <span class="skill-chip">LSTM (Sequence Models)</span>
-              <span class="skill-chip">NLP &amp; Tokenization</span>
-              <span class="skill-chip">Feature Engineering</span>
-              <span class="skill-chip">Model Evaluation</span>
-            </div>
-          </div>
-
-          <!-- Category 4: Data Engineering & Databases -->
-          <div class="glass-card skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">🗄️</div>
-              <h4 class="skill-cat-title">Data Engineering &amp; DBs</h4>
-            </div>
-            <div class="skill-chips-wrap">
-              <span class="skill-chip">Data Validation</span>
-              <span class="skill-chip">Data Preprocessing</span>
-              <span class="skill-chip">ETL Pipelines</span>
-              <span class="skill-chip">Pandas &amp; NumPy</span>
-              <span class="skill-chip">MongoDB</span>
-              <span class="skill-chip">MySQL</span>
-              <span class="skill-chip">SQLite</span>
-            </div>
-          </div>
-
-          <!-- Category 5: Cloud & Developer Tools -->
-          <div class="glass-card skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">☁️</div>
-              <h4 class="skill-cat-title">Cloud &amp; DevOps</h4>
-            </div>
-            <div class="skill-chips-wrap">
-              <span class="skill-chip">Docker</span>
-              <span class="skill-chip">Git &amp; GitHub</span>
-              <span class="skill-chip">GCP</span>
-              <span class="skill-chip">AWS</span>
-              <span class="skill-chip">DigitalOcean</span>
-              <span class="skill-chip">VS Code</span>
-              <span class="skill-chip">GitHub Copilot</span>
-            </div>
-          </div>
-
-          <!-- Category 6: Education & Foundation -->
-          <div class="glass-card skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <div class="skill-cat-icon">🎓</div>
-              <h4 class="skill-cat-title">Education</h4>
-            </div>
-            <div style="font-size: 0.9rem; color: var(--text-secondary);">
-              <strong style="color: var(--text-primary); display: block; margin-bottom: 0.2rem;">
-                B.Tech in Electronics &amp; Communication Engineering
-              </strong>
-              <span>Aditya University, Surampalem, Andhra Pradesh</span>
-              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--primary); margin-top: 0.4rem;">
-                2018 – 2022
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- HACKATHON & CERTIFICATIONS -->
-    <section id="hackathon" class="section-wrapper">
-      <div class="container">
-        
-        <!-- Hackathon Spotlight Banner -->
-        <div class="hackathon-banner">
-          <div class="section-tag" style="color: var(--violet);">
-            <span>NATIONAL AI HACKATHON // i2e CONSULTING</span>
-          </div>
-          <h3 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;">
-            Complex Technical Manual QA System using RAG
-          </h3>
-          <p style="color: var(--text-secondary); max-width: 800px; font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-            Built a high-performance RAG system for the <strong>270-page NASA Systems Engineering Handbook</strong>. Extracted and indexed <strong>885 semantic vectors</strong> into FAISS using sentence-transformers (all-MiniLM-L6-v2) and connected with <strong>Groq API (LLaMA-3.3-70B)</strong> with confidence scoring (0–100%), multi-turn conversation memory, and section-level citations in Bangalore.
-          </p>
-          <div class="tech-tag-row">
-            <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">FAISS</span>
-            <span class="tech-tag">Groq API</span>
-            <span class="tech-tag">LLaMA 3.3-70B</span>
-            <span class="tech-tag">sentence-transformers</span>
-            <span class="tech-tag">PdfPlumber</span>
-          </div>
-        </div>
-
-        <div class="section-header" style="margin-bottom: 2.5rem;">
-          <div class="section-tag">
-            <span>06 // CREDENTIALS</span>
-          </div>
-          <h2 class="section-title">Certifications &amp; Accreditations</h2>
-        </div>
-
-        <div class="certs-grid">
-          
-          <div class="glass-card cert-card tilt-card">
-            <div>
-              <div class="cert-issuer">Microsoft Learning</div>
-              <h5 class="cert-title">Generative AI Introduction</h5>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald); margin-top: 1rem;">VERIFIED CREDENTIAL</span>
-          </div>
-
-          <div class="glass-card cert-card tilt-card">
-            <div>
-              <div class="cert-issuer">Microsoft &amp; LinkedIn</div>
-              <h5 class="cert-title">Career Essentials in Generative AI</h5>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald); margin-top: 1rem;">VERIFIED CREDENTIAL</span>
-          </div>
-
-          <div class="glass-card cert-card tilt-card">
-            <div>
-              <div class="cert-issuer">Microsoft</div>
-              <h5 class="cert-title">Develop an AI App with Azure AI Foundry SDK</h5>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald); margin-top: 1rem;">VERIFIED CREDENTIAL</span>
-          </div>
-
-          <div class="glass-card cert-card tilt-card">
-            <div>
-              <div class="cert-issuer">LinkedIn</div>
-              <h5 class="cert-title">Learning Microsoft 365 Copilot for Work</h5>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald); margin-top: 1rem;">VERIFIED CREDENTIAL</span>
-          </div>
-
-          <div class="glass-card cert-card tilt-card">
-            <div>
-              <div class="cert-issuer">NASSCOM</div>
-              <h5 class="cert-title">AI Data Scientist</h5>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald); margin-top: 1rem;">VERIFIED CREDENTIAL</span>
-          </div>
-
-          <div class="glass-card cert-card tilt-card">
-            <div>
-              <div class="cert-issuer">HackerRank</div>
-              <h5 class="cert-title">Python (Basic) Certification</h5>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald); margin-top: 1rem;">VERIFIED CREDENTIAL</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT & SECURITY ENCRYPTED CHANNELS -->
-    <section id="contact" class="section-wrapper">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">
-            <span>07 // GET IN TOUCH</span>
-          </div>
-          <h2 class="section-title">Let's Build Something Intelligent</h2>
-          <p class="section-desc">
-            Open to AI/ML Engineer and GenAI Engineer roles, consulting, and system architecture collaborations.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          
-          <!-- Contact Info Card -->
-          <div class="glass-card contact-info-card">
-            <h4 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--text-primary); margin-bottom: 1.5rem;">
-              Direct Channels
-            </h4>
-
-            <!-- Obfuscated Email (Protected against bot harvesters) -->
-            <div class="contact-channel-item">
-              <div class="channel-icon">✉️</div>
-              <div class="channel-details">
-                <h6>Email (Protected)</h6>
-                <a id="secureEmailDisplay" href="#">Decoding email...</a>
-              </div>
-              <button id="copyEmailBtn" class="btn-cyber btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem; margin-left: auto;">
-                Copy
-              </button>
-            </div>
-
-            <!-- Obfuscated Phone -->
-            <div class="contact-channel-item">
-              <div class="channel-icon">📞</div>
-              <div class="channel-details">
-                <h6>Phone (Protected)</h6>
-                <a id="securePhoneDisplay" href="#">Decoding phone...</a>
-              </div>
-              <button id="copyPhoneBtn" class="btn-cyber btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem; margin-left: auto;">
-                Copy
-              </button>
-            </div>
-
-            <!-- Location -->
-            <div class="contact-channel-item">
-              <div class="channel-icon">📍</div>
-              <div class="channel-details">
-                <h6>Location</h6>
-                <p>Hyderabad, Telangana, India (IST)</p>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; gap: 1rem;">
-              <a href="https://linkedin.com/in/somala-ajay-8a806b213" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-secondary" style="flex: 1;">
-                <span>LinkedIn</span>
-              </a>
-              <a href="https://github.com/Ajaysomala" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-secondary" style="flex: 1;">
-                <span>GitHub</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="glass-card" style="padding: 2.5rem;">
-            <h4 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--text-primary); margin-bottom: 1.5rem;">
-              Send a Direct Dispatch
-            </h4>
-            <form id="contactForm" class="contact-form">
-              <div class="form-group">
-                <label class="form-label" for="senderName">YOUR NAME</label>
-                <input type="text" id="senderName" class="form-input" placeholder="e.g. Alex Mercer" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="senderEmail">YOUR EMAIL</label>
-                <input type="email" id="senderEmail" class="form-input" placeholder="name@company.com" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="senderMessage">PROJECT BRIEF / MESSAGE</label>
-                <textarea id="senderMessage" class="form-textarea" placeholder="Describe the AI/ML challenge, role, or collaboration..." required></textarea>
-              </div>
-              <button type="submit" class="btn-cyber btn-primary" style="width: 100%;">
-                <span>Transmit Message</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-              </button>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="brand-logo">
-          <span class="brand-badge">SA</span>
-          <span>Somala Ajay</span>
-        </div>
-        <div class="footer-copy">
-          © 2026 Somala Ajay · AI/ML Engineer · Built with High-Performance Glass &amp; Vector Aesthetics
-        </div>
-        <div>
-          <button class="btn-cyber btn-secondary open-resume-modal-btn" style="font-size: 0.78rem; padding: 0.4rem 0.9rem;">
-            PDF Resume
-          </button>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- RECRUITER FAST-VIEW MODAL -->
-  <div id="recruiterModal" class="modal-backdrop" aria-hidden="true">
-    <div class="modal-dialog recruiter-dialog">
-      <div class="modal-header">
-        <div class="recruiter-header-title">
-          <div class="recruiter-badge">⚡ 60-SECOND EXECUTIVE BRIEF</div>
-          <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: var(--text-primary);">
-            Somala Ajay — Executive Summary
-          </h3>
-        </div>
-        <button id="closeRecruiterModalBtn" class="btn-cyber btn-secondary" style="padding: 0.4rem 0.75rem; font-size: 0.85rem;" aria-label="Close Recruiter Modal">
-          ✕
-        </button>
-      </div>
-      <div class="modal-body recruiter-modal-body">
-        
-        <!-- Key Metrics Strip -->
-        <div class="recruiter-stats-strip">
-          <div class="recruiter-stat-box">
-            <div class="recruiter-stat-val">3+ <span>Yrs</span></div>
-            <div class="recruiter-stat-lbl">AI/ML Production Exp</div>
-          </div>
-          <div class="recruiter-stat-box">
-            <div class="recruiter-stat-val">20+</div>
-            <div class="recruiter-stat-lbl">Production Models</div>
-          </div>
-          <div class="recruiter-stat-box">
-            <div class="recruiter-stat-val">&lt;45 <span>ms</span></div>
-            <div class="recruiter-stat-lbl">Flask/FastAPI Latency</div>
-          </div>
-          <div class="recruiter-stat-box">
-            <div class="recruiter-stat-val">885</div>
-            <div class="recruiter-stat-lbl">NASA FAISS Vectors</div>
-          </div>
-        </div>
-
-        <!-- Quick Summary Box -->
-        <div class="recruiter-info-block">
-          <h5 class="recruiter-section-heading">🎯 Target Roles &amp; Availability</h5>
-          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.75rem;">
-            <strong>Target Roles:</strong> AI/ML Engineer · Generative AI Engineer · Python Backend Engineer<br />
-            <strong>Location:</strong> Hyderabad, Telangana, India · <span style="color: var(--emerald);">Open to Remote &amp; Relocation</span><br />
-            <strong>Availability:</strong> <span style="color: var(--emerald); font-weight: 600;">Immediate / 15-Day Notice</span>
-          </p>
-        </div>
-
-        <!-- Core Stack Breakdown -->
-        <div class="recruiter-info-block">
-          <h5 class="recruiter-section-heading">🛠️ Core Technology Matrix</h5>
-          <div class="recruiter-stack-grid">
-            <div class="stack-row">
-              <span class="stack-category">GenAI &amp; RAG:</span>
-              <span class="stack-items">RAG, LangChain, FAISS, LLaMA 3.3, Groq API, sentence-transformers</span>
-            </div>
-            <div class="stack-row">
-              <span class="stack-category">Backend &amp; DB:</span>
-              <span class="stack-items">Python, FastAPI, Flask, SQL, MongoDB, Stripe, REST APIs</span>
-            </div>
-            <div class="stack-row">
-              <span class="stack-category">ML &amp; Data:</span>
-              <span class="stack-items">Scikit-learn, TensorFlow, Keras, Pandas, NumPy, OpenCV, CNN, LSTM</span>
-            </div>
-            <div class="stack-row">
-              <span class="stack-category">Deployment:</span>
-              <span class="stack-items">Docker, DigitalOcean, AWS, GCP, Git, Linux, Webhooks</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Recruiter Action CTAs -->
-        <div class="recruiter-action-row">
-          <a href="./Somala_Ajay_Resume.pdf" download="Somala_Ajay_Resume.pdf" class="btn-cyber btn-primary" style="flex: 1; text-align: center;">
-            <span>Download Official PDF Resume</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          </a>
-          <a href="mailto:jaydeveloper010@gmail.com?subject=Interview%20Invitation%20for%20Somala%20Ajay%20(AI%2FML%20Role)&body=Hi%20Ajay%2C%0A%0AWe%20came%20across%20your%20portfolio%20and%20would%20love%20to%20schedule%20an%20interview." class="btn-cyber btn-emerald" style="flex: 1; text-align: center;">
-            <span>Schedule Interview (1-Click Email)</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- COMMAND PALETTE (CMD+K) MODAL -->
-  <div id="cmdkModal" class="modal-backdrop cmdk-backdrop" aria-hidden="true">
-    <div class="modal-dialog cmdk-dialog">
-      <div class="cmdk-search-wrap">
-        <span class="cmdk-search-icon">🔍</span>
-        <input type="text" id="cmdkInput" class="cmdk-input" placeholder="Type a command or search sections (e.g., 'resume', 'projects', 'rag')..." autocomplete="off" />
-        <span class="cmdk-esc-hint">ESC</span>
-      </div>
-      <div id="cmdkResults" class="cmdk-results-list">
-        <div class="cmdk-group-title">Navigation</div>
-        <button class="cmdk-item" data-action="goto" data-target="#hero">
-          <span class="cmdk-item-icon">⚡</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Overview &amp; Hero</div>
-            <div class="cmdk-item-desc">Jump to portfolio introduction</div>
-          </div>
-          <span class="cmdk-badge">Section</span>
-        </button>
-        <button class="cmdk-item" data-action="goto" data-target="#architecture">
-          <span class="cmdk-item-icon">🏗️</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">System Architecture &amp; Telemetry</div>
-            <div class="cmdk-item-desc">Inspect NASA RAG, PinGuru &amp; Enterprise topologies</div>
-          </div>
-          <span class="cmdk-badge">Topology</span>
-        </button>
-        <button class="cmdk-item" data-action="goto" data-target="#experience">
-          <span class="cmdk-item-icon">💼</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Career Experience</div>
-            <div class="cmdk-item-desc">TCS, Tech Mahindra &amp; BO IT Solutions timeline</div>
-          </div>
-          <span class="cmdk-badge">Section</span>
-        </button>
-        <button class="cmdk-item" data-action="goto" data-target="#demos">
-          <span class="cmdk-item-icon">🚀</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Interactive AI Demonstrations</div>
-            <div class="cmdk-item-desc">Test NASA RAG query &amp; Multi-Agent visualizer</div>
-          </div>
-          <span class="cmdk-badge">Interactive</span>
-        </button>
-        <button class="cmdk-item" data-action="goto" data-target="#projects">
-          <span class="cmdk-item-icon">📂</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Featured Projects</div>
-            <div class="cmdk-item-desc">PinGuru SaaS, NASA RAG, Multi-Agent &amp; CV</div>
-          </div>
-          <span class="cmdk-badge">Section</span>
-        </button>
-        <button class="cmdk-item" data-action="goto" data-target="#skills">
-          <span class="cmdk-item-icon">🧠</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Technical Skills Matrix</div>
-            <div class="cmdk-item-desc">GenAI, ML, Backend &amp; Cloud stack</div>
-          </div>
-          <span class="cmdk-badge">Section</span>
-        </button>
-        
-        <div class="cmdk-group-title">Quick Actions</div>
-        <button class="cmdk-item" data-action="open-recruiter">
-          <span class="cmdk-item-icon">⚡</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Open Recruiter Fast-View</div>
-            <div class="cmdk-item-desc">60-second executive summary for hiring managers</div>
-          </div>
-          <span class="cmdk-badge">Action</span>
-        </button>
-        <button class="cmdk-item" data-action="open-resume">
-          <span class="cmdk-item-icon">📄</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">View / Download PDF Resume</div>
-            <div class="cmdk-item-desc">Full verified curriculum vitae</div>
-          </div>
-          <span class="cmdk-badge">Resume</span>
-        </button>
-        <button class="cmdk-item" data-action="copy-email">
-          <span class="cmdk-item-icon">✉️</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Copy Email to Clipboard</div>
-            <div class="cmdk-item-desc">jaydeveloper010@gmail.com</div>
-          </div>
-          <span class="cmdk-badge">Copy</span>
-        </button>
-        <button class="cmdk-item" data-action="toggle-sound">
-          <span class="cmdk-item-icon">🔊</span>
-          <div class="cmdk-item-content">
-            <div class="cmdk-item-title">Toggle Web Audio Tactile SFX</div>
-            <div class="cmdk-item-desc">Turn interface sound effects on / off</div>
-          </div>
-          <span class="cmdk-badge">Audio</span>
-        </button>
-      </div>
-      <div class="cmdk-footer">
-        <div class="cmdk-footer-hints">
-          <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
-          <span><kbd>↵</kbd> Select</span>
-          <span><kbd>ESC</kbd> Close</span>
-        </div>
-        <div class="cmdk-status">Ready</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RESUME MODAL & PDF VIEWER -->
-  <div id="resumeModal" class="modal-backdrop" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <div>
-          <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary);">
-            Somala Ajay — Resume
-          </h4>
-          <p style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
-            AI/ML Engineer | Gen AI Engineer | Python Developer
-          </p>
-        </div>
-        <div style="display: flex; gap: 0.75rem; align-items: center;">
-          <a href="./Somala_Ajay_Resume.pdf" download="Somala_Ajay_Resume.pdf" class="btn-cyber btn-primary" style="font-size: 0.8rem; padding: 0.4rem 0.9rem;">
-            <span>Download PDF</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          </a>
-          <button id="closeResumeModalBtn" class="btn-cyber btn-secondary" style="padding: 0.4rem 0.75rem; font-size: 0.85rem;" aria-label="Close Modal">
-            ✕
-          </button>
-        </div>
-      </div>
-      <div class="modal-body">
-        <iframe src="./Somala_Ajay_Resume.pdf#toolbar=1" class="pdf-viewer-frame" title="Somala Ajay Resume"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification Container -->
-  <div id="portfolioToast" class="toast-box">
-    <span>✓</span>
-    <span>Notification</span>
-  </div>
-
-  <!-- Core JavaScript Engine -->
-  <script src="./assets/js/main.js"></script>
+<div id="glow" aria-hidden="true"></div>
+<header><div class="wrap">
+<a class="logo" href="#top">Somala Ajay</a>
+<div class="acts"><button class="theme" id="theme" aria-label="Switch to light theme" title="Switch theme">☀</button>
+<button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button></div>
+<nav id="nav" aria-label="Main"><ul>
+<li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li>
+</ul></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="status">Open to AI/ML and Gen AI roles</span>
+<h1>Somala Ajay</h1>
+<p class="role">AI/ML Engineer, Gen AI Engineer and Python Developer</p>
+<p class="lead">I build LLM applications, RAG pipelines and full-stack AI products, and I run PinGuru, a live Instagram DM automation SaaS. Based in Hyderabad.</p>
+<div class="cta">
+<a class="btn main" href="#projects">See my projects</a>
+<a class="btn" href="./Somala_Ajay_Resume.pdf" download>Download resume</a>
+<a class="btn" href="#contact">Contact me</a>
+</div>
+</div>
+<div class="photo"><img src="./assets/img/ajay.jpeg" alt="Portrait of Somala Ajay" width="800" height="1000"></div>
+</div></div>
+
+<section id="about"><div class="wrap">
+<h2>About</h2>
+<div class="about">
+<p>AI/ML and Generative AI engineer with 3+ years of experience developing production-grade LLM applications, RAG pipelines and full-stack AI products. My background is in data engineering, data validation and backend API integration, and I have delivered 20+ ML/DL models across NLP and computer vision. I work mostly in Python, SQL, FastAPI, LangChain, FAISS and Docker, on AWS, GCP and DigitalOcean.</p>
+<ul class="facts">
+<li><span>Location</span><b>Hyderabad, Telangana</b></li>
+<li><span>Education</span><b>B.Tech ECE, Aditya University (2018–2022)</b></li>
+<li><span>Live product</span><b>PinGuru (pinguru.me)</b></li>
+<li><span>Looking for</span><b>AI/ML, Gen AI and Python roles</b></li>
+</ul>
+</div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2>Experience</h2>
+<div class="tl">
+<div class="job">
+<div class="when">Dec 2025 – May 2026 · Hyderabad</div>
+<h3>Associate Software Engineer <span>at TCS</span></h3>
+<ul>
+<li>Designed and implemented ML pipelines for structured client datasets, from ingestion and preprocessing to model training.</li>
+<li>Optimized SQL queries and database schemas for large-scale extraction, improving preprocessing ingestion speed by 20%.</li>
+<li>Ran EDA and feature engineering with Pandas and NumPy on datasets of 10K to 50K records.</li>
+<li>Built Scikit-learn classification models reaching about 82–87% accuracy on validation data, and deployed a model through a Flask REST API for internal inference.</li>
+<li>Automated the preprocessing pipeline, cutting manual effort by about 25–30%, and tracked experiments in Git for reproducibility.</li>
+</ul>
+</div>
+<div class="job">
+<div class="when">Sep 2024 – Nov 2025 · Hyderabad</div>
+<h3>Associate <span>at Tech Mahindra</span></h3>
+<ul>
+<li>Worked on a client project in a Workflow Management System (WFMS), handling and processing structured data.</li>
+<li>Engineered pipelines for high-volume unstructured and semi-structured text, preparing inputs for downstream NLP and LLM training.</li>
+<li>Audited documents and corrected data to keep accuracy and integrity high.</li>
+<li>Designed data validation algorithms and quality workflows that removed label noise and cut feature discrepancies by 20%.</li>
+</ul>
+</div>
+<div class="job">
+<div class="when">Aug 2022 – Jun 2024 · Hyderabad</div>
+<h3>AI/ML Data Scientist <span>at BO IT Solutions</span></h3>
+<ul>
+<li>Delivered 20+ end-to-end AI/ML projects across NLP, computer vision and deep learning, from data collection to deployment.</li>
+<li>Ran EDA and feature engineering on 10K to 100K+ records with Pandas, NumPy and Matplotlib, reducing preprocessing time by about 30%.</li>
+<li>Built classification and regression models in Scikit-learn and TensorFlow, consistently reaching 80–90% accuracy.</li>
+<li>Implemented CNN and LSTM models that improved baseline accuracy by about 15% over traditional ML.</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<div class="proj">
+<div class="row"><div><h3><a href="https://pinguru.me" target="_blank" rel="noopener">PinGuru</a></h3><div class="stack">Python, FastAPI, MongoDB, Instagram Graph API, Stripe, DigitalOcean</div></div>
+<p>Instagram DM automation SaaS, live at pinguru.me. Real-time DM triggers, comment-to-DM workflows, multi-tier Stripe billing, and JWT and OTP security on a FastAPI and MongoDB backend.</p></div>
+<div class="row"><div><h3><a href="https://github.com/Ajaysomala/i2e_Hireathon-Complex_Technical_Manual_QA_System" target="_blank" rel="noopener">Technical Manual QA System</a></h3><div class="stack">FastAPI, FAISS, Llama 3.3, Groq, NLP</div></div>
+<p>Production-grade RAG pipeline that answers questions from the 270-page NASA Systems Engineering Handbook with citations.</p></div>
+<div class="row"><div><h3>Autonomous Multi-Agent Operations System</h3><div class="stack">FastAPI, Groq (Llama 3.3), Docker, SQLite, Pydantic</div></div>
+<p>A reflex layer handles known triggers with fixed rules. A single agent plans its own steps from plain language. For complex goals, a Planner, Executor and Reviewer split the work and self-correct. Runs as a containerized FastAPI service with task memory.</p></div>
+<div class="row"><div><h3>Image Caption Generator</h3><div class="stack">Python, CNN, LSTM, Flickr8k</div></div>
+<p>End-to-end captioning system with a CNN encoder for visual features and an LSTM decoder for caption generation, trained on Flickr8k.</p></div>
+</div>
+<div class="hack">
+<h3>National AI Hackathon, i2e Consulting (Bangalore)</h3>
+<p>Built the Complex Technical Manual QA System: 885 semantic vectors from the NASA handbook indexed in FAISS with all-MiniLM-L6-v2, Llama-3.3-70B through Groq, confidence scoring from 0 to 100%, multi-turn memory, section-level citations and expansion of 20+ NASA acronyms.</p>
+<div class="stack">FastAPI, FAISS, Groq API, sentence-transformers, PyPDF, PdfPlumber, Vanilla JS</div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<dl>
+<div class="sk"><dt>Generative AI and agents</dt><dd>LLMs, RAG pipelines, semantic search, vector databases, LangChain, LlamaIndex, prompt engineering, agentic workflows, ADK and MCP</dd></div>
+<div class="sk"><dt>Programming and backend</dt><dd>Python, SQL, FastAPI, Flask, REST APIs</dd></div>
+<div class="sk"><dt>Machine learning and deep learning</dt><dd>Scikit-learn, TensorFlow, Keras, CNN, LSTM, NLP, feature engineering, model evaluation</dd></div>
+<div class="sk"><dt>Data engineering and databases</dt><dd>Data validation, preprocessing, ETL pipelines, Pandas, NumPy, MongoDB, MySQL</dd></div>
+<div class="sk"><dt>Cloud and tools</dt><dd>Docker, Git, VS Code, GitHub Copilot, GCP, AWS, DigitalOcean</dd></div>
+</dl>
+<h2 style="margin-top:3.5rem">Certifications</h2>
+<ul class="certs">
+<li>Generative AI Introduction<small>Microsoft Learning</small></li>
+<li>Career Essentials in Generative AI<small>Microsoft and LinkedIn</small></li>
+<li>Develop an AI app with the Azure AI Foundry SDK<small>Microsoft</small></li>
+<li>Learning Microsoft 365 Copilot for Work<small>LinkedIn</small></li>
+</ul>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Contact</h2>
+<p>I'm open to AI/ML, Gen AI and Python roles in Hyderabad or remote. Email is the fastest way to reach me.</p>
+<div class="links">
+<a class="btn main" href="mailto:jaydeveloper010@gmail.com">jaydeveloper010@gmail.com</a>
+<a class="btn" href="tel:+917675010831">+91 76750 10831</a>
+<a class="btn" href="https://linkedin.com/in/somala-ajay-8a806b213" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/Ajaysomala" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Somala Ajay · Hyderabad, India</div></footer>
+
+<script>
+const b=document.getElementById('menu'),n=document.getElementById('nav');
+b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+n.addEventListener('click',e=>{if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+
+const R=document.documentElement,t=document.getElementById('theme');
+function sync(){const d=R.dataset.theme==='dark';t.textContent=d?'☀':'☾';t.setAttribute('aria-label',d?'Switch to light theme':'Switch to dark theme')}
+sync();
+t.addEventListener('click',()=>{R.dataset.theme=R.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',R.dataset.theme)}catch(e){}sync()});
+const g=document.getElementById('glow'),ph=document.querySelector('.photo');
+if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+document.addEventListener('mousemove',e=>{g.style.opacity=1;g.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
+const r=ph.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+if(Math.abs(x)<1.2&&Math.abs(y)<1.2)ph.style.transform='perspective(700px) rotateY('+x*14+'deg) rotateX('+(-y*14)+'deg)';else ph.style.transform=''});
+document.addEventListener('mouseleave',()=>{g.style.opacity=0;ph.style.transform=''});
+}
+</script>
 </body>
 </html>
