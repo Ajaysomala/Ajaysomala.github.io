@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Somala Ajay — AI/ML & Gen AI Engineer, Hyderabad</title>
 <meta name="description" content="Somala Ajay, AI/ML and Generative AI engineer in Hyderabad. RAG pipelines, multi-agent systems, and the PinGuru SaaS.">
 <link rel="canonical" href="https://ajaysomala.github.io/">
@@ -11,255 +11,212 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ajaysomala.github.io/">
 <meta property="og:image" content="https://ajaysomala.github.io/assets/img/ajay.jpeg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Somala Ajay","jobTitle":"AI/ML & Generative AI Engineer","url":"https://ajaysomala.github.io/","image":"https://ajaysomala.github.io/assets/img/ajay.jpeg","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressCountry":"IN"},"sameAs":["https://github.com/Ajaysomala","https://linkedin.com/in/somala-ajay-8a806b213"]}</script>
 <style>
-:root{--bg:#0b1120;--ink:#eaeef7;--mute:#93a0ba;--line:#222d47;--acc:#7b93ff;--panel:#131c33;--body:#b7c2d9;--hdr:rgba(11,17,32,.88);--tag:#182449;--hack:#16223d;--fd:'Bricolage Grotesque',system-ui,sans-serif;--fb:'IBM Plex Sans',system-ui,sans-serif;color-scheme:dark}
-[data-theme=light]{--bg:#f2f4f7;--ink:#0f1a2b;--mute:#55627a;--line:#d5dbe6;--acc:#2340d8;--panel:#e7ebf3;--body:#33415a;--hdr:rgba(242,244,247,.92);--tag:#e3e8fb;--hack:#0f1a2b;color-scheme:light}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--bg);color:var(--ink);font:400 1rem/1.7 var(--fb)}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
-header{position:sticky;top:0;z-index:10;background:var(--hdr);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font:800 1.1rem var(--fd);text-decoration:none}
-nav ul{display:flex;gap:1.6rem;list-style:none}
-nav a{font-size:.9rem;font-weight:500;color:var(--mute);text-decoration:none}
-nav a:hover{color:var(--acc)}
+:root{--bg:#0d0f14;--ink:#ecebe6;--mute:#8d929e;--line:#262a35;--acc:#c9a96a;--on:#14110a;--panel:#14171f;--body:#b9bcc5;--tag:rgba(201,169,106,.1);--glass:rgba(20,23,31,.82);--fd:'Playfair Display',Georgia,serif;--fb:'Source Sans 3',system-ui,sans-serif;color-scheme:dark}
+[data-theme=light]{--bg:#f7f5f0;--ink:#14161b;--mute:#666b76;--line:#e2ded3;--acc:#8a6a2c;--on:#fff;--panel:#fff;--body:#3b414d;--tag:rgba(138,106,44,.09);--glass:rgba(255,255,255,.88);color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 1.02rem/1.7 var(--fb);overflow-x:hidden;transition:background .3s,color .3s}
+a{color:inherit}:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+#net{position:fixed;inset:0;z-index:0;pointer-events:none}
+header{position:sticky;top:0;z-index:50;background:var(--glass);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:1rem;height:64px}
+.logo{display:flex;align-items:center;gap:.7rem;font:700 1.1rem var(--fd);text-decoration:none;letter-spacing:.01em}
+.logo img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:center 22%;border:1px solid var(--acc)}
+nav{margin-left:auto}nav ul{display:flex;gap:1.8rem;list-style:none}nav a{font-size:.8rem;font-weight:500;color:var(--mute);text-decoration:none;text-transform:uppercase;letter-spacing:.12em}nav a:hover{color:var(--acc)}
 .acts{display:flex;align-items:center;gap:.6rem}
-.theme{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;font-size:1.05rem;line-height:1;transition:transform .25s,border-color .2s}
-.theme:hover{border-color:var(--acc);transform:rotate(20deg)}
-.menu{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:.35rem .8rem;font:500 .9rem var(--fb);color:var(--ink);cursor:pointer}
-/* hero */
+.theme,.menu{height:36px;border-radius:4px;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;font:500 .75rem var(--fb);text-transform:uppercase;letter-spacing:.1em;padding:0 .9rem;transition:.2s}.theme:hover,.menu:hover{border-color:var(--acc);color:var(--acc)}.menu{display:none}
 .hero{padding:4.5rem 0 4rem}
-.hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:3.5rem;align-items:center}
-.status{display:inline-block;font-size:.85rem;font-weight:500;color:var(--acc);background:var(--tag);padding:.3rem .8rem;border-radius:99px;margin-bottom:1.3rem}
-h1{font:800 clamp(2.8rem,7vw,5.2rem)/.98 var(--fd);letter-spacing:-.03em}
-.role{font:500 1.25rem/1.4 var(--fd);color:var(--mute);margin:1.2rem 0}
-.lead{max-width:34rem;color:var(--body)}
+.hero .wrap{display:grid;grid-template-columns:1fr 360px;grid-template-areas:"hn ph" "hr ph";column-gap:4rem;align-items:start}
+.hn{grid-area:hn;align-self:end}.hr{grid-area:hr}
+.tag{display:inline-block;font-size:.74rem;font-weight:600;color:var(--acc);letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--acc);padding:.3rem .8rem;margin-bottom:1.4rem}
+h1{font:700 clamp(3rem,7vw,5.4rem)/1 var(--fd);letter-spacing:-.02em}h1 em{font-style:italic;font-weight:500;color:var(--acc)}
+.role{font:500 .85rem var(--fb);color:var(--mute);margin:1.3rem 0 1rem;text-transform:uppercase;letter-spacing:.18em}
+.lead{color:var(--body);max-width:34rem;font-size:1.08rem}
 .cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
-.btn{display:inline-block;padding:.7rem 1.4rem;border-radius:6px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--ink);transition:background .2s,color .2s}
-.btn.main{background:var(--ink);color:var(--bg)}
-.btn.main:hover{background:var(--acc);border-color:var(--acc)}
-.btn:not(.main):hover{background:var(--ink);color:var(--bg)}
-.photo{position:relative;width:300px;justify-self:end;transition:transform .15s ease-out;will-change:transform}
-.photo img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 25%;border-radius:4px 60px 4px 4px;background:var(--panel)}
-.photo::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--acc);border-radius:4px 60px 4px 4px;z-index:-1}
-.hero .wrap>*{animation:in .8s ease both}
-.hero .photo{animation-delay:.15s}
-@keyframes in{from{opacity:0;transform:translateY(14px)}}
-#glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,rgba(123,147,255,.16),transparent 65%);pointer-events:none;z-index:0;opacity:0;transition:opacity .3s}
-[data-theme=light] #glow{background:radial-gradient(circle,rgba(35,64,216,.10),transparent 65%)}
-header,main,footer{position:relative;z-index:1}
-.row{transition:padding-left .25s,background .25s}
-.row:hover{padding-left:1rem;background:linear-gradient(90deg,var(--tag),transparent 70%)}
-.job,.certs li,.sk{transition:transform .2s}
-.certs li:hover{transform:translateY(-4px)}
-/* sections */
-section{padding:4.5rem 0;border-top:1px solid var(--line)}
-h2{font:800 clamp(1.8rem,4vw,2.5rem)/1.1 var(--fd);letter-spacing:-.02em;margin-bottom:2.2rem}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.facts{list-style:none;border-top:1px solid var(--line)}
-.facts li{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
-.facts span{color:var(--mute)}
-.facts b{font-weight:600;text-align:right}
-/* timeline */
-.tl{border-left:2px solid var(--ink);margin-left:.4rem}
-.job{position:relative;padding:0 0 2.6rem 2rem}
-.job:last-child{padding-bottom:0}
-.job::before{content:"";position:absolute;left:-8px;top:.55rem;width:14px;height:14px;background:var(--bg);border:3px solid var(--acc);border-radius:50%}
-.when{font-size:.85rem;color:var(--acc);font-weight:600}
-.job h3{font:700 1.3rem/1.3 var(--fd);margin:.2rem 0}
-.job h3 span{color:var(--mute);font-weight:500}
-.job ul{margin:.8rem 0 0 1.1rem;color:var(--body)}
-.job li{margin-bottom:.4rem;max-width:46rem}
-/* projects */
-.proj{border-top:1px solid var(--ink)}
-.row{display:grid;grid-template-columns:1fr 1.5fr;gap:2rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
-.row h3{font:700 1.2rem/1.3 var(--fd)}
-.row h3 a{text-decoration:none;border-bottom:2px solid var(--acc)}
-.row h3 a:hover{color:var(--acc)}
-.stack{font-size:.85rem;color:var(--acc);margin-top:.4rem;font-weight:500}
-.row p{color:var(--body)}
-.hack{background:var(--hack);color:#fff;border:1px solid var(--line);border-radius:6px;padding:2rem;margin-top:2.5rem}
-.hack h3{font:700 1.3rem var(--fd);margin-bottom:.3rem}
-.hack .stack{color:#9db0ff;margin:.8rem 0 0}
-.hack p{color:#c6cfe2;margin-top:.6rem}
-/* skills */
-dl{border-top:1px solid var(--ink)}
-.sk{display:grid;grid-template-columns:14rem 1fr;gap:1.5rem;padding:1rem 0;border-bottom:1px solid var(--line)}
-dt{font:700 1rem var(--fd)}
-dd{color:var(--body)}
-.certs{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.certs li{background:var(--panel);padding:1.1rem 1.3rem;border-radius:4px;font-weight:600}
-.certs small{display:block;font-weight:400;color:var(--mute)}
-/* contact */
-.contact p{max-width:34rem;color:var(--body);margin-bottom:1.5rem}
-.links{display:flex;flex-wrap:wrap;gap:.7rem}
-footer{padding:1.8rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}
-@media(max-width:800px){
-.menu{display:block}
-nav{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}
-nav.open{display:block}
-nav ul{flex-direction:column;gap:.2rem}
-nav a{display:block;padding:.6rem 0}
-.hero{padding-top:2.5rem}
-.hero .wrap,.about,.row,.sk,.certs{grid-template-columns:1fr}
-.photo{width:210px;justify-self:start;order:-1}
-.sk{gap:.3rem}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}#glow{display:none}}
-@media(hover:none){#glow{display:none}}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:2px;font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:var(--fb);transition:.25s}
+.btn.main{background:var(--acc);border-color:var(--acc);color:var(--on)}.btn.main:hover{filter:brightness(1.1)}.btn:not(.main):hover{background:var(--ink);color:var(--bg)}
+.stats{display:flex;gap:2.2rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line);flex-wrap:wrap}.stats div{font:700 2.1rem var(--fd);line-height:1}.stats small{display:block;font:500 .68rem var(--fb);color:var(--mute);margin-top:.5rem;letter-spacing:.14em}
+.ph{grid-area:ph;position:relative;align-self:center}.ph img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:saturate(.95)}.ph::after{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--acc);z-index:-1}
+.tick{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0;position:relative;z-index:1;background:var(--glass)}.tick div{display:flex;gap:3rem;width:max-content;animation:mq 40s linear infinite;font:500 .78rem var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:5rem 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(2rem,4vw,2.8rem)/1.1 var(--fd);letter-spacing:-.01em;margin-bottom:2.2rem}h2 em{font-style:italic;font-weight:500;color:var(--acc)}
+.rv{opacity:0;transform:translateY(20px);transition:.8s cubic-bezier(.2,.7,.2,1)}.rv.on{opacity:1;transform:none}
+.about{display:grid;grid-template-columns:1fr 1.05fr;gap:3.5rem;align-items:start}
+.about p{color:var(--body)}
+.facts{list-style:none;border-top:1px solid var(--line);margin-top:1.6rem}.facts li{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.95rem}.facts span{color:var(--mute)}.facts b{font-weight:600;text-align:right}
+.chat{background:var(--panel);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;height:560px;box-shadow:0 24px 60px rgba(0,0,0,.18);overflow:hidden}
+.ch-top{display:flex;align-items:center;gap:.7rem;padding:.85rem 1.1rem;border-bottom:1px solid var(--line);font:600 .78rem var(--fb);text-transform:uppercase;letter-spacing:.12em}.ch-top img{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:center 22%}.ch-top small{margin-left:auto;color:var(--acc);letter-spacing:.1em}
+#msgs{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:1rem;scroll-behavior:smooth}
+.m{display:flex;gap:.65rem;animation:in .35s ease both}@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.m img{width:28px;height:28px;border-radius:50%;object-fit:cover;object-position:center 22%;flex:none;margin-top:2px}
+.m .b{background:var(--bg);border:1px solid var(--line);padding:.7rem .95rem;border-radius:2px 12px 12px 12px;font-size:.95rem;min-width:0;max-width:calc(100% - 40px);white-space:pre-wrap}
+.m.u{justify-content:flex-end}.m.u .b{background:var(--acc);color:var(--on);border:0;border-radius:12px 2px 12px 12px;font-weight:500}
+.m .b .c{white-space:normal}.mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.5rem;margin-top:.6rem}
+.mini button,.chip{font:500 .8rem var(--fb);text-align:left;background:none;color:var(--ink);border:1px solid var(--line);border-radius:2px;padding:.45rem .7rem;cursor:pointer;transition:.2s}.mini button:hover,.chip:hover{border-color:var(--acc);color:var(--acc)}
+.pl{display:inline-block;font:500 .74rem var(--fb);letter-spacing:.04em;background:var(--tag);color:var(--acc);padding:.15rem .6rem;border-radius:2px;margin:.15rem .25rem .15rem 0}
+.lk{display:block;margin-top:.4rem;padding:.45rem .7rem;border:1px solid var(--line);border-radius:2px;text-decoration:none;font-size:.88rem}.lk:hover{border-color:var(--acc);color:var(--acc)}
+.dots i{display:inline-block;width:6px;height:6px;margin:0 2px;border-radius:50%;background:var(--mute);animation:d 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}@keyframes d{50%{transform:translateY(-4px);opacity:.4}}
+.chips{display:flex;gap:.45rem;overflow-x:auto;padding:.2rem 1.1rem .7rem;scrollbar-width:none}.chip{white-space:nowrap;flex:none}
+.inp{display:flex;gap:.5rem;padding:.7rem 1rem 1rem}.inp input{flex:1;background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:2px;padding:.75rem 1rem;font:400 .95rem var(--fb);outline:none}.inp input:focus{border-color:var(--acc)}
+.inp button{width:46px;border:0;border-radius:2px;background:var(--acc);cursor:pointer;color:var(--on);display:grid;place-items:center}
+.tl{border-left:1px solid var(--line);margin-left:.4rem}.job{position:relative;padding:0 0 2.6rem 2.2rem}.job::before{content:"";position:absolute;left:-6px;top:.6rem;width:11px;height:11px;background:var(--bg);border:2px solid var(--acc);border-radius:50%}
+.when{font:600 .74rem var(--fb);color:var(--acc);letter-spacing:.16em}.job h3{font:700 1.4rem var(--fd);margin:.25rem 0}.job h3 span{color:var(--mute);font-weight:500;font-style:italic}.job ul{margin:.7rem 0 0 1.1rem;color:var(--body)}.job li{margin-bottom:.35rem;max-width:48rem}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);padding:1.8rem;transition:.3s;text-decoration:none;display:block}.card:hover{transform:translateY(-4px);border-color:var(--acc)}
+.card .n{font:600 .7rem var(--fb);color:var(--acc);letter-spacing:.16em}.card h3{font:700 1.35rem var(--fd);margin:.4rem 0 .6rem}.card p{color:var(--body);font-size:.96rem}.card .go{position:absolute;top:1.5rem;right:1.6rem;color:var(--acc)}
+.hack{margin-top:1.4rem;padding:2rem;background:var(--panel);border:1px solid var(--acc)}.hack h3{font:700 1.3rem var(--fd)}.hack p{color:var(--body);margin:.6rem 0}
+.sk{display:grid;grid-template-columns:16rem 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}.sk dt{font:700 1.05rem var(--fd)}dl{border-top:1px solid var(--line)}
+.certs{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.2rem}.certs li{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--acc);padding:1rem 1.3rem;font-weight:600}.certs small{display:block;font-weight:400;color:var(--mute)}
+.sub{font:700 1.5rem var(--fd);margin:3rem 0 0}
+.contact p{max-width:34rem;color:var(--body);margin-bottom:1.6rem}.links{display:flex;flex-wrap:wrap;gap:.7rem}
+footer{padding:1.8rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+#fab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:60;display:none;padding:.8rem 1.3rem;border:0;border-radius:2px;font:600 .78rem var(--fb);text-transform:uppercase;letter-spacing:.12em;cursor:pointer;background:var(--acc);color:var(--on);box-shadow:0 10px 30px rgba(0,0,0,.35)}#fab.show{display:block}
+@media(max-width:900px){.menu{display:block}nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}nav.open{display:block}nav ul{flex-direction:column;gap:.2rem}nav a{display:block;padding:.6rem 0}
+.hero .wrap{grid-template-columns:1fr;grid-template-areas:"hn" "ph" "hr"}.ph{width:min(300px,80%);margin:2rem 0 2.5rem 0}.hn{align-self:start}
+.about,.grid,.sk,.certs{grid-template-columns:1fr}.about{gap:2.5rem}.sk{gap:.3rem}.chat{height:520px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div id="glow" aria-hidden="true"></div>
+<canvas id="net" aria-hidden="true"></canvas>
 <header><div class="wrap">
-<a class="logo" href="#top">Somala Ajay</a>
-<div class="acts"><button class="theme" id="theme" aria-label="Switch to light theme" title="Switch theme">☀</button>
-<button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button></div>
-<nav id="nav" aria-label="Main"><ul>
-<li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li>
-</ul></nav>
+<a class="logo" href="#top"><img src="assets/img/ajay.jpeg" alt="">Somala Ajay</a>
+<nav id="nav" aria-label="Main"><ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<div class="acts"><button class="theme" id="theme" aria-label="Switch theme">Light</button><button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button></div>
 </div></header>
 
 <main id="top">
 <div class="hero"><div class="wrap">
-<div>
-<span class="status">Open to AI/ML and Gen AI roles</span>
-<h1>Somala Ajay</h1>
-<p class="role">AI/ML Engineer, Gen AI Engineer and Python Developer</p>
+<div class="hn"><span class="tag">Open to AI/ML and Gen AI roles</span><h1>Somala <em>Ajay</em></h1></div>
+<div class="ph"><img src="assets/img/ajay-portrait.jpeg" alt="Portrait of Somala Ajay" width="800" height="1000"></div>
+<div class="hr">
+<p class="role">AI/ML Engineer &nbsp;·&nbsp; Generative AI Engineer &nbsp;·&nbsp; Python Developer</p>
 <p class="lead">I build LLM applications, RAG pipelines and full-stack AI products, and I run PinGuru, a live Instagram DM automation SaaS. Based in Hyderabad.</p>
-<div class="cta">
-<a class="btn main" href="#projects">See my projects</a>
-<a class="btn" href="./Somala_Ajay_Resume.pdf" download>Download resume</a>
-<a class="btn" href="#contact">Contact me</a>
+<div class="cta"><a class="btn main" href="#projects">View projects</a><a class="btn" href="Somala_Ajay_Resume.pdf" download>Download resume</a></div>
+<div class="stats"><div data-n="3" data-s="+">0<small>YEARS EXPERIENCE</small></div><div data-n="20" data-s="+">0<small>ML/DL MODELS</small></div><div data-n="885" data-s="">0<small>FAISS VECTORS</small></div><div data-n="1" data-s="">0<small>LIVE SAAS</small></div></div>
 </div>
-</div>
-<div class="photo"><img src="./assets/img/ajay.jpeg" alt="Portrait of Somala Ajay" width="800" height="1000"></div>
 </div></div>
 
-<section id="about"><div class="wrap">
-<h2>About</h2>
-<div class="about">
-<p>AI/ML and Generative AI engineer with 3+ years of experience developing production-grade LLM applications, RAG pipelines and full-stack AI products. My background is in data engineering, data validation and backend API integration, and I have delivered 20+ ML/DL models across NLP and computer vision. I work mostly in Python, SQL, FastAPI, LangChain, FAISS and Docker, on AWS, GCP and DigitalOcean.</p>
-<ul class="facts">
-<li><span>Location</span><b>Hyderabad, Telangana</b></li>
-<li><span>Education</span><b>B.Tech ECE, Aditya University (2018–2022)</b></li>
-<li><span>Live product</span><b>PinGuru (pinguru.me)</b></li>
-<li><span>Looking for</span><b>AI/ML, Gen AI and Python roles</b></li>
-</ul>
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+
+<section id="about"><div class="wrap"><div class="about rv">
+<div><h2>About <em>me</em></h2>
+<p>AI/ML and Generative AI engineer with 3+ years of experience building production-grade LLM applications, RAG pipelines and full-stack AI products. My background is in data engineering, data validation and backend API integration, and I have delivered 20+ ML/DL models across NLP and computer vision. I work mostly in Python, SQL, FastAPI, LangChain, FAISS and Docker, on AWS, GCP and DigitalOcean.</p>
+<ul class="facts"><li><span>Location</span><b>Hyderabad, Telangana</b></li><li><span>Education</span><b>B.Tech ECE, Aditya University (2018–2022)</b></li><li><span>Live product</span><b>PinGuru (pinguru.me)</b></li><li><span>Looking for</span><b>AI/ML, Gen AI and Python roles</b></li></ul></div>
+<div class="chat" id="chatbox">
+<div class="ch-top"><img src="assets/img/ajay.jpeg" alt=""><span>Ask Ajay's AI</span><small>ONLINE</small></div>
+<div id="msgs" role="log" aria-live="polite"></div>
+<div class="chips" id="chips"></div>
+<form class="inp" id="form"><input id="q" autocomplete="off" maxlength="300" placeholder="What would you like to know?" aria-label="Ask about Ajay"><button aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21L23 12 2 3v7l15 2-15 2z"/></svg></button></form>
 </div>
+</div></div></section>
+
+<section id="experience"><div class="wrap"><h2 class="rv">Professional <em>experience</em></h2><div class="tl rv">
+<div class="job"><div class="when">DEC 2025 – MAY 2026 · HYDERABAD</div><h3>Associate Software Engineer <span>at TCS</span></h3><ul>
+<li>Designed ML pipelines for structured client datasets, from ingestion and preprocessing to model training.</li>
+<li>Optimized SQL queries and schemas for large-scale extraction, improving ingestion speed by 20%.</li>
+<li>Ran EDA and feature engineering with Pandas and NumPy on 10K–50K records.</li>
+<li>Built Scikit-learn classifiers (~82–87% validation accuracy) and deployed one through a Flask REST API.</li>
+<li>Automated preprocessing, cutting manual effort by ~25–30%; tracked experiments in Git.</li></ul></div>
+<div class="job"><div class="when">SEP 2024 – NOV 2025 · HYDERABAD</div><h3>Associate <span>at Tech Mahindra</span></h3><ul>
+<li>Processed structured data in a Workflow Management System (WFMS) for a client project.</li>
+<li>Engineered pipelines for unstructured and semi-structured text, preparing inputs for downstream NLP and LLM training.</li>
+<li>Built data validation algorithms and quality workflows that removed label noise and cut feature discrepancies by 20%.</li></ul></div>
+<div class="job"><div class="when">AUG 2022 – JUN 2024 · HYDERABAD</div><h3>AI/ML Data Scientist <span>at BO IT Solutions</span></h3><ul>
+<li>Delivered 20+ end-to-end AI/ML projects across NLP, computer vision and deep learning.</li>
+<li>EDA and feature engineering on 10K–100K+ records, reducing preprocessing time by ~30%.</li>
+<li>Built classification and regression models in Scikit-learn and TensorFlow (80–90% accuracy).</li>
+<li>Implemented CNN and LSTM models that beat traditional ML baselines by ~15%.</li></ul></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap"><h2 class="rv">Selected <em>work</em></h2>
+<div class="grid rv">
+<a class="card" href="https://pinguru.me" target="_blank" rel="noopener"><span class="go">↗</span><div class="n">01 · LIVE PRODUCT</div><h3>PinGuru</h3><p>Instagram DM automation SaaS at pinguru.me. Real-time DM triggers, comment-to-DM workflows, multi-tier Stripe billing, JWT and OTP security.</p><div style="margin-top:.9rem"><span class="pl">FastAPI</span><span class="pl">MongoDB</span><span class="pl">Stripe</span><span class="pl">DigitalOcean</span></div></a>
+<a class="card" href="https://github.com/Ajaysomala/i2e_Hireathon-Complex_Technical_Manual_QA_System" target="_blank" rel="noopener"><span class="go">↗</span><div class="n">02 · RAG</div><h3>Technical Manual QA System</h3><p>Production-grade RAG that answers questions from the 270-page NASA Systems Engineering Handbook, with section-level citations.</p><div style="margin-top:.9rem"><span class="pl">FastAPI</span><span class="pl">FAISS</span><span class="pl">Llama 3.3</span><span class="pl">Groq</span></div></a>
+<div class="card"><div class="n">03 · AGENTS</div><h3>Autonomous Multi-Agent Operations System</h3><p>A reflex layer handles known triggers. A single agent plans from plain language. For complex goals, a Planner, Executor and Reviewer split the work and self-correct. Containerized FastAPI service with task memory.</p><div style="margin-top:.9rem"><span class="pl">Groq</span><span class="pl">Docker</span><span class="pl">SQLite</span><span class="pl">Pydantic</span></div></div>
+<div class="card"><div class="n">04 · DEEP LEARNING</div><h3>Image Caption Generator</h3><p>CNN encoder for visual features and an LSTM decoder for caption generation, trained on Flickr8k.</p><div style="margin-top:.9rem"><span class="pl">CNN</span><span class="pl">LSTM</span><span class="pl">TensorFlow</span></div></div>
+</div>
+<div class="hack rv"><h3>National AI Hackathon · i2e Consulting, Bangalore</h3><p>Indexed 885 semantic vectors from the NASA handbook in FAISS (all-MiniLM-L6-v2), served Llama-3.3-70B via Groq with 0–100% confidence scoring, multi-turn memory, section citations and expansion of 20+ NASA acronyms.</p><span class="pl">FastAPI</span><span class="pl">FAISS</span><span class="pl">Groq</span><span class="pl">PdfPlumber</span></div>
 </div></section>
 
-<section id="experience"><div class="wrap">
-<h2>Experience</h2>
-<div class="tl">
-<div class="job">
-<div class="when">Dec 2025 – May 2026 · Hyderabad</div>
-<h3>Associate Software Engineer <span>at TCS</span></h3>
-<ul>
-<li>Designed and implemented ML pipelines for structured client datasets, from ingestion and preprocessing to model training.</li>
-<li>Optimized SQL queries and database schemas for large-scale extraction, improving preprocessing ingestion speed by 20%.</li>
-<li>Ran EDA and feature engineering with Pandas and NumPy on datasets of 10K to 50K records.</li>
-<li>Built Scikit-learn classification models reaching about 82–87% accuracy on validation data, and deployed a model through a Flask REST API for internal inference.</li>
-<li>Automated the preprocessing pipeline, cutting manual effort by about 25–30%, and tracked experiments in Git for reproducibility.</li>
-</ul>
-</div>
-<div class="job">
-<div class="when">Sep 2024 – Nov 2025 · Hyderabad</div>
-<h3>Associate <span>at Tech Mahindra</span></h3>
-<ul>
-<li>Worked on a client project in a Workflow Management System (WFMS), handling and processing structured data.</li>
-<li>Engineered pipelines for high-volume unstructured and semi-structured text, preparing inputs for downstream NLP and LLM training.</li>
-<li>Audited documents and corrected data to keep accuracy and integrity high.</li>
-<li>Designed data validation algorithms and quality workflows that removed label noise and cut feature discrepancies by 20%.</li>
-</ul>
-</div>
-<div class="job">
-<div class="when">Aug 2022 – Jun 2024 · Hyderabad</div>
-<h3>AI/ML Data Scientist <span>at BO IT Solutions</span></h3>
-<ul>
-<li>Delivered 20+ end-to-end AI/ML projects across NLP, computer vision and deep learning, from data collection to deployment.</li>
-<li>Ran EDA and feature engineering on 10K to 100K+ records with Pandas, NumPy and Matplotlib, reducing preprocessing time by about 30%.</li>
-<li>Built classification and regression models in Scikit-learn and TensorFlow, consistently reaching 80–90% accuracy.</li>
-<li>Implemented CNN and LSTM models that improved baseline accuracy by about 15% over traditional ML.</li>
-</ul>
-</div>
-</div>
+<section id="skills"><div class="wrap"><h2 class="rv">Skills &amp; <em>certifications</em></h2>
+<dl class="rv" id="skl"></dl>
+<ul class="certs rv"><li>Generative AI Introduction<small>Microsoft Learning</small></li><li>Career Essentials in Generative AI<small>Microsoft and LinkedIn</small></li><li>Develop an AI app with the Azure AI Foundry SDK<small>Microsoft</small></li><li>Learning Microsoft 365 Copilot for Work<small>LinkedIn</small></li></ul>
 </div></section>
 
-<section id="projects"><div class="wrap">
-<h2>Projects</h2>
-<div class="proj">
-<div class="row"><div><h3><a href="https://pinguru.me" target="_blank" rel="noopener">PinGuru</a></h3><div class="stack">Python, FastAPI, MongoDB, Instagram Graph API, Stripe, DigitalOcean</div></div>
-<p>Instagram DM automation SaaS, live at pinguru.me. Real-time DM triggers, comment-to-DM workflows, multi-tier Stripe billing, and JWT and OTP security on a FastAPI and MongoDB backend.</p></div>
-<div class="row"><div><h3><a href="https://github.com/Ajaysomala/i2e_Hireathon-Complex_Technical_Manual_QA_System" target="_blank" rel="noopener">Technical Manual QA System</a></h3><div class="stack">FastAPI, FAISS, Llama 3.3, Groq, NLP</div></div>
-<p>Production-grade RAG pipeline that answers questions from the 270-page NASA Systems Engineering Handbook with citations.</p></div>
-<div class="row"><div><h3>Autonomous Multi-Agent Operations System</h3><div class="stack">FastAPI, Groq (Llama 3.3), Docker, SQLite, Pydantic</div></div>
-<p>A reflex layer handles known triggers with fixed rules. A single agent plans its own steps from plain language. For complex goals, a Planner, Executor and Reviewer split the work and self-correct. Runs as a containerized FastAPI service with task memory.</p></div>
-<div class="row"><div><h3>Image Caption Generator</h3><div class="stack">Python, CNN, LSTM, Flickr8k</div></div>
-<p>End-to-end captioning system with a CNN encoder for visual features and an LSTM decoder for caption generation, trained on Flickr8k.</p></div>
-</div>
-<div class="hack">
-<h3>National AI Hackathon, i2e Consulting (Bangalore)</h3>
-<p>Built the Complex Technical Manual QA System: 885 semantic vectors from the NASA handbook indexed in FAISS with all-MiniLM-L6-v2, Llama-3.3-70B through Groq, confidence scoring from 0 to 100%, multi-turn memory, section-level citations and expansion of 20+ NASA acronyms.</p>
-<div class="stack">FastAPI, FAISS, Groq API, sentence-transformers, PyPDF, PdfPlumber, Vanilla JS</div>
-</div>
-</div></section>
-
-<section id="skills"><div class="wrap">
-<h2>Skills</h2>
-<dl>
-<div class="sk"><dt>Generative AI and agents</dt><dd>LLMs, RAG pipelines, semantic search, vector databases, LangChain, LlamaIndex, prompt engineering, agentic workflows, ADK and MCP</dd></div>
-<div class="sk"><dt>Programming and backend</dt><dd>Python, SQL, FastAPI, Flask, REST APIs</dd></div>
-<div class="sk"><dt>Machine learning and deep learning</dt><dd>Scikit-learn, TensorFlow, Keras, CNN, LSTM, NLP, feature engineering, model evaluation</dd></div>
-<div class="sk"><dt>Data engineering and databases</dt><dd>Data validation, preprocessing, ETL pipelines, Pandas, NumPy, MongoDB, MySQL</dd></div>
-<div class="sk"><dt>Cloud and tools</dt><dd>Docker, Git, VS Code, GitHub Copilot, GCP, AWS, DigitalOcean</dd></div>
-</dl>
-<h2 style="margin-top:3.5rem">Certifications</h2>
-<ul class="certs">
-<li>Generative AI Introduction<small>Microsoft Learning</small></li>
-<li>Career Essentials in Generative AI<small>Microsoft and LinkedIn</small></li>
-<li>Develop an AI app with the Azure AI Foundry SDK<small>Microsoft</small></li>
-<li>Learning Microsoft 365 Copilot for Work<small>LinkedIn</small></li>
-</ul>
-</div></section>
-
-<section id="contact" class="contact"><div class="wrap">
-<h2>Contact</h2>
+<section id="contact" class="contact"><div class="wrap rv"><h2>Get in <em>touch</em></h2>
 <p>I'm open to AI/ML, Gen AI and Python roles in Hyderabad or remote. Email is the fastest way to reach me.</p>
-<div class="links">
-<a class="btn main" href="mailto:jaydeveloper010@gmail.com">jaydeveloper010@gmail.com</a>
-<a class="btn" href="tel:+917675010831">+91 76750 10831</a>
-<a class="btn" href="https://linkedin.com/in/somala-ajay-8a806b213" target="_blank" rel="noopener">LinkedIn</a>
-<a class="btn" href="https://github.com/Ajaysomala" target="_blank" rel="noopener">GitHub</a>
-</div>
+<div class="links"><a class="btn main" href="mailto:jaydeveloper010@gmail.com">jaydeveloper010@gmail.com</a><a class="btn" href="tel:+917675010831">+91 76750 10831</a><a class="btn" href="https://linkedin.com/in/somala-ajay-8a806b213" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/Ajaysomala" target="_blank" rel="noopener">GitHub</a></div>
 </div></section>
 </main>
-
-<footer><div class="wrap">© 2026 Somala Ajay · Hyderabad, India</div></footer>
+<footer><div class="wrap"><span>© 2026 Somala Ajay · Hyderabad, India</span><span>Tip: ask the assistant to switch the theme</span></div></footer>
+<button id="fab">Ask Ajay's AI</button>
 
 <script>
-const b=document.getElementById('menu'),n=document.getElementById('nav');
-b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
-n.addEventListener('click',e=>{if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
-
-const R=document.documentElement,t=document.getElementById('theme');
-function sync(){const d=R.dataset.theme==='dark';t.textContent=d?'☀':'☾';t.setAttribute('aria-label',d?'Switch to light theme':'Switch to dark theme')}
-sync();
-t.addEventListener('click',()=>{R.dataset.theme=R.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',R.dataset.theme)}catch(e){}sync()});
-const g=document.getElementById('glow'),ph=document.querySelector('.photo');
-if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-document.addEventListener('mousemove',e=>{g.style.opacity=1;g.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
-const r=ph.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-if(Math.abs(x)<1.2&&Math.abs(y)<1.2)ph.style.transform='perspective(700px) rotateY('+x*14+'deg) rotateX('+(-y*14)+'deg)';else ph.style.transform=''});
-document.addEventListener('mouseleave',()=>{g.style.opacity=0;ph.style.transform=''});
-}
+const $=s=>document.querySelector(s),R=document.documentElement;
+const tb=$('#theme');function sync(){tb.textContent=R.dataset.theme==='dark'?'Light':'Dark'}sync();
+function toggleTheme(){R.dataset.theme=R.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',R.dataset.theme)}catch(e){}sync()}
+tb.onclick=toggleTheme;
+const nv=$('#nav'),mn=$('#menu');mn.onclick=()=>mn.setAttribute('aria-expanded',nv.classList.toggle('open'));nv.onclick=e=>{if(e.target.tagName==='A')nv.classList.remove('open')};
+const SK={'Generative AI & agents':['LLMs','RAG pipelines','Semantic search','Vector databases','LangChain','LlamaIndex','Prompt engineering','Agentic workflows','ADK & MCP'],'Programming & backend':['Python','SQL','FastAPI','Flask','REST APIs'],'Machine & deep learning':['Scikit-learn','TensorFlow','Keras','CNN','LSTM','NLP','Feature engineering','Model evaluation'],'Data engineering & databases':['Data validation','Preprocessing','ETL pipelines','Pandas','NumPy','MongoDB','MySQL'],'Cloud & tools':['Docker','Git','VS Code','GitHub Copilot','GCP','AWS','DigitalOcean']};
+const pills=a=>a.map(x=>`<span class="pl">${x}</span>`).join('');
+$('#skl').innerHTML=Object.entries(SK).map(([k,v])=>`<div class="sk"><dt>${k}</dt><dd>${pills(v)}</dd></div>`).join('');
+const all=Object.values(SK).flat();$('#tk').innerHTML=[...all,...all].map(x=>`<span>${x}</span>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.querySelectorAll('.stats div').forEach(d=>{const n=+d.dataset.n,s=d.dataset.s;let v=0;const t=document.createTextNode('0');d.prepend(t);d.firstChild.nextSibling&&0;const st=setInterval(()=>{v=Math.min(n,v+Math.ceil(n/40));t.textContent=v+(v===n?s:'');if(v===n)clearInterval(st)},30);d.childNodes[1]&&d.childNodes[1].nodeType===3&&d.childNodes[1].remove()});
+/* subtle network background */
+(function(){const c=$('#net'),x=c.getContext('2d');let W,H,P=[];function rs(){W=c.width=innerWidth;H=c.height=innerHeight;P=Array.from({length:Math.min(45,W/28|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25}))}rs();addEventListener('resize',rs);
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+(function d(){x.clearRect(0,0,W,H);const col=R.dataset.theme==='dark'?'201,169,106':'138,106,44',o=R.dataset.theme==='dark'?.32:.18;
+P.forEach((p,i)=>{p.x=(p.x+p.vx+W)%W;p.y=(p.y+p.vy+H)%H;x.fillStyle=`rgba(${col},${o})`;x.beginPath();x.arc(p.x,p.y,1.4,0,7);x.fill();
+for(let j=i+1;j<P.length;j++){const q=P[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<140){x.strokeStyle=`rgba(${col},${o*(1-dd/140)*.6})`;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}});requestAnimationFrame(d)})()})();
+/* chat */
+const msgs=$('#msgs'),inp=$('#q'),IMG='assets/img/ajay.jpeg';let busy=false;
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h)e.innerHTML=h;return e};
+const down=()=>msgs.scrollTop=msgs.scrollHeight;
+function bot(){const m=el('div','m'),i=el('img');i.src=IMG;i.alt='';const b=el('div','b');m.append(i,b);msgs.append(m);down();return b}
+function user(t){const m=el('div','m u'),b=el('div','b');b.textContent=t;m.append(b);msgs.append(m);down()}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function stream(b,t){for(const w of t.split(/(\s+)/)){b.textContent+=w;down();await sleep(w.trim()?22:0)}}
+const link=(l,h)=>`<a class="lk" href="${h}" ${h[0]=='h'?'target="_blank" rel="noopener"':''}>${l}</a>`;
+const R_={
+about:{t:"Ajay is an AI/ML and Generative AI engineer with 3+ years of experience building LLM apps, RAG pipelines and full-stack AI products. He is based in Hyderabad and open to new roles.",c:()=>''},
+projects:{t:"Here are Ajay's featured projects. Select one for details.",c:()=>'<div class="mini">'+['PinGuru','NASA RAG QA','Multi-Agent Ops','Image Captioning'].map(x=>`<button data-ask="Tell me about ${x}">${x}</button>`).join('')+'</div>'},
+pinguru:{t:"PinGuru (pinguru.me) is a live Instagram DM automation SaaS: real-time DM triggers, comment-to-DM workflows, multi-tier Stripe billing and JWT/OTP security on FastAPI and MongoDB, hosted on DigitalOcean.",c:()=>link('Open pinguru.me','https://pinguru.me')},
+rag:{t:"The Technical Manual QA System is a production-grade RAG pipeline over the 270-page NASA Systems Engineering Handbook: 885 FAISS vectors (all-MiniLM-L6-v2), Llama-3.3-70B via Groq, confidence scoring, multi-turn memory and section-level citations. Built for the i2e National AI Hackathon.",c:()=>link('View on GitHub','https://github.com/Ajaysomala/i2e_Hireathon-Complex_Technical_Manual_QA_System')},
+agent:{t:"The Autonomous Multi-Agent Operations System layers autonomy: a reflex layer for known triggers, a single planning agent, and a Planner, Executor and Reviewer team that self-corrects. It ships as a containerized FastAPI service with task memory (Groq Llama 3.3, Docker, SQLite, Pydantic).",c:()=>''},
+caption:{t:"The Image Caption Generator pairs a CNN encoder with an LSTM decoder, trained on Flickr8k to generate captions for images.",c:()=>''},
+skills:{t:"Here is Ajay's stack:",c:()=>Object.entries(SK).map(([k,v])=>`<div style="margin-top:.5rem"><small style="color:var(--mute)">${k}</small><br>${pills(v)}</div>`).join('')},
+exp:{t:"Ajay has 3+ years of experience: Associate Software Engineer at TCS (Dec 2025 – May 2026), Associate at Tech Mahindra (Sep 2024 – Nov 2025) building data-validation and text pipelines for NLP/LLM training, and AI/ML Data Scientist at BO IT Solutions (Aug 2022 – Jun 2024), where he delivered 20+ ML projects.",c:()=>link('Jump to experience','#experience')},
+edu:{t:"B.Tech in Electronics and Communication Engineering from Aditya University, Surampalem (2018–2022).",c:()=>''},
+certs:{t:"Ajay's certifications:",c:()=>['Generative AI Introduction — Microsoft Learning','Career Essentials in Generative AI — Microsoft and LinkedIn','Develop an AI app with the Azure AI Foundry SDK — Microsoft','Learning Microsoft 365 Copilot for Work — LinkedIn'].map(x=>`<div>— ${x}</div>`).join('')},
+contact:{t:"Here is how to reach Ajay:",c:()=>link('jaydeveloper010@gmail.com','mailto:jaydeveloper010@gmail.com')+link('+91 76750 10831','tel:+917675010831')+link('LinkedIn','https://linkedin.com/in/somala-ajay-8a806b213')+link('GitHub','https://github.com/Ajaysomala')},
+resume:{t:"Here is Ajay's resume:",c:()=>link('Download resume (PDF)','Somala_Ajay_Resume.pdf')},
+hire:{t:"Ajay brings production experience across the AI stack: a live SaaS (PinGuru), a citation-backed RAG system, multi-agent orchestration, and 20+ shipped ML/DL models, backed by a strong data-validation background. He is open to AI/ML, Gen AI and Python roles.",c:()=>link('Email Ajay','mailto:jaydeveloper010@gmail.com')},
+hi:{t:"Hello. I'm Ajay's AI assistant. Ask about his projects, skills or experience, or try \"switch theme\".",c:()=>''},
+thanks:{t:"You're welcome. Anything else you'd like to know?",c:()=>''},
+polite:{t:"Let's keep this professional. I'm here to talk about Ajay's work. Try asking about his projects or experience.",c:()=>''},
+personal:{t:"I stick to Ajay's professional background. For anything else, you can reach him directly by email.",c:()=>''}
+};
+const INT=[[/theme|dark|light|mode/,'theme'],[/\b(sex|nude|porn|nsfw|dating|kiss)\b|idiot|stupid|useless|loser/,'polite'],[/\bage\b|how old|born|birthday|married|salary/,'personal'],[/pinguru|saas|instagram/,'pinguru'],[/nasa|rag|hackathon|faiss|vector|manual|i2e/,'rag'],[/agent|autonom/,'agent'],[/caption|cnn|lstm/,'caption'],[/project|built|build|portfolio|work on/,'projects'],[/skill|stack|tech|tool|language|framework/,'skills'],[/cert|credential|course/,'certs'],[/resume|cv\b|pdf/,'resume'],[/contact|reach|email|phone|linkedin|github|connect/,'contact'],[/experience|job|tcs|mahindra|bo it|career|worked/,'exp'],[/educat|degree|college|univers|btech|study/,'edu'],[/why|hire|strength|available|opportunit|looking/,'hire'],[/about|who|yourself|introduce|tell me/,'about'],[/thank|thx/,'thanks'],[/^(hi|hello|hey|yo|sup|hola|good (morning|evening))/,'hi']];
+async function ask(text){if(busy||!text.trim())return;busy=true;user(text);const b=bot();b.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';await sleep(500+Math.random()*400);b.textContent='';
+const q=text.toLowerCase(),hit=INT.find(([r])=>r.test(q)),k=hit?hit[1]:null;
+if(k==='theme'){toggleTheme();await stream(b,`Done. Switched to ${R.dataset.theme} mode.`)}
+else if(k){const r=R_[k];await stream(b,r.t);const c=el('div','c');c.innerHTML=r.c();if(c.innerHTML)b.append(c)}
+else await stream(b,"I can tell you about Ajay's projects, skills, experience, certifications, or how to contact him. What would you like to know?");
+down();busy=false}
+$('#form').onsubmit=e=>{e.preventDefault();const t=inp.value;inp.value='';ask(t)};
+msgs.addEventListener('click',e=>{const b=e.target.closest('[data-ask]');if(b)ask(b.dataset.ask)});
+$('#chips').innerHTML=['About Ajay','Projects','Skills','Experience','Certifications','Resume','Contact','Switch theme'].map(x=>`<button class="chip" data-ask="${x}">${x}</button>`).join('');
+$('#chips').onclick=e=>{const b=e.target.closest('[data-ask]');if(b)ask(b.dataset.ask)};
+(async()=>{busy=true;await stream(bot(),R_.hi.t);busy=false})();
+const fab=$('#fab');new IntersectionObserver(([e])=>fab.classList.toggle('show',!e.isIntersecting)).observe($('#chatbox'));
+fab.onclick=()=>{$('#about').scrollIntoView();setTimeout(()=>inp.focus(),500)};
 </script>
 </body>
 </html>
