@@ -39,7 +39,6 @@ a{color:inherit}:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .ev{display:grid;gap:1.8rem;background:var(--panel);border:1px solid var(--line);padding:2rem}
 .ev .meta{font:600 .72rem var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}.ev h3{font:700 1.5rem/1.25 var(--fd);margin:.4rem 0 .7rem}.ev p{color:var(--body);max-width:52rem}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.job-gal{margin-top:1.1rem;max-width:40rem}.job-gal figure{aspect-ratio:4/3}
 .gal figure{position:relative;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;aspect-ratio:4/5;background:var(--bg)}
 .gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.gal figure:hover img{transform:scale(1.05)}
 .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .9rem .7rem;font:500 .74rem var(--fb);letter-spacing:.06em;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff}
@@ -63,7 +62,7 @@ h1{font:700 clamp(3rem,7vw,5.4rem)/1 var(--fd);letter-spacing:-.02em}h1 em{font-
 .btn{display:inline-block;padding:.8rem 1.5rem;border-radius:2px;font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer;font-family:var(--fb);transition:.25s}
 .btn.main{background:var(--acc);border-color:var(--acc);color:var(--on)}.btn.main:hover{filter:brightness(1.1)}.btn:not(.main):hover{background:var(--ink);color:var(--bg)}
 .stats{display:flex;gap:2.2rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line);flex-wrap:wrap}.stats div{font:700 2.1rem var(--fd);line-height:1}.stats small{display:block;font:500 .68rem var(--fb);color:var(--mute);margin-top:.5rem;letter-spacing:.14em}
-.ph{grid-area:ph;position:relative;align-self:center;justify-self:center;width:290px}.ph img{display:block;width:290px;height:290px;aspect-ratio:1/1;object-fit:cover;object-position:center 22%;border-radius:6px}@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+.ph{grid-area:ph;position:relative;align-self:center;justify-self:center;width:290px}.ph img{display:block;width:290px;height:362px;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;border-radius:6px}@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
 .ph{isolation:isolate}
 .ph::before,.ph::after{content:"";position:absolute;z-index:-1;background:conic-gradient(from var(--a),var(--acc),transparent 28%,#67e8f9 52%,transparent 76%,var(--acc));animation:spin 5s linear infinite}
 .ph::before{inset:-16px;border-radius:22px;filter:blur(22px);opacity:.65;animation:spin 5s linear infinite,pulse 3s ease-in-out infinite}
@@ -95,6 +94,7 @@ h2{font:700 clamp(2rem,4vw,2.8rem)/1.1 var(--fd);letter-spacing:-.01em;margin-bo
 .inp button{width:46px;border:0;border-radius:2px;background:var(--acc);cursor:pointer;color:var(--on);display:grid;place-items:center}
 .tl{border-left:1px solid var(--line);margin-left:.4rem}.job{position:relative;padding:0 0 2.6rem 2.2rem}.job::before{content:"";position:absolute;left:-6px;top:.6rem;width:11px;height:11px;background:var(--bg);border:2px solid var(--acc);border-radius:50%}
 .when{font:600 .74rem var(--fb);color:var(--acc);letter-spacing:.16em}.job h3{font:700 1.4rem var(--fd);margin:.25rem 0}.job h3 span{color:var(--mute);font-weight:500;font-style:normal}.job ul{margin:.7rem 0 0 1.1rem;color:var(--body)}.job li{margin-bottom:.35rem;max-width:48rem}
+.projs{display:grid;gap:1.2rem;margin-top:1.6rem}.proj{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--acc);padding:1.4rem 1.6rem}.proj .pn{font:600 .68rem var(--fb);letter-spacing:.16em;color:var(--acc)}.proj h4{font:700 1.15rem/1.3 var(--fd);margin:.35rem 0 .2rem}.proj .cl{font-size:.88rem;color:var(--mute);margin-bottom:.6rem}.proj ul{margin:0 0 .8rem 1.1rem;color:var(--body);font-size:.95rem}.proj li{margin-bottom:.35rem;max-width:50rem}.env{margin-top:.2rem}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
 .card{position:relative;background:var(--panel);border:1px solid var(--line);padding:1.8rem;transition:.3s;text-decoration:none;display:block}.card:hover{transform:translateY(-4px);border-color:var(--acc)}
 .card .n{font:600 .7rem var(--fb);color:var(--acc);letter-spacing:.16em}.card h3{font:700 1.35rem var(--fd);margin:.4rem 0 .6rem}.card p{color:var(--body);font-size:.96rem}.card .go{position:absolute;top:1.5rem;right:1.6rem;color:var(--acc)}
@@ -106,14 +106,14 @@ h2{font:700 clamp(2rem,4vw,2.8rem)/1.1 var(--fd);letter-spacing:-.01em;margin-bo
 footer{padding:1.8rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 #fab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:60;display:none;padding:.8rem 1.3rem;border:0;border-radius:2px;font:600 .78rem var(--fb);text-transform:uppercase;letter-spacing:.12em;cursor:pointer;background:var(--acc);color:var(--on);box-shadow:0 10px 30px rgba(0,0,0,.35)}#fab.show{display:block}
 @media(max-width:900px){.gal{grid-template-columns:1fr}.ev{padding:1.3rem}.menu{display:block}nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}nav.open{display:block}nav ul{flex-direction:column;gap:.2rem}nav a{display:block;padding:.6rem 0}
-.hero .wrap{grid-template-columns:1fr;grid-template-areas:"hn" "ph" "hr"}.ph{width:210px;margin:1.6rem 0 2rem 0;justify-self:start}.ph img{width:210px;height:210px}.hn{align-self:start}
+.hero .wrap{grid-template-columns:1fr;grid-template-areas:"hn" "ph" "hr"}.ph{width:210px;margin:1.6rem 0 2rem 0;justify-self:start}.ph img{width:210px;height:262px}.hn{align-self:start}
 .about,.grid,.sk,.certs{grid-template-columns:1fr}.about{gap:2.5rem}.sk{gap:.3rem}.chat{height:520px}}
 @media(max-width:600px){
 body{font-size:.95rem;line-height:1.6}.wrap{padding:0 1.1rem}
 header .wrap{height:56px}nav{top:56px;padding:.4rem 1.1rem .8rem}.logo{font-size:1rem}.logo img{width:30px;height:30px}
 .theme,.menu{height:34px;padding:0 .7rem;font-size:.7rem}
 .hero{padding:2rem 0}.tag{font-size:.62rem;letter-spacing:.1em;padding:.25rem .6rem;margin-bottom:1rem}h1{font-size:2.6rem}
-.ph{width:150px;margin:1.2rem 0 1.4rem}.ph img{width:150px;height:150px}.ph::before{filter:blur(14px)}.st{left:-6px;bottom:10px;padding:.3rem .55rem;font-size:.58rem}
+.ph{width:170px;margin:1.2rem 0 1.4rem}.ph img{width:170px;height:212px}.ph::before{filter:blur(14px)}.st{left:-6px;bottom:10px;padding:.3rem .55rem;font-size:.58rem}
 .role{font-size:.66rem;letter-spacing:.1em;line-height:1.8;margin:1rem 0 .7rem}.lead{font-size:.98rem}
 .cta{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:1.2rem}.btn{padding:.75rem .4rem;text-align:center;font-size:.68rem;letter-spacing:.08em}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin-top:1.6rem;padding-top:1.2rem}.stats div{font-size:1.4rem}.stats small{font-size:.5rem;letter-spacing:.05em}
@@ -122,7 +122,7 @@ section{padding:3rem 0}h2{font-size:1.7rem;margin-bottom:1.4rem}
 .about{gap:1.8rem}.facts li{font-size:.88rem;flex-direction:column;gap:.1rem}.facts b{text-align:left}
 .chat{height:min(480px,72vh)}.ch-top{padding:.7rem .9rem}#msgs{padding:.9rem}.m .b{font-size:.9rem;padding:.6rem .8rem}.inp{padding:.6rem .8rem .8rem}.inp input{padding:.65rem .8rem;font-size:16px}
 .job{padding:0 0 1.8rem 1.3rem}.job h3{font-size:1.1rem}.job ul{margin-left:1rem;font-size:.92rem}.when{font-size:.64rem;letter-spacing:.1em}
-.card{padding:1.2rem}.card h3{font-size:1.15rem}.card p{font-size:.9rem}
+.proj{padding:1.1rem 1.1rem}.proj h4{font-size:1.02rem}.proj ul{font-size:.9rem;margin-left:1rem}.card{padding:1.2rem}.card h3{font-size:1.15rem}.card p{font-size:.9rem}
 .ev h3{font-size:1.2rem}.ev p{font-size:.92rem}
 .gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.7rem;padding-bottom:.4rem;scrollbar-width:none}.gal figure{flex:0 0 72%;scroll-snap-align:center;aspect-ratio:4/5}
 .sk{padding:.8rem 0}.sk dt{font-size:.95rem}.pl{font-size:.7rem;padding:.1rem .45rem}
@@ -148,12 +148,12 @@ footer .wrap{flex-direction:column;font-size:.75rem}
 <main id="top">
 <div class="hero"><div class="wrap">
 <div class="hn"><span class="tag">Open to AI/ML and Gen AI roles</span><h1>Somala <em>Ajay</em></h1></div>
-<div class="ph"><img src="assets/img/ajay.jpeg" alt="Portrait of Somala Ajay" width="290" height="290"><span class="st"><s></s>Open to work</span></div>
+<div class="ph"><img src="assets/img/ajay-portrait.jpeg" alt="Portrait of Somala Ajay" width="290" height="362"><span class="st"><s></s>Open to work</span></div>
 <div class="hr">
 <p class="role">AI/ML Engineer &nbsp;·&nbsp; Generative AI Engineer &nbsp;·&nbsp; Python Developer</p>
 <p class="lead">I build LLM applications, RAG pipelines and full-stack AI products, and I run PinGuru, a live Instagram DM automation SaaS. Based in Hyderabad.</p>
 <div class="cta"><a class="btn main" href="#projects">View projects</a><a class="btn" href="Somala_Ajay_Resume.pdf" download>Download resume</a></div>
-<div class="stats"><div data-n="3" data-s="+">0<small>YEARS EXPERIENCE</small></div><div data-n="20" data-s="+">0<small>ML/DL MODELS</small></div><div data-n="885" data-s="">0<small>FAISS VECTORS</small></div><div data-n="1" data-s="">0<small>LIVE SAAS</small></div></div>
+<div class="stats"><div data-n="3" data-s="+">0<small>YEARS EXPERIENCE</small></div><div data-n="3" data-s="">0<small>ENTERPRISE PROJECTS</small></div><div data-n="885" data-s="">0<small>FAISS VECTORS</small></div><div data-n="1" data-s="">0<small>LIVE SAAS</small></div></div>
 </div>
 </div></div>
 
@@ -161,7 +161,7 @@ footer .wrap{flex-direction:column;font-size:.75rem}
 
 <section id="about"><div class="wrap"><div class="about rv">
 <div><h2>About <em>me</em></h2>
-<p>AI/ML and Generative AI engineer with 3+ years of experience building production-grade LLM applications, RAG pipelines and full-stack AI products. My background is in data engineering, data validation and backend API integration, and I have delivered 20+ ML/DL models across NLP and computer vision. I work mostly in Python, SQL, FastAPI, LangChain, FAISS and Docker, on AWS, GCP and DigitalOcean.</p>
+<p>AI/ML and Generative AI engineer with 3+ years of experience building production-grade LLM applications, RAG pipelines and full-stack AI products. My background is in data engineering, data validation and backend API integration, and I have delivered ML/DL models across NLP and computer vision. I work mostly in Python, SQL, FastAPI, LangChain, FAISS and Docker, on GCP, AWS and DigitalOcean.</p>
 <ul class="facts"><li><span>Location</span><b>Hyderabad, Telangana</b></li><li><span>Education</span><b>B.Tech ECE, Aditya University (2018–2022)</b></li><li><span>Live product</span><b>PinGuru (pinguru.me)</b></li><li><span>Looking for</span><b>AI/ML, Gen AI and Python roles</b></li></ul></div>
 <div class="chat" id="chatbox">
 <div class="ch-top"><img src="assets/img/ajay.jpeg" alt=""><span>Ask Ajay's AI</span><small>ONLINE</small></div>
@@ -172,26 +172,27 @@ footer .wrap{flex-direction:column;font-size:.75rem}
 </div></div></section>
 
 <section id="experience"><div class="wrap"><h2 class="rv">Professional <em>experience</em></h2><div class="tl rv">
-<div class="job"><div class="when">DEC 2025 – MAY 2026 · HYDERABAD</div><h3>Associate Software Engineer <span>at TCS</span></h3><ul>
-<li>Designed ML pipelines for structured client datasets, from ingestion and preprocessing to model training.</li>
-<li>Optimized SQL queries and schemas for large-scale extraction, improving ingestion speed by 20%.</li>
-<li>Ran EDA and feature engineering with Pandas and NumPy on 10K–50K records.</li>
-<li>Built Scikit-learn classifiers (~82–87% validation accuracy) and deployed one through a Flask REST API.</li>
-<li>Automated preprocessing, cutting manual effort by ~25–30%; tracked experiments in Git.</li></ul></div>
-<div class="job"><div class="when">SEP 2024 – NOV 2025 · HYDERABAD</div><h3>Associate <span>at Tech Mahindra</span></h3><ul>
-<li>Processed structured data in a Workflow Management System (WFMS) for a client project.</li>
-<li>Engineered pipelines for unstructured and semi-structured text, preparing inputs for downstream NLP and LLM training.</li>
-<li>Built data validation algorithms and quality workflows that removed label noise and cut feature discrepancies by 20%.</li></ul>
-<div class="gal job-gal">
-<figure><img loading="lazy" src="assets/img/TechMahindra-1.jpeg" alt="At the Tech Mahindra office" onerror="this.closest('figure').style.display='none'"><figcaption>At Tech Mahindra</figcaption></figure>
-<figure><img loading="lazy" src="assets/img/TechMahindra-2.jpeg" alt="At work on a project at Tech Mahindra" onerror="this.closest('figure').style.display='none'"><figcaption>On the job</figcaption></figure>
-<figure><img loading="lazy" src="assets/img/TechMahindra-3.jpeg" alt="With colleagues at Tech Mahindra" style="object-position:center 30%" onerror="this.closest('figure').style.display='none'"><figcaption>With the team</figcaption></figure>
+<div class="job"><div class="when">AUG 2022 – SEP 2026 · HYDERABAD</div><h3>Associate Software Engineer <span>at TCS</span></h3><ul>
+<li>Delivered 3 enterprise projects across ML, deep learning and Generative AI over 4 years, owning data preparation, model development, API development, Docker deployment on AWS and monitoring.</li>
+<li>Built and maintained Python and FastAPI microservices and REST APIs, with unit testing in pytest and CI/CD pipelines in GitHub Actions.</li>
+<li>Worked in Agile and Scrum teams with code reviews, technical documentation and regular stakeholder demos.</li></ul>
+<div class="projs">
+<article class="proj"><div class="pn">PROJECT 1 · AUG 2022 – SEP 2023</div><h4>Visual Defect Detection using Computer Vision</h4><div class="cl">Client: Manufacturing and electronics company</div><ul>
+<li>Developed a CNN-based image classification model in TensorFlow and Keras, using OpenCV preprocessing and data augmentation to detect surface defects on production-line images. It reached 94% accuracy against 81% for the earlier rule-based check.</li>
+<li>Used transfer learning (ResNet, MobileNet) and hyperparameter tuning to cut training time by about 40% while improving recall on rare defect classes.</li></ul>
+<div class="env"><span class="pl">Python</span><span class="pl">TensorFlow</span><span class="pl">Keras</span><span class="pl">OpenCV</span><span class="pl">CNN</span><span class="pl">Scikit-learn</span><span class="pl">Flask</span><span class="pl">Docker</span><span class="pl">MongoDB</span><span class="pl">Git</span></div></article>
+<article class="proj"><div class="pn">PROJECT 2 · OCT 2023 – OCT 2024</div><h4>Demand Forecasting and Predictive Analytics Platform</h4><div class="cl">Client: Retail and consumer goods company</div><ul>
+<li>Built time-series forecasting models (LSTM, XGBoost, Scikit-learn regressors) for 1,000+ SKUs with 60+ engineered features such as seasonality, promotions and lag variables, lowering forecast error (MAPE) from 21% to 13%.</li>
+<li>Created SQL and PostgreSQL data pipelines that processed 5M+ monthly records, and tuned slow queries to cut report generation time by about 45%.</li>
+<li>Tracked experiments and model versions with MLflow, and added hyperparameter tuning (Optuna) for reproducible training runs.</li></ul>
+<div class="env"><span class="pl">Python</span><span class="pl">LSTM</span><span class="pl">XGBoost</span><span class="pl">Scikit-learn</span><span class="pl">PyTorch</span><span class="pl">FastAPI</span><span class="pl">PostgreSQL</span><span class="pl">SQL</span><span class="pl">MLflow</span><span class="pl">Docker</span><span class="pl">AWS</span></div></article>
+<article class="proj"><div class="pn">PROJECT 3 · NOV 2024 – SEP 2026</div><h4>Enterprise Knowledge Assistant (RAG and Agentic AI)</h4><div class="cl">Client: Banking and financial services company</div><ul>
+<li>Built a Retrieval-Augmented Generation (RAG) assistant over 20K+ policy, compliance and process documents using LangChain, a FAISS vector database and sentence-transformer embeddings.</li>
+<li>Improved retrieval with semantic chunking, metadata filtering, hybrid search (BM25 plus vector) and re-ranking, raising answer relevance by about 30% over the baseline retriever.</li>
+<li>Developed multi-step agentic workflows with LangGraph and Google ADK, using MCP to connect tools and internal data sources, with tool calling, memory and retry handling.</li>
+<li>Created an automated LLM evaluation pipeline (retrieval hit rate, faithfulness, answer relevance) to guide prompt and chunking changes.</li></ul>
+<div class="env"><span class="pl">Python</span><span class="pl">LangChain</span><span class="pl">LangGraph</span><span class="pl">Google ADK</span><span class="pl">MCP</span><span class="pl">RAG</span><span class="pl">FAISS</span><span class="pl">LLMs</span><span class="pl">FastAPI</span><span class="pl">MongoDB</span><span class="pl">Docker</span><span class="pl">AWS</span><span class="pl">Git</span></div></article>
 </div></div>
-<div class="job"><div class="when">AUG 2022 – JUN 2024 · HYDERABAD</div><h3>AI/ML Data Scientist <span>at BO IT Solutions</span></h3><ul>
-<li>Delivered 20+ end-to-end AI/ML projects across NLP, computer vision and deep learning.</li>
-<li>EDA and feature engineering on 10K–100K+ records, reducing preprocessing time by ~30%.</li>
-<li>Built classification and regression models in Scikit-learn and TensorFlow (80–90% accuracy).</li>
-<li>Implemented CNN and LSTM models that beat traditional ML baselines by ~15%.</li></ul></div>
 </div></div></section>
 
 <section id="projects"><div class="wrap"><h2 class="rv">Selected <em>work</em></h2>
@@ -264,19 +265,22 @@ rag:{t:"The Technical Manual QA System is a production-grade RAG pipeline over t
 agent:{t:"The Autonomous Multi-Agent Operations System layers autonomy: a reflex layer for known triggers, a single planning agent, and a Planner, Executor and Reviewer team that self-corrects. It ships as a containerized FastAPI service with task memory (Groq Llama 3.3, Docker, SQLite, Pydantic).",c:()=>''},
 caption:{t:"The Image Caption Generator pairs a CNN encoder with an LSTM decoder, trained on Flickr8k to generate captions for images.",c:()=>''},
 skills:{t:"Here is Ajay's stack:",c:()=>Object.entries(SK).map(([k,v])=>`<div style="margin-top:.5rem"><small style="color:var(--mute)">${k}</small><br>${pills(v)}</div>`).join('')},
-exp:{t:"Ajay has 3+ years of experience: Associate Software Engineer at TCS (Dec 2025 – May 2026), Associate at Tech Mahindra (Sep 2024 – Nov 2025) building data-validation and text pipelines for NLP/LLM training, and AI/ML Data Scientist at BO IT Solutions (Aug 2022 – Jun 2024), where he delivered 20+ ML projects.",c:()=>link('Jump to experience','#experience')},
+exp:{t:"Ajay is an Associate Software Engineer at TCS (Aug 2022 – Sep 2026). Over 4 years he delivered 3 enterprise projects across ML, deep learning and Generative AI: Visual Defect Detection (computer vision), a Demand Forecasting and Predictive Analytics Platform, and an Enterprise Knowledge Assistant (RAG and agentic AI) for a banking client. He owned data preparation, modelling, FastAPI services, Docker deployment on AWS and monitoring.",c:()=>link('Jump to experience','#experience')},
+defect:{t:"Visual Defect Detection (Aug 2022 – Sep 2023, manufacturing and electronics client): a CNN image classifier in TensorFlow and Keras with OpenCV preprocessing and augmentation. It reached 94% accuracy against 81% for the earlier rule-based check, and transfer learning (ResNet, MobileNet) cut training time by about 40%.",c:()=>link('Jump to experience','#experience')},
+forecast:{t:"Demand Forecasting and Predictive Analytics Platform (Oct 2023 – Oct 2024, retail client): LSTM, XGBoost and Scikit-learn models for 1,000+ SKUs that cut forecast error (MAPE) from 21% to 13%, on SQL/PostgreSQL pipelines handling 5M+ monthly records, with MLflow and Optuna for reproducible training.",c:()=>link('Jump to experience','#experience')},
+kb:{t:"Enterprise Knowledge Assistant (Nov 2024 – Sep 2026, banking client): a RAG assistant over 20K+ policy and compliance documents using LangChain, FAISS and sentence-transformers, with hybrid search and re-ranking that raised answer relevance by about 30%. It includes LangGraph and Google ADK agent workflows connected through MCP, and an automated LLM evaluation pipeline.",c:()=>link('Jump to experience','#experience')},
 edu:{t:"B.Tech in Electronics and Communication Engineering from Aditya University, Surampalem (2018–2022).",c:()=>''},
 certs:{t:"Ajay's certifications:",c:()=>['Generative AI Introduction — Microsoft Learning','Career Essentials in Generative AI — Microsoft and LinkedIn','Develop an AI app with the Azure AI Foundry SDK — Microsoft','Learning Microsoft 365 Copilot for Work — LinkedIn'].map(x=>`<div>— ${x}</div>`).join('')},
 contact:{t:"Here is how to reach Ajay:",c:()=>link('jaydeveloper010@gmail.com','mailto:jaydeveloper010@gmail.com')+link('+91 76750 10831','tel:+917675010831')+link('LinkedIn','https://linkedin.com/in/somala-ajay-8a806b213')+link('GitHub','https://github.com/Ajaysomala')},
 resume:{t:"Here is Ajay's resume:",c:()=>link('Download resume (PDF)','Somala_Ajay_Resume.pdf')},
 events:{t:"Ajay took part in the AI Quest Hire-athon 2026 by i2e Consulting in Bangalore, where he built a citation-backed RAG question-answering system over the NASA Systems Engineering Handbook. Photos are in the Explored events section.",c:()=>link('View events','#events')},
-hire:{t:"Ajay brings production experience across the AI stack: a live SaaS (PinGuru), a citation-backed RAG system, multi-agent orchestration, and 20+ shipped ML/DL models, backed by a strong data-validation background. He is open to AI/ML, Gen AI and Python roles.",c:()=>link('Email Ajay','mailto:jaydeveloper010@gmail.com')},
+hire:{t:"Ajay brings production experience across the AI stack: a live SaaS (PinGuru), 3 enterprise projects at TCS spanning computer vision, forecasting and RAG with agentic AI, a citation-backed RAG system, and multi-agent orchestration. He is open to AI/ML, Gen AI and Python roles.",c:()=>link('Email Ajay','mailto:jaydeveloper010@gmail.com')},
 hi:{t:"Hello. I'm Ajay's AI assistant. Ask about his projects, skills or experience, or try \"switch theme\".",c:()=>''},
 thanks:{t:"You're welcome. Anything else you'd like to know?",c:()=>''},
 polite:{t:"Let's keep this professional. I'm here to talk about Ajay's work. Try asking about his projects or experience.",c:()=>''},
 personal:{t:"I stick to Ajay's professional background. For anything else, you can reach him directly by email.",c:()=>''}
 };
-const INT=[[/theme|dark|light|mode/,'theme'],[/\b(sex|nude|porn|nsfw|dating|kiss)\b|idiot|stupid|useless|loser/,'polite'],[/\bage\b|how old|born|birthday|married|salary/,'personal'],[/event|hire-?athon|explored/,'events'],[/pinguru|saas|instagram/,'pinguru'],[/nasa|rag|hackathon|faiss|vector|manual|i2e/,'rag'],[/agent|autonom/,'agent'],[/caption|cnn|lstm/,'caption'],[/project|built|build|portfolio|work on/,'projects'],[/skill|stack|tech|tool|language|framework/,'skills'],[/cert|credential|course/,'certs'],[/resume|cv\b|pdf/,'resume'],[/contact|reach|email|phone|linkedin|github|connect/,'contact'],[/experience|job|tcs|mahindra|bo it|career|worked/,'exp'],[/educat|degree|college|univers|btech|study/,'edu'],[/why|hire|strength|available|opportunit|looking/,'hire'],[/about|who|yourself|introduce|tell me/,'about'],[/thank|thx/,'thanks'],[/^(hi|hello|hey|yo|sup|hola|good (morning|evening))/,'hi']];
+const INT=[[/theme|dark|light|mode/,'theme'],[/\b(sex|nude|porn|nsfw|dating|kiss)\b|idiot|stupid|useless|loser/,'polite'],[/\bage\b|how old|born|birthday|married|salary/,'personal'],[/event|hire-?athon|explored/,'events'],[/defect|visual|computer vision|manufactur/,'defect'],[/forecast|demand|retail|time.?series/,'forecast'],[/knowledge|enterprise|bank/,'kb'],[/pinguru|saas|instagram/,'pinguru'],[/nasa|rag|hackathon|faiss|vector|manual|i2e/,'rag'],[/agent|autonom/,'agent'],[/caption|cnn|lstm/,'caption'],[/project|built|build|portfolio|work on/,'projects'],[/skill|stack|tech|tool|language|framework/,'skills'],[/cert|credential|course/,'certs'],[/resume|cv\b|pdf/,'resume'],[/contact|reach|email|phone|linkedin|github|connect/,'contact'],[/experience|job|tcs|career|worked|employ/,'exp'],[/educat|degree|college|univers|btech|study/,'edu'],[/why|hire|strength|available|opportunit|looking/,'hire'],[/about|who|yourself|introduce|tell me/,'about'],[/thank|thx/,'thanks'],[/^(hi|hello|hey|yo|sup|hola|good (morning|evening))/,'hi']];
 async function ask(text){if(busy||!text.trim())return;busy=true;user(text);const b=bot();b.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';await sleep(500+Math.random()*400);b.textContent='';
 const q=text.toLowerCase(),hit=INT.find(([r])=>r.test(q)),k=hit?hit[1]:null;
 if(k==='theme'){toggleTheme();await stream(b,`Done. Switched to ${R.dataset.theme} mode.`)}
